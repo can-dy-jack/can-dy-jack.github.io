@@ -84,7 +84,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -114,12 +114,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
   </ul>
@@ -145,118 +145,6 @@
 
           <div class="content index posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/can-dy-jack/can-dy-jack.github.io/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kart jim">
-      <meta itemprop="description" content="kartjim`s blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈科衡的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">TypeScript入门</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-17 23:04:30" itemprop="dateCreated datePublished" datetime="2020-12-17T23:04:30+08:00">2020-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-26 21:28:30" itemprop="dateModified" datetime="2020-12-26T21:28:30+08:00">2020-12-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/" class="post-meta-item leancloud_visitors" data-flag-title="TypeScript入门" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="TypeScript-part01"><a href="#TypeScript-part01" class="headerlink" title="TypeScript-part01"></a>TypeScript-part01</h1><h2 id="TypeScript介绍"><a href="#TypeScript介绍" class="headerlink" title="TypeScript介绍"></a>TypeScript介绍</h2><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p> <em>程序运行的一般步骤：</em></p>
-<ol>
-<li><p>解析程序：程序解析为AST（抽象句树法-abstract syntax tree）；</p>
-</li>
-<li><p>编译：将AWT编译成为字节码；</p>
-</li>
-<li><p>运行：计算字节码。</p>
-<h3 id="但是对于TS而言："><a href="#但是对于TS而言：" class="headerlink" title="但是对于TS而言："></a>但是对于TS而言：</h3><p>要先用编译器编译为JavaScript，然后执行以上步骤！</p>
-<h3 id="TS与JS区别"><a href="#TS与JS区别" class="headerlink" title="TS与JS区别"></a>TS与JS区别</h3><blockquote>
-<p>JavaScript是动态绑定类型；<br>TypeScript是静态绑定类型。</p>
-</blockquote>
-<blockquote>
-<p>JavaScript是弱类型语言；<br>TypeScript是渐进式类型语言。</p>
-</blockquote>
-<blockquote>
-<p>JavaScript会自动转换类型；<br>TypeScript会检查类型，并报错。</p>
-</blockquote>
-<h2 id="TypeScript配置"><a href="#TypeScript配置" class="headerlink" title="TypeScript配置"></a>TypeScript配置</h2></li>
-</ol>
-<ul>
-<li>新建一个文件夹</li>
-<li>初始化npm：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></li>
-<li>安装TSC、TSLint、NodeJS的类型声明<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev typescript tslint @types/node</span><br></pre></td></tr></table></figure>
-<h3 id="最好安装一下全局"><a href="#最好安装一下全局" class="headerlink" title="最好安装一下全局*"></a>最好安装一下全局*</h3><h4 id="Locally-in-your-project"><a href="#Locally-in-your-project" class="headerlink" title="Locally in your project."></a>Locally in your project.</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -D typescript</span><br><span class="line">npm install -D ts-node</span><br></pre></td></tr></table></figure>
-<h4 id="Or-globally-with-TypeScript"><a href="#Or-globally-with-TypeScript" class="headerlink" title="Or globally with TypeScript."></a>Or globally with TypeScript.</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g typescript</span><br><span class="line">npm install -g ts-node</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1170,6 +1058,93 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/can-dy-jack/can-dy-jack.github.io/kotlin/KotLin-%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%AF%BC%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kart jim">
+      <meta itemprop="description" content="kartjim`s blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈科衡的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/kotlin/KotLin-%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%AF%BC%E5%85%A5/" class="post-title-link" itemprop="url">KotLin - 包的定义与导入</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-11 12:00:00" itemprop="dateCreated datePublished" datetime="2020-12-11T12:00:00+08:00">2020-12-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-26 21:28:30" itemprop="dateModified" datetime="2020-12-26T21:28:30+08:00">2020-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/kotlin/" itemprop="url" rel="index"><span itemprop="name">kotlin</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/kotlin/KotLin-%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%AF%BC%E5%85%A5/" class="post-meta-item leancloud_visitors" data-flag-title="KotLin - 包的定义与导入" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="KotLin-包的定义与导入"><a href="#KotLin-包的定义与导入" class="headerlink" title="KotLin - 包的定义与导入"></a>KotLin - 包的定义与导入</h1><p>包的声明应处于源⽂件顶部：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.demo</span><br><span class="line"><span class="keyword">import</span> kotlin.text.*</span><br><span class="line"><span class="comment">// …… </span></span><br></pre></td></tr></table></figure>
+<p>⽬录与包的结构⽆需匹配：源代码可以在⽂件系统的任意位置。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>源⽂件通常以包声明开头：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printMessage</span><span class="params">()</span></span> &#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="comment">// ……</span></span><br></pre></td></tr></table></figure>
+<p>源⽂件所有内容（⽆论是类还是函数）都包含在声明的包内。 所以上例中 <code>printMessage()</code> 的全名是<br><code>org.example.printMessage</code> ， ⽽ <code>Message</code> 的全名是 <code>org.example.Message</code> 。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/moriafly/article/details/107279590">博客来自：</a>moriafly</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1239,17 +1214,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -1281,7 +1256,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Kart jim</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
