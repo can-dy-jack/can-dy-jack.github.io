@@ -4,7 +4,7 @@
 - 我的个人博客
     * _powered by [hexo](https://github.com/hexojs/hexo)._
 - 个人博客主题
-    * _powered by [Smackdown](https://github.com/smackgg/hexo-theme-smackdown) Theme_
+    * _powered by [Smackdown](https://github.com/smackgg/hexo-theme-smackdown) and [next](https://github.com/theme-next/hexo-theme-next) Theme_
 
 #### 域名
 - github page  https://can-dy-jack.github.io
