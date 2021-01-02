@@ -630,4 +630,49 @@
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>js奇淫技巧1</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><ul>
+<li>var</li>
+</ul>
+<p>JavaScript有两种作用域：全局 / 局部作用域</p>
+<blockquote>
+<p>var声明的变量 在函数内部声明的变量只存在于函数内部</p>
+</blockquote>
+<blockquote>
+<p>用 this 可以调用全局作用域</p>
+</blockquote>
+<ul>
+<li>let</li>
+</ul>
+<p>为了实现变量块级作用域，js用一个<code>let</code>关键字声明具有严格块级作用域的变量。</p>
+<ul>
+<li>const</li>
+</ul>
+<p>const关键字用于声明一个常量，使常量不能被重新赋值或重新声明。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>先看一般的匿名函数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">&quot;Hello&quot;</span>);&#125;;</span><br></pre></td></tr></table></figure>
+<p>箭头函数（arrow function）可以使匿名函数更加简洁：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function">() =&gt;</span> alert(<span class="string">&#x27;Hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只有包含多个表达式，才需要花括号。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">myFunc = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">     x += y;</span><br><span class="line">     alert(x); </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>=&gt;符号通常被称为胖箭头符号</p>
+</blockquote>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>要指定一个默认参数，只要给函数定义中的参数一个默认值就行。<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">warn</span>(<span class="params">temp,subtitle=<span class="string">&#x27;--warning&#x27;</span></span>)</span>&#123;</span><br><span class="line">    alert(subtitle+<span class="string">&quot; , &quot;</span>+temp+<span class="string">&quot; ;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在函数定义中，一般将有默认值的参数，放在没有默认值的参数后面</strong></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
 </search>
