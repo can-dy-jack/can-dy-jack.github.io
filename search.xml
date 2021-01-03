@@ -209,7 +209,7 @@
 </blockquote>
 就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
 即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
-    <div id="aplayer-KHaGXsQq" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-QcLfVVts" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 <h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
@@ -317,6 +317,53 @@
       </tags>
   </entry>
   <entry>
+    <title>js奇淫技巧2</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><pre class="mermaid">graph LR
+A[window] --> B[document]
+A --> C[location]
+A --> D[history]
+A --> E[navigator]
+A --> F[... ...]</pre>
+
+<p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure>
+<h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p>
+<blockquote>
+<p>history.length</p>
+</blockquote>
+<p>history对象有三个方法：forward()、backward()、go()。</p>
+<ul>
+<li>forward()、backward()对应单页浏览器中前进和后退。</li>
+<li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。</li>
+</ul>
+<h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3><p>location对象包含当前加载页面的URL信息。<br>比如：<a href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：</p>
+<blockquote>
+<p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure>
+<h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3><p>navigator对象包含了浏览器 程序本身的数据。<br>如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kotlin-String</title>
     <url>/kotlin/kotlin-String/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Kotlin-字符串"><a href="#Kotlin-字符串" class="headerlink" title="Kotlin - 字符串"></a>Kotlin - 字符串</h1><p>字符串只是一个字符串序列，包含在双引号中。在 Kotlin 中，字符串由类型 <code>String</code> 表示。它是实践中使用最广泛的数据类型之一。</p>
@@ -376,63 +423,16 @@
       </tags>
   </entry>
   <entry>
-    <title>js奇淫技巧2</title>
-    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><pre class="mermaid">graph LR
-A[window] --> B[document]
-A --> C[location]
-A --> D[history]
-A --> E[navigator]
-A --> F[... ...]</pre>
-
-<p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
-<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure>
-<h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure>
-<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p>
-<blockquote>
-<p>history.length</p>
-</blockquote>
-<p>history对象有三个方法：forward()、backward()、go()。</p>
-<ul>
-<li>forward()、backward()对应单页浏览器中前进和后退。</li>
-<li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。</li>
-</ul>
-<h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3><p>location对象包含当前加载页面的URL信息。<br>比如：<a href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：</p>
-<blockquote>
-<p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure>
-<h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3><p>navigator对象包含了浏览器 程序本身的数据。<br>如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>js</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>music-aplayer</title>
     <url>/music/music-aplayer/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>
 
-        <div id="aplayer-iSRXymsb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-FTnoaafA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-iSRXymsb"),
+            element: document.getElementById("aplayer-FTnoaafA"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -449,12 +449,12 @@ A --> F[... ...]</pre>
         </script>
 
 
-        <div id="aplayer-kOUjGYqb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-bfeRWdxH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-kOUjGYqb"),
+            element: document.getElementById("aplayer-bfeRWdxH"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -481,7 +481,7 @@ A --> F[... ...]</pre>
     <url>/music/music/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>
 
-    <div id="aplayer-tvjimpiU" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-mcinemzU" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>]]></content>
       <categories>
