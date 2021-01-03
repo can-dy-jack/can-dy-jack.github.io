@@ -23,21 +23,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="JavaScript文件注释和缩放 注释会增加JavaScript源文件的大小，但是影响较小，可以忽略不计。 在JavaScript正式使用版本一般会清楚文件里的注释和空白，即压缩版本，一般后缀为.min.js。变量 变量区分大小写 命名规则一般是：”驼峰大小写“操作符操作符优先级与其他语言一样，如 java、PHP等。基本 事件（event）JavaScript使用事件处理器（event han">
+  <meta name="description" content="DOM123456graph LRA[window] --&gt; B[document]A --&gt; C[location]A --&gt; D[history]A --&gt; E[navigator]A --&gt; F[... ...] 层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。window对象有一些子对象： document对象任何HTML页面都">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript-part2">
-<meta property="og:url" content="https://github.com/can-dy-jack/can-dy-jack.github.io/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/JavaScript-part2/index.html">
+<meta property="og:title" content="js奇淫技巧2">
+<meta property="og:url" content="https://github.com/can-dy-jack/can-dy-jack.github.io/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/index.html">
 <meta property="og:site_name" content="陈科衡的博客">
-<meta property="og:description" content="JavaScript文件注释和缩放 注释会增加JavaScript源文件的大小，但是影响较小，可以忽略不计。 在JavaScript正式使用版本一般会清楚文件里的注释和空白，即压缩版本，一般后缀为.min.js。变量 变量区分大小写 命名规则一般是：”驼峰大小写“操作符操作符优先级与其他语言一样，如 java、PHP等。基本 事件（event）JavaScript使用事件处理器（event han">
+<meta property="og:description" content="DOM123456graph LRA[window] --&gt; B[document]A --&gt; C[location]A --&gt; D[history]A --&gt; E[navigator]A --&gt; F[... ...] 层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。window对象有一些子对象： document对象任何HTML页面都">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-24T15:00:16.000Z">
-<meta property="article:modified_time" content="2020-12-26T13:28:30.456Z">
+<meta property="article:published_time" content="2021-01-03T02:38:21.000Z">
+<meta property="article:modified_time" content="2021-01-03T10:23:53.819Z">
 <meta property="article:author" content="Kart jim">
 <meta property="article:tag" content="前端">
-<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/can-dy-jack/can-dy-jack.github.io/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/JavaScript-part2/">
+<link rel="canonical" href="https://github.com/can-dy-jack/can-dy-jack.github.io/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/">
 
 
 <script id="page-configurations">
@@ -60,7 +60,7 @@
     })();
 </script>
 
-  <title>JavaScript-part2 | 陈科衡的博客</title>
+  <title>js奇淫技巧2 | 陈科衡的博客</title>
   
 
 
@@ -221,7 +221,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/can-dy-jack/can-dy-jack.github.io/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/JavaScript-part2/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/can-dy-jack/can-dy-jack.github.io/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -234,7 +234,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript-part2
+          js奇淫技巧2
         </h1>
 
         <div class="post-meta">
@@ -243,27 +243,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-12-24 23:00:16" itemprop="dateCreated datePublished" datetime="2020-12-24T23:00:16+08:00">2020-12-24</time>
+              <time title="创建时间：2021-01-03 10:38:21 / 修改时间：18:23:53" itemprop="dateCreated datePublished" datetime="2021-01-03T10:38:21+08:00">2021-01-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-26 21:28:30" itemprop="dateModified" datetime="2020-12-26T21:28:30+08:00">2020-12-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                  <a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                  <a href="/categories/js/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -273,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>761</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -292,27 +286,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="文件注释和缩放"><a href="#文件注释和缩放" class="headerlink" title="文件注释和缩放"></a>文件注释和缩放</h2><ul>
-<li>注释会增加JavaScript源文件的大小，但是影响较小，可以忽略不计。</li>
-<li>在JavaScript正式使用版本一般会清楚文件里的注释和空白，即压缩版本，一般后缀为.min.js。<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2></li>
-<li>变量区分大小写</li>
-<li>命名规则一般是：”驼峰大小写“<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2>操作符优先级与其他语言一样，如 java、PHP等。<h2 id="基本-事件（event）"><a href="#基本-事件（event）" class="headerlink" title="基本 事件（event）"></a>基本 事件（event）</h2>JavaScript使用事件处理器（event handler）来处理事件。<br>常见的有三个：</li>
-</ul>
+        <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[window] --&gt; B[document]</span><br><span class="line">A --&gt; C[location]</span><br><span class="line">A --&gt; D[history]</span><br><span class="line">A --&gt; E[navigator]</span><br><span class="line">A --&gt; F[... ...]</span><br></pre></td></tr></table></figure>
+<p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure>
+<h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p>
+<blockquote>
+<p>history.length</p>
+</blockquote>
+<p>history对象有三个方法：forward()、backward()、go()。</p>
 <ul>
-<li><input disabled="" type="checkbox"> onClick<ul>
-<li>鼠标点击效果</li>
+<li>forward()、backward()对应单页浏览器中前进和后退。</li>
+<li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。<h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3>location对象包含当前加载页面的URL信息。<br>比如：<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：<blockquote>
+<p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure>
+<h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3>navigator对象包含了浏览器 程序本身的数据。<br>如：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li><input disabled="" type="checkbox"> onMouseOver<ul>
-<li>鼠标移入效果</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> onMouseOut<ul>
-<li>鼠标移出效果</li>
-</ul>
-</li>
-</ul>
-<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>图像翻滚 Demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;favicon.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;onMouseOver&quot;</span> <span class="attr">onmousemove</span>=<span class="string">&quot;this.src=&#x27;test/timg.jpeg&#x27;;&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;this.src=&#x27;favicon.png&#x27;;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -326,7 +326,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E5%89%8D%E7%AB%AF/"><i class="fa fa-tag"></i>前端</a>
-              <a href="/tags/javascript/"><i class="fa fa-tag"></i>javascript</a>
+              <a href="/tags/js/"><i class="fa fa-tag"></i>js</a>
           </div>
 
         
@@ -335,13 +335,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" rel="prev" title="hexo插入图片">
-      <i class="fa fa-chevron-left"></i> hexo插入图片
+    <a href="/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/" rel="prev" title="js奇淫技巧1">
+      <i class="fa fa-chevron-left"></i> js奇淫技巧1
     </a></div>
-      <div class="post-nav-item">
-    <a href="/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/" rel="next" title="防止渲染README.md文件">
-      防止渲染README.md文件 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -401,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%B3%A8%E9%87%8A%E5%92%8C%E7%BC%A9%E6%94%BE"><span class="nav-number">1.1.</span> <span class="nav-text">文件注释和缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC-%E4%BA%8B%E4%BB%B6%EF%BC%88event%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">基本 事件（event）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">1.4.1.</span> <span class="nav-text">Demo</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.1.</span> <span class="nav-text">document对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92"><span class="nav-number">2.</span> <span class="nav-text">与用户交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">window对象下的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document%E5%AF%B9%E8%B1%A1%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">document对象下的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E8%8A%82%E7%82%B9"><span class="nav-number">2.2.1.</span> <span class="nav-text">获取标签节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#innerHTML"><span class="nav-number">2.2.2.</span> <span class="nav-text">innerHTML</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history%E5%AF%B9%E8%B1%A1%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">history对象下的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">location对象下的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator%E5%AF%B9%E8%B1%A1%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">navigator对象下的常用方法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -592,7 +589,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'can-dy-jack.github.io',
       owner       : 'can-dy-jack',
       admin       : ['can-dy-jack'],
-      id          : 'cd9832052a481422af09e24fbc7f9527',
+      id          : '8d30f2f1bb044d15adf7ba83fce42f6e',
         language: 'zh-CN',
       distractionFreeMode: true
     });
