@@ -384,6 +384,7 @@ A --> C[location]
 A --> D[history]
 A --> E[navigator]
 A --> F[... ...]</pre>
+
 <p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
 <h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
