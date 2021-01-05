@@ -209,7 +209,7 @@
 </blockquote>
 就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
 即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
-    <div id="aplayer-QcLfVVts" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-dXlteZMr" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 <h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
@@ -427,12 +427,12 @@ A --> F[... ...]</pre>
     <url>/music/music-aplayer/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>
 
-        <div id="aplayer-FTnoaafA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-GoMadpvg" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-FTnoaafA"),
+            element: document.getElementById("aplayer-GoMadpvg"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -449,12 +449,12 @@ A --> F[... ...]</pre>
         </script>
 
 
-        <div id="aplayer-bfeRWdxH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-UAQCombw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-bfeRWdxH"),
+            element: document.getElementById("aplayer-UAQCombw"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -481,7 +481,7 @@ A --> F[... ...]</pre>
     <url>/music/music/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>
 
-    <div id="aplayer-mcinemzU" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-RWsBAxON" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>]]></content>
       <categories>
@@ -579,18 +579,6 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
-    <title>文章摘要</title>
-    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
-<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
-</blockquote>
-<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>官网学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>标签插件</title>
     <url>/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p>
@@ -621,6 +609,18 @@ A --> F[... ...]</pre>
 <h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
       <tags>
         <tag>随笔</tag>
+        <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章摘要</title>
+    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
+<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
+</blockquote>
+<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
         <tag>官网学习</tag>
       </tags>
   </entry>

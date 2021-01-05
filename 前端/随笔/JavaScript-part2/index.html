@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Verdana:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -319,8 +319,58 @@
         <div style="text-align:center;color: #ccc;font-size:14px;">----------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读----------</div>
     
 </div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Kart jim 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/pay.jpg" alt="Kart jim 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://blog.csdn.net/qq_46590483?spm=1001.2100.3001.5343">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">CSDN</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.png">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
+          
           <div class="post-tags">
               <a href="/tags/%E5%89%8D%E7%AB%AF/"><i class="fa fa-tag"></i>前端</a>
               <a href="/tags/javascript/"><i class="fa fa-tag"></i>javascript</a>
@@ -332,12 +382,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" rel="prev" title="hexo插入图片">
-      <i class="fa fa-chevron-left"></i> hexo插入图片
+    <a href="/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/" rel="prev" title="防止渲染README.md文件">
+      <i class="fa fa-chevron-left"></i> 防止渲染README.md文件
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/" rel="next" title="防止渲染README.md文件">
-      防止渲染README.md文件 <i class="fa fa-chevron-right"></i>
+    <a href="/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" rel="next" title="hexo插入图片">
+      hexo插入图片 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -435,9 +485,6 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/can-dy-jack" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;can-dy-jack" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://www.zhihu.com/people/can-que-de-wan-mei-43" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;can-que-de-wan-mei-43" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>zhihu</a>
