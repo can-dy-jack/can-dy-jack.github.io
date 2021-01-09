@@ -117,6 +117,41 @@
       </tags>
   </entry>
   <entry>
+    <title>aplayer+meting添加播放列表</title>
+    <url>/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="aplayer-meting添加播放列表"><a href="#aplayer-meting添加播放列表" class="headerlink" title="aplayer+meting添加播放列表"></a>aplayer+meting添加播放列表</h1><h2 id="看官网"><a href="#看官网" class="headerlink" title="看官网"></a>看官网</h2><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></p>
+<h3 id="使用-hexo-tag-aplayer-插件"><a href="#使用-hexo-tag-aplayer-插件" class="headerlink" title="使用 hexo-tag-aplayer 插件"></a>使用 hexo-tag-aplayer 插件</h3><p>在博客根目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure>
+<p>下载hexo-tag-aplayer插件</p>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><a id="more"></a>
+
+<p>在任意一个Markdown文件里使用 形如以下代码即可使用播放音乐。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer title author url lrc:xxx %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="标签参数"><a href="#标签参数" class="headerlink" title="标签参数"></a>标签参数</h4><ul>
+<li>title : 曲目标题</li>
+<li>author: 曲目作者</li>
+<li>url: 音乐文件 URL 地址</li>
+<li>lrc:xxx: （可选）歌词文件 URL 地址<h5 id="歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323"><a href="#歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323" class="headerlink" title="歌词URL前一定要加上 lrc: 如：lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323"></a>歌词URL前一定要加上 <code>lrc:</code> 如：<code>lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323</code></h5>更多参数请看官网：<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><h5 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer 断点 张敬轩 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;189323.mp3  https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;cover&amp;id&#x3D;189323 &quot;lrc:https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;lrc&amp;id&#x3D;189323&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"><a href="#各大平台音乐的歌曲、歌词、图片查找方法自己百度。" class="headerlink" title="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"></a>各大平台音乐的歌曲、歌词、图片查找方法自己百度。</h4><h3 id="使用meting"><a href="#使用meting" class="headerlink" title="使用meting"></a>使用meting</h3><h4 id="hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上"><a href="#hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上" class="headerlink" title="hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上"></a>hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上</h4><em>（注意不是你的主题配置文件）</em><blockquote>
+<p>aplayer:<br> meting: true</p>
+</blockquote>
+就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
+即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
+    <div id="aplayer-InPgZwvg" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+<h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>music</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TypeScript入门</title>
     <url>/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="TypeScript-part01"><a href="#TypeScript-part01" class="headerlink" title="TypeScript-part01"></a>TypeScript-part01</h1><h2 id="TypeScript介绍"><a href="#TypeScript介绍" class="headerlink" title="TypeScript介绍"></a>TypeScript介绍</h2><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p> <em>程序运行的一般步骤：</em></p>
@@ -186,41 +221,6 @@
       </categories>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>aplayer+meting添加播放列表</title>
-    <url>/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="aplayer-meting添加播放列表"><a href="#aplayer-meting添加播放列表" class="headerlink" title="aplayer+meting添加播放列表"></a>aplayer+meting添加播放列表</h1><h2 id="看官网"><a href="#看官网" class="headerlink" title="看官网"></a>看官网</h2><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></p>
-<h3 id="使用-hexo-tag-aplayer-插件"><a href="#使用-hexo-tag-aplayer-插件" class="headerlink" title="使用 hexo-tag-aplayer 插件"></a>使用 hexo-tag-aplayer 插件</h3><p>在博客根目录下执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure>
-<p>下载hexo-tag-aplayer插件</p>
-<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><a id="more"></a>
-
-<p>在任意一个Markdown文件里使用 形如以下代码即可使用播放音乐。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer title author url lrc:xxx %&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="标签参数"><a href="#标签参数" class="headerlink" title="标签参数"></a>标签参数</h4><ul>
-<li>title : 曲目标题</li>
-<li>author: 曲目作者</li>
-<li>url: 音乐文件 URL 地址</li>
-<li>lrc:xxx: （可选）歌词文件 URL 地址<h5 id="歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323"><a href="#歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323" class="headerlink" title="歌词URL前一定要加上 lrc: 如：lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323"></a>歌词URL前一定要加上 <code>lrc:</code> 如：<code>lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323</code></h5>更多参数请看官网：<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><h5 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer 断点 张敬轩 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;189323.mp3  https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;cover&amp;id&#x3D;189323 &quot;lrc:https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;lrc&amp;id&#x3D;189323&quot; %&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"><a href="#各大平台音乐的歌曲、歌词、图片查找方法自己百度。" class="headerlink" title="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"></a>各大平台音乐的歌曲、歌词、图片查找方法自己百度。</h4><h3 id="使用meting"><a href="#使用meting" class="headerlink" title="使用meting"></a>使用meting</h3><h4 id="hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上"><a href="#hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上" class="headerlink" title="hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上"></a>hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上</h4><em>（注意不是你的主题配置文件）</em><blockquote>
-<p>aplayer:<br> meting: true</p>
-</blockquote>
-就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
-即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
-    <div id="aplayer-SfSzDePR" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
-    ></div>
-<h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>music</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -294,7 +294,7 @@
 <ul>
 <li><p><strong>设置新的日期之后，之前获取的日期不会变化！</strong><br>需要重新获取 dates = date.getDate();<br>或者直接输出 date.getDate()</p>
 </li>
-<li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em>[2]</p>
+<li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em></p>
 </li>
 <li><p>更改月份或者日期时，星期几是由设置之后决定的（设置前获取的星期不是）。</p>
 </li>
@@ -476,12 +476,12 @@ A --> F[... ...]</pre>
     <url>/music/music-aplayer/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>
 
-        <div id="aplayer-PpgvERid" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-FPqeHzKM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-PpgvERid"),
+            element: document.getElementById("aplayer-FPqeHzKM"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -498,12 +498,12 @@ A --> F[... ...]</pre>
         </script>
 
 
-        <div id="aplayer-PEEFvpSI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-rakmoePp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-PEEFvpSI"),
+            element: document.getElementById("aplayer-rakmoePp"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -530,7 +530,7 @@ A --> F[... ...]</pre>
     <url>/music/music/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>
 
-    <div id="aplayer-wYuYEsHy" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-TWMwKKqK" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>]]></content>
       <categories>
@@ -555,18 +555,6 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
-    <title>time</title>
-    <url>/%E9%9A%8F%E7%AC%94/time/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>…….</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>time</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>分类</title>
     <url>/hexo/%E5%88%86%E7%B1%BB-12.15/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="分类方法的分歧"><a href="#分类方法的分歧" class="headerlink" title="分类方法的分歧"></a>分类方法的分歧</h3><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p>
@@ -588,6 +576,18 @@ A --> F[... ...]</pre>
       <tags>
         <tag>随笔</tag>
         <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>time</title>
+    <url>/%E9%9A%8F%E7%AC%94/time/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>…….</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>time</tag>
       </tags>
   </entry>
   <entry>
@@ -628,18 +628,6 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
-    <title>文章摘要</title>
-    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
-<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
-</blockquote>
-<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>官网学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>标签插件</title>
     <url>/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p>
@@ -670,6 +658,18 @@ A --> F[... ...]</pre>
 <h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
       <tags>
         <tag>随笔</tag>
+        <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章摘要</title>
+    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
+<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
+</blockquote>
+<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
         <tag>官网学习</tag>
       </tags>
   </entry>
@@ -739,6 +739,20 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
+    <title>防止渲染README.md文件</title>
+    <url>/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo-amp-amp-github防止渲染README-md文件"><a href="#hexo-amp-amp-github防止渲染README-md文件" class="headerlink" title="hexo &amp;&amp; github防止渲染README.md文件"></a>hexo &amp;&amp; github防止渲染README.md文件</h1><h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>以前每次hexo写完博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+<p> 推到github都会将README.md文件渲染成HTML文件，这样很不方便。<br> 于是就想着能不能修改配置文件 _config.yml 来避免将README.md文件渲染成HTML文件。<br> 终于在_config.yml 找到：<code>skip_render: </code><br> 改为<code>skip_render: README.md</code>即可</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网页学习-part01</title>
     <url>/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/%E7%BD%91%E9%A1%B5%E5%AD%A6%E4%B9%A0-part01/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前端学习-part01</p>
@@ -757,20 +771,6 @@ A --> F[... ...]</pre>
         <tag>html</tag>
         <tag>javascript</tag>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>防止渲染README.md文件</title>
-    <url>/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo-amp-amp-github防止渲染README-md文件"><a href="#hexo-amp-amp-github防止渲染README-md文件" class="headerlink" title="hexo &amp;&amp; github防止渲染README.md文件"></a>hexo &amp;&amp; github防止渲染README.md文件</h1><h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>以前每次hexo写完博客</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
-<p> 推到github都会将README.md文件渲染成HTML文件，这样很不方便。<br> 于是就想着能不能修改配置文件 _config.yml 来避免将README.md文件渲染成HTML文件。<br> 终于在_config.yml 找到：<code>skip_render: </code><br> 改为<code>skip_render: README.md</code>即可</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>

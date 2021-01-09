@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>陈科衡的博客</title>
+  
+  <subtitle>kartjim`s blog</subtitle>
+  <link href="https://kartjim.top/atom.xml" rel="self"/>
+  
+  <link href="https://kartjim.top/"/>
+  <updated>2021-01-09T03:34:50.304Z</updated>
+  <id>https://kartjim.top/</id>
+  
+  <author>
+    <name>Kart jim</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript3-日期和时间</title>
+    <link href="https://kartjim.top/js/%E5%89%8D%E7%AB%AF/javascript3-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/"/>
+    <id>https://kartjim.top/js/%E5%89%8D%E7%AB%AF/javascript3-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</id>
+    <published>2021-01-09T02:26:07.000Z</published>
+    <updated>2021-01-09T03:34:50.304Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>JavaScript中时间和日期对象和java类似，都是Date对象。且都需要进行创建Date对象才能使用。</p><h3 id="当前时间和日期"><a href="#当前时间和日期" class="headerlink" title="当前时间和日期"></a>当前时间和日期</h3><p>新建一个Date对象：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure><p>date就是一个Date对象，包含创建对象时的日期和时间信息。<br>date具有一些可以操作日期和时间的方法，如：</p><a id="more"></a><h4 id="获取年月日"><a href="#获取年月日" class="headerlink" title="获取年月日"></a>获取年月日</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//FullYear();是四位数的年份，如2021;而year();是二位数的年份；为了不引起舞蹈，一般使用FullYear();</span></span><br><span class="line"><span class="keyword">var</span> year = date.getFullYear(); </span><br><span class="line"><span class="comment">//获取的月份是从0-11的数字，需要加上1才是真正的月份，如11表示12月。</span></span><br><span class="line"><span class="keyword">var</span> month = date.getMonth();</span><br><span class="line"><span class="comment">//获取日期，1-31</span></span><br><span class="line"><span class="keyword">var</span> dates = date.getDate();</span><br><span class="line"><span class="comment">//获取星期，0-6，0表示周日，其它正常。</span></span><br><span class="line"><span class="keyword">var</span> day = date.getDay();</span><br></pre></td></tr></table></figure><h4 id="获取几点几分"><a href="#获取几点几分" class="headerlink" title="获取几点几分"></a>获取几点几分</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> hours= date.getHours();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> minute = date.getMinutes();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> seconds = date.getSeconds();</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure><h4 id="得到当前具体时间"><a href="#得到当前具体时间" class="headerlink" title="得到当前具体时间"></a>得到当前具体时间</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure><p>执行结果：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-9 10:57:16</span><br></pre></td></tr></table></figure><h3 id="创建指定日期和时间的Date对象"><a href="#创建指定日期和时间的Date对象" class="headerlink" title="创建指定日期和时间的Date对象"></a>创建指定日期和时间的Date对象</h3><p>创建Date对象时，给Date对象传参即可创建指定日期和时间的Date对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//指定从1970-1-1到程序执行时的毫秒数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(ms) </span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用日期字符串</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">String</span>-date)</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;January  9,2021 11:09:16&quot;</span>);</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用每个参数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,day,hour,minute,seconds,ms);</span><br><span class="line"><span class="comment">// 靠后的参数可以省略，默认为0。</span></span><br></pre></td></tr></table></figure><h3 id="编辑Date对象"><a href="#编辑Date对象" class="headerlink" title="编辑Date对象"></a>编辑Date对象</h3><h4 id="设置自定义时间和日期"><a href="#设置自定义时间和日期" class="headerlink" title="设置自定义时间和日期"></a>设置自定义时间和日期</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//更改 为当月23号</span></span><br><span class="line">date.setDate(<span class="number">23</span>);</span><br></pre></td></tr></table></figure><p>其它参数同理。<br>注意：</p><ul><li><p><strong>设置新的日期之后，之前获取的日期不会变化！</strong><br>需要重新获取 dates = date.getDate();<br>或者直接输出 date.getDate()</p></li><li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em></p></li><li><p>更改月份或者日期时，星期几是由设置之后决定的（设置前获取的星期不是）。</p></li></ul><h4 id="转换格式输出"><a href="#转换格式输出" class="headerlink" title="转换格式输出"></a>转换格式输出</h4><p>手动控制日期和时间的输出顺序</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure><p>要先获得各个参数，还要自己排序输出，比较麻烦。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-23 11:16:34</span><br></pre></td></tr></table></figure><p>利用 <code>toDateString()</code> 方法可以把日期转换格式，并不需要自己一个个获取单个参数，直接输出可以更容易理解的日期。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toDateString());</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">Sat Jan 23 2021</span><br></pre></td></tr></table></figure><p>同理，<code>toTimeString()</code>是另外一种方式。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toTimeString());</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">11:16:34 GMT+0800 (GMT+08:00)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Date对象&quot;&gt;&lt;a href=&quot;#Date对象&quot; class=&quot;headerlink&quot; title=&quot;Date对象&quot;&gt;&lt;/a&gt;Date对象&lt;/h2&gt;&lt;p&gt;JavaScript中时间和日期对象和java类似，都是Date对象。且都需要进行创建Date对象才能使用。&lt;/p&gt;
+&lt;h3 id=&quot;当前时间和日期&quot;&gt;&lt;a href=&quot;#当前时间和日期&quot; class=&quot;headerlink&quot; title=&quot;当前时间和日期&quot;&gt;&lt;/a&gt;当前时间和日期&lt;/h3&gt;&lt;p&gt;新建一个Date对象：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; date = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;date就是一个Date对象，包含创建对象时的日期和时间信息。&lt;br&gt;date具有一些可以操作日期和时间的方法，如：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="js" scheme="https://kartjim.top/categories/js/"/>
+    
+    <category term="前端" scheme="https://kartjim.top/categories/js/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="js" scheme="https://kartjim.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js奇淫技巧2</title>
+    <link href="https://kartjim.top/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/"/>
+    <id>https://kartjim.top/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/</id>
+    <published>2021-01-03T02:38:21.000Z</published>
+    <updated>2021-01-03T13:24:45.459Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><pre class="mermaid">graph LRA[window] --> B[document]A --> C[location]A --> D[history]A --> E[navigator]A --> F[... ...]</pre><p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p><h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure><h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure><h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure><h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure><h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p><blockquote><p>history.length</p></blockquote><p>history对象有三个方法：forward()、backward()、go()。</p><ul><li>forward()、backward()对应单页浏览器中前进和后退。</li><li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。</li></ul><h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3><p>location对象包含当前加载页面的URL信息。<br>比如：<a href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：</p><blockquote><p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure><h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3><p>navigator对象包含了浏览器 程序本身的数据。<br>如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;DOM&quot;&gt;&lt;a href=&quot;#DOM&quot; class=&quot;headerlink&quot; title=&quot;DOM&quot;&gt;&lt;/a&gt;DOM&lt;/h2&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
+A[window] --&gt; B[document]
+A --&gt; C[location]
+A --&gt; D[history]
+A --&gt; E[navigator]
+A --&gt; F[... ...]&lt;/pre&gt;
+
+&lt;p&gt;层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。&lt;br&gt;window对象有一些子对象：&lt;/p&gt;
+&lt;h3 id=&quot;document对象&quot;&gt;&lt;a href=&quot;#document对象&quot; class=&quot;headerlink&quot; title=&quot;document对象&quot;&gt;&lt;/a&gt;document对象&lt;/h3&gt;&lt;p&gt;任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="js" scheme="https://kartjim.top/categories/js/"/>
+    
+    <category term="前端" scheme="https://kartjim.top/categories/js/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="js" scheme="https://kartjim.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js奇淫技巧1</title>
+    <link href="https://kartjim.top/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/"/>
+    <id>https://kartjim.top/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/</id>
+    <published>2021-01-02T08:30:37.000Z</published>
+    <updated>2021-01-03T08:31:03.189Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><ul><li>var</li></ul><p>JavaScript有两种作用域：全局 / 局部作用域</p><blockquote><p>var声明的变量 在函数内部声明的变量只存在于函数内部</p></blockquote><blockquote><p>用 this 可以调用全局作用域</p></blockquote><ul><li>let</li></ul><a id="more"></a><p>为了实现变量块级作用域，js用一个<code>let</code>关键字声明具有严格块级作用域的变量。</p><ul><li>const</li></ul><p>const关键字用于声明一个常量，使常量不能被重新赋值或重新声明。</p><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>先看一般的匿名函数：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">&quot;Hello&quot;</span>);&#125;;</span><br></pre></td></tr></table></figure><p>箭头函数（arrow function）可以使匿名函数更加简洁：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function">() =&gt;</span> alert(<span class="string">&#x27;Hello&#x27;</span>);</span><br></pre></td></tr></table></figure><blockquote><p>只有包含多个表达式，才需要花括号。</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myFunc = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">     x += y;</span><br><span class="line">     alert(x); </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure><blockquote><p>=&gt;符号通常被称为胖箭头符号</p></blockquote><h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>要指定一个默认参数，只要给函数定义中的参数一个默认值就行。<br>例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">warn</span>(<span class="params">temp,subtitle=<span class="string">&#x27;--warning&#x27;</span></span>)</span>&#123;</span><br><span class="line">    alert(subtitle+<span class="string">&quot; , &quot;</span>+temp+<span class="string">&quot; ;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>在函数定义中，一般将有默认值的参数，放在没有默认值的参数后面</strong></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;函数&quot;&gt;&lt;a href=&quot;#函数&quot; class=&quot;headerlink&quot; title=&quot;函数&quot;&gt;&lt;/a&gt;函数&lt;/h2&gt;&lt;h3 id=&quot;变量作用域&quot;&gt;&lt;a href=&quot;#变量作用域&quot; class=&quot;headerlink&quot; title=&quot;变量作用域&quot;&gt;&lt;/a&gt;变量作用域&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;var&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;JavaScript有两种作用域：全局 / 局部作用域&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var声明的变量 在函数内部声明的变量只存在于函数内部&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用 this 可以调用全局作用域&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;let&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="js" scheme="https://kartjim.top/categories/js/"/>
+    
+    <category term="前端" scheme="https://kartjim.top/categories/js/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="js" scheme="https://kartjim.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>music</title>
+    <link href="https://kartjim.top/music/music/"/>
+    <id>https://kartjim.top/music/music/</id>
+    <published>2020-12-28T01:25:38.000Z</published>
+    <updated>2020-12-31T10:26:31.017Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>    <div id="aplayer-TWMwKKqK" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;password-123456&quot;&gt;&lt;a href=&quot;#password-123456&quot; class=&quot;headerlink&quot; title=&quot;password: 123456&quot;&gt;&lt;/a&gt;password: 123456&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="music" scheme="https://kartjim.top/categories/music/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="hexo" scheme="https://kartjim.top/tags/hexo/"/>
+    
+    <category term="password" scheme="https://kartjim.top/tags/password/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>aplayer+meting添加播放列表</title>
+    <link href="https://kartjim.top/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/"/>
+    <id>https://kartjim.top/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/</id>
+    <published>2020-12-28T01:01:15.000Z</published>
+    <updated>2020-12-28T04:02:39.886Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="aplayer-meting添加播放列表"><a href="#aplayer-meting添加播放列表" class="headerlink" title="aplayer+meting添加播放列表"></a>aplayer+meting添加播放列表</h1><h2 id="看官网"><a href="#看官网" class="headerlink" title="看官网"></a>看官网</h2><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></p><h3 id="使用-hexo-tag-aplayer-插件"><a href="#使用-hexo-tag-aplayer-插件" class="headerlink" title="使用 hexo-tag-aplayer 插件"></a>使用 hexo-tag-aplayer 插件</h3><p>在博客根目录下执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure><p>下载hexo-tag-aplayer插件</p><h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><a id="more"></a><p>在任意一个Markdown文件里使用 形如以下代码即可使用播放音乐。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer title author url lrc:xxx %&#125;</span><br></pre></td></tr></table></figure><h4 id="标签参数"><a href="#标签参数" class="headerlink" title="标签参数"></a>标签参数</h4><ul><li>title : 曲目标题</li><li>author: 曲目作者</li><li>url: 音乐文件 URL 地址</li><li>lrc:xxx: （可选）歌词文件 URL 地址<h5 id="歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323"><a href="#歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323" class="headerlink" title="歌词URL前一定要加上 lrc: 如：lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323"></a>歌词URL前一定要加上 <code>lrc:</code> 如：<code>lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323</code></h5>更多参数请看官网：<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><h5 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer 断点 张敬轩 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;189323.mp3  https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;cover&amp;id&#x3D;189323 &quot;lrc:https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;lrc&amp;id&#x3D;189323&quot; %&#125;</span><br></pre></td></tr></table></figure><h4 id="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"><a href="#各大平台音乐的歌曲、歌词、图片查找方法自己百度。" class="headerlink" title="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"></a>各大平台音乐的歌曲、歌词、图片查找方法自己百度。</h4><h3 id="使用meting"><a href="#使用meting" class="headerlink" title="使用meting"></a>使用meting</h3><h4 id="hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上"><a href="#hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上" class="headerlink" title="hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上"></a>hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上</h4><em>（注意不是你的主题配置文件）</em><blockquote><p>aplayer:<br> meting: true</p></blockquote>就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>    <div id="aplayer-InPgZwvg" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div><h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;aplayer-meting添加播放列表&quot;&gt;&lt;a href=&quot;#aplayer-meting添加播放列表&quot; class=&quot;headerlink&quot; title=&quot;aplayer+meting添加播放列表&quot;&gt;&lt;/a&gt;aplayer+meting添加播放列表&lt;/h1&gt;&lt;h2 id=&quot;看官网&quot;&gt;&lt;a href=&quot;#看官网&quot; class=&quot;headerlink&quot; title=&quot;看官网&quot;&gt;&lt;/a&gt;看官网&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8&quot;&gt;aplayer中文文档&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/metowolf/MetingJS/tree/v1.2&quot;&gt;MetingJS&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用-hexo-tag-aplayer-插件&quot;&gt;&lt;a href=&quot;#使用-hexo-tag-aplayer-插件&quot; class=&quot;headerlink&quot; title=&quot;使用 hexo-tag-aplayer 插件&quot;&gt;&lt;/a&gt;使用 hexo-tag-aplayer 插件&lt;/h3&gt;&lt;p&gt;在博客根目录下执行&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; npm install --save hexo-tag-aplayer&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下载hexo-tag-aplayer插件&lt;/p&gt;
+&lt;h4 id=&quot;使用：&quot;&gt;&lt;a href=&quot;#使用：&quot; class=&quot;headerlink&quot; title=&quot;使用：&quot;&gt;&lt;/a&gt;使用：&lt;/h4&gt;</summary>
+    
+    
+    
+    <category term="music" scheme="https://kartjim.top/categories/music/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="hexo" scheme="https://kartjim.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>music-aplayer</title>
+    <link href="https://kartjim.top/music/music-aplayer/"/>
+    <id>https://kartjim.top/music/music-aplayer/</id>
+    <published>2020-12-27T12:12:11.000Z</published>
+    <updated>2020-12-28T01:36:05.896Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>        <div id="aplayer-FPqeHzKM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-FPqeHzKM"),            narrow: false,            autoplay: false,            showlrc: 3,            music: {              title: "夜车",              author: "曾轶可",              url: "https://music.163.com/song/media/outer/url?id=340376.mp3",              pic: "https://api.fczbl.vip/163/?type=cover&id=340376",              lrc: "https://api.fczbl.vip/163/?type=lrc&id=340376"            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>        <div id="aplayer-rakmoePp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-rakmoePp"),            narrow: false,            autoplay: false,            showlrc: 3,            music: {              title: "断点",              author: "张敬轩",              url: "https://music.163.com/song/media/outer/url?id=189323.mp3",              pic: "https://api.fczbl.vip/163/?type=cover&id=189323",              lrc: "https://api.fczbl.vip/163/?type=lrc&id=189323"            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;aplayer-插件音乐&quot;&gt;&lt;a href=&quot;#aplayer-插件音乐&quot; class=&quot;headerlink&quot; title=&quot;aplayer 插件音乐&quot;&gt;&lt;/a&gt;aplayer 插件音乐&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="music" scheme="https://kartjim.top/categories/music/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>new</title>
+    <link href="https://kartjim.top/all/new/"/>
+    <id>https://kartjim.top/all/new/</id>
+    <published>2020-12-26T12:20:47.000Z</published>
+    <updated>2020-12-27T00:44:36.781Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="issue："><a href="#issue：" class="headerlink" title="issue："></a>issue：</h2><ul><li>leancloud阅读量异常</li><li>添加音乐</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文章摘要</title>
+    <link href="https://kartjim.top/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/"/>
+    <id>https://kartjim.top/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</id>
+    <published>2020-12-26T03:19:18.000Z</published>
+    <updated>2020-12-26T13:28:30.485Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote><p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p></blockquote><h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;文章摘要&quot;&gt;&lt;a href=&quot;#文章摘要&quot; class=&quot;headerlink&quot; title=&quot;文章摘要:&quot;&gt;&lt;/a&gt;文章摘要:&lt;/h2&gt;&lt;h4 id=&quot;在需要显示摘要的地方添加如下代码即可：&quot;&gt;&lt;a href=&quot;#在需要显示摘要的地方添加如下代码即可：&quot; class=&quot;headerlink&quot; title=&quot;在需要显示摘要的地方添加如下代码即可：&quot;&gt;&lt;/a&gt;在需要显示摘要的地方添加如下代码即可：&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;以上是摘要&lt;br&gt;&amp;lt;!–more–&amp;gt;&lt;br&gt;以下是余下全文&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。&quot;&gt;&lt;a href=&quot;#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。&quot; class=&quot;headerlink&quot; title=&quot;more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &amp;gt;&amp;gt; 』链接打开全文才显示。&quot;&gt;&lt;/a&gt;more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &amp;gt;&amp;gt; 』链接打开全文才显示。&lt;/h4&gt;</summary>
+    
+    
+    
+    
+    <category term="官网学习" scheme="https://kartjim.top/tags/%E5%AE%98%E7%BD%91%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fancybox</title>
+    <link href="https://kartjim.top/all/fancybox/"/>
+    <id>https://kartjim.top/all/fancybox/</id>
+    <published>2020-12-26T02:48:53.000Z</published>
+    <updated>2020-12-26T13:28:30.469Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="fancybox效果"><a href="#fancybox效果" class="headerlink" title="fancybox效果"></a>fancybox效果</h1><p>设置fancybox: true即可？</p><h2 id="photo"><a href="#photo" class="headerlink" title="photo:"></a>photo:</h2><p>图片来源：<a href="https://blog.smackgg.cn/2015/05/25/newHexo">https://blog.smackgg.cn/2015/05/25/newHexo</a><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" alt="girl"><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt="book"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>/,./and../的区别</title>
+    <link href="https://kartjim.top/%E9%9A%8F%E7%AC%94/and-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://kartjim.top/%E9%9A%8F%E7%AC%94/and-%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2020-12-25T07:55:44.000Z</published>
+    <updated>2020-12-26T13:28:30.467Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>/表示根目录<br>./表示当前目录<br>../表示父级目录</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>防止渲染README.md文件</title>
+    <link href="https://kartjim.top/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/"/>
+    <id>https://kartjim.top/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/</id>
+    <published>2020-12-25T02:19:27.000Z</published>
+    <updated>2020-12-26T13:28:30.492Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo-amp-amp-github防止渲染README-md文件"><a href="#hexo-amp-amp-github防止渲染README-md文件" class="headerlink" title="hexo &amp;&amp; github防止渲染README.md文件"></a>hexo &amp;&amp; github防止渲染README.md文件</h1><h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>以前每次hexo写完博客</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure><p> 推到github都会将README.md文件渲染成HTML文件，这样很不方便。<br> 于是就想着能不能修改配置文件 _config.yml 来避免将README.md文件渲染成HTML文件。<br> 终于在_config.yml 找到：<code>skip_render: </code><br> 改为<code>skip_render: README.md</code>即可</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://kartjim.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="hexo" scheme="https://kartjim.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript-part2</title>
+    <link href="https://kartjim.top/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/JavaScript-part2/"/>
+    <id>https://kartjim.top/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/JavaScript-part2/</id>
+    <published>2020-12-24T15:00:16.000Z</published>
+    <updated>2020-12-26T13:28:30.456Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="文件注释和缩放"><a href="#文件注释和缩放" class="headerlink" title="文件注释和缩放"></a>文件注释和缩放</h2><ul><li>注释会增加JavaScript源文件的大小，但是影响较小，可以忽略不计。</li><li>在JavaScript正式使用版本一般会清楚文件里的注释和空白，即压缩版本，一般后缀为.min.js。<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2></li><li>变量区分大小写</li><li>命名规则一般是：”驼峰大小写“<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2>操作符优先级与其他语言一样，如 java、PHP等。<h2 id="基本-事件（event）"><a href="#基本-事件（event）" class="headerlink" title="基本 事件（event）"></a>基本 事件（event）</h2>JavaScript使用事件处理器（event handler）来处理事件。<br>常见的有三个：</li></ul><ul><li><input disabled="" type="checkbox"> onClick<ul><li>鼠标点击效果</li></ul></li><li><input disabled="" type="checkbox"> onMouseOver<ul><li>鼠标移入效果</li></ul></li><li><input disabled="" type="checkbox"> onMouseOut<ul><li>鼠标移出效果</li></ul></li></ul><h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>图像翻滚 Demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;favicon.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;onMouseOver&quot;</span> <span class="attr">onmousemove</span>=<span class="string">&quot;this.src=&#x27;test/timg.jpeg&#x27;;&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;this.src=&#x27;favicon.png&#x27;;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://kartjim.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="随笔" scheme="https://kartjim.top/categories/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="javascript" scheme="https://kartjim.top/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo插入图片</title>
+    <link href="https://kartjim.top/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/"/>
+    <id>https://kartjim.top/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</id>
+    <published>2020-12-24T14:16:39.000Z</published>
+    <updated>2020-12-26T13:28:30.472Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo插入图片"><a href="#hexo插入图片" class="headerlink" title="hexo插入图片"></a>hexo插入图片</h1><p><img data-src="/images/clouds.jpg" alt="sky"></p><blockquote><p>将图片放在 source/images 文件夹中，<br>然后通过 ![ ](/images/image.jpg) 的方法访问它们。</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="hexo" scheme="https://kartjim.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript文件后缀</title>
+    <link href="https://kartjim.top/all/JavaScript%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/"/>
+    <id>https://kartjim.top/all/JavaScript%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</id>
+    <published>2020-12-22T14:01:21.000Z</published>
+    <updated>2020-12-26T13:28:30.458Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JavaScript文件后缀"><a href="#JavaScript文件后缀" class="headerlink" title="JavaScript文件后缀"></a>JavaScript文件后缀</h1><h2 id="一般都为-js-后缀"><a href="#一般都为-js-后缀" class="headerlink" title="一般都为 .js 后缀"></a>一般都为 .js 后缀</h2><p>按照惯例，JavaScript代码文件的扩展名名.js。但从实际情况来看，胆码的名称可以使用任何扩展名，浏览器都会把其中的内容当做JavaScript代码来解释。</p><h2 id="放在script标签里"><a href="#放在script标签里" class="headerlink" title="放在script标签里"></a>放在script标签里</h2><p> src属性 和 写在其中的代码 只能选一个。<br> 即，要么用src属性导入，要么在其中写入代码。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kartjim.top/default/hello-world/"/>
+    <id>https://kartjim.top/default/hello-world/</id>
+    <published>2020-12-20T11:16:39.000Z</published>
+    <updated>2020-12-27T00:43:57.141Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="default" scheme="https://kartjim.top/categories/default/"/>
+    
+    
+    <category term="default" scheme="https://kartjim.top/tags/default/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScript入门</title>
+    <link href="https://kartjim.top/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/"/>
+    <id>https://kartjim.top/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/</id>
+    <published>2020-12-17T15:04:30.000Z</published>
+    <updated>2020-12-26T13:28:30.465Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="TypeScript-part01"><a href="#TypeScript-part01" class="headerlink" title="TypeScript-part01"></a>TypeScript-part01</h1><h2 id="TypeScript介绍"><a href="#TypeScript介绍" class="headerlink" title="TypeScript介绍"></a>TypeScript介绍</h2><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p> <em>程序运行的一般步骤：</em></p><ol><li><p>解析程序：程序解析为AST（抽象句树法-abstract syntax tree）；</p></li><li><p>编译：将AWT编译成为字节码；</p></li><li><p>运行：计算字节码。</p><h3 id="但是对于TS而言："><a href="#但是对于TS而言：" class="headerlink" title="但是对于TS而言："></a>但是对于TS而言：</h3><p>要先用编译器编译为JavaScript，然后执行以上步骤！</p><h3 id="TS与JS区别"><a href="#TS与JS区别" class="headerlink" title="TS与JS区别"></a>TS与JS区别</h3><blockquote><p>JavaScript是动态绑定类型；<br>TypeScript是静态绑定类型。</p></blockquote><blockquote><p>JavaScript是弱类型语言；<br>TypeScript是渐进式类型语言。</p></blockquote><blockquote><p>JavaScript会自动转换类型；<br>TypeScript会检查类型，并报错。</p></blockquote><h2 id="TypeScript配置"><a href="#TypeScript配置" class="headerlink" title="TypeScript配置"></a>TypeScript配置</h2></li></ol><ul><li>新建一个文件夹</li><li>初始化npm：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></li><li>安装TSC、TSLint、NodeJS的类型声明<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev typescript tslint @types/node</span><br></pre></td></tr></table></figure><h3 id="最好安装一下全局"><a href="#最好安装一下全局" class="headerlink" title="最好安装一下全局*"></a>最好安装一下全局*</h3><h4 id="Locally-in-your-project"><a href="#Locally-in-your-project" class="headerlink" title="Locally in your project."></a>Locally in your project.</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -D typescript</span><br><span class="line">npm install -D ts-node</span><br></pre></td></tr></table></figure><h4 id="Or-globally-with-TypeScript"><a href="#Or-globally-with-TypeScript" class="headerlink" title="Or globally with TypeScript."></a>Or globally with TypeScript.</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g typescript</span><br><span class="line">npm install -g ts-node</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="TypeScript创建一个简单的程序"><a href="#TypeScript创建一个简单的程序" class="headerlink" title="TypeScript创建一个简单的程序"></a>TypeScript创建一个简单的程序</h2></li></ul><ol><li>在根目录下新建tsconfig.json 文件，写入：</li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line"><span class="attr">&quot;lib&quot;</span>: [<span class="string">&quot;es6&quot;</span>],</span><br><span class="line"><span class="attr">&quot;module&quot;</span>: <span class="string">&quot;commonjs&quot;</span>,</span><br><span class="line"><span class="attr">&quot;outDir&quot;</span>: <span class="string">&quot;dist&quot;</span>,</span><br><span class="line"><span class="attr">&quot;sourceMap&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="attr">&quot;strict&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="attr">&quot;target&quot;</span>: <span class="string">&quot;es6&quot;</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">&quot;include&quot;</span>: [</span><br><span class="line"><span class="string">&quot;src&quot;</span></span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>具体配置请看<a href="https://www.typescriptlang.org/docs/handbook">官方文档</a></p><ol start="2"><li>新建tslint.json文件，写入：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;defaultSeverity&quot;</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;tslint:recommended&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;semicolon&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;trailing-comma&quot;</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>或者使用命令行：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tslint --init</span><br></pre></td></tr></table></figure></li><li>最后新建src文件夹及其之下的index.ts<br>试着写入代码：<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hello TypeScript!&#x27;</span>)</span><br></pre></td></tr></table></figure></li><li>编译： tsc ./src/index.ts<br>之后文件夹src下会出现编译好的js文件。</li><li>运行（node）：node ./src/index.js</li></ol><p>成功运行第一个TypeScript项目！</p><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul><li><a href="https://www.npmjs.com/package/ts-node">ts-node</a><br>更快编译、运行</li><li>typescript-node-starter（github上面搜）<br>脚手架工具<hr>文章来自我的CSDN博客：<a href="https://blog.csdn.net/qq_46590483/article/details/111345714" title="" target="">CSND</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;TypeScript-part01&quot;&gt;&lt;a href=&quot;#TypeScript-part01&quot; class=&quot;headerlink&quot; title=&quot;TypeScript-part01&quot;&gt;&lt;/a&gt;TypeScript-part01&lt;/h1&gt;&lt;h2 id=&quot;TypeScript介绍&quot;&gt;&lt;a href=&quot;#TypeScript介绍&quot; class=&quot;headerlink&quot; title=&quot;TypeScript介绍&quot;&gt;&lt;/a&gt;TypeScript介绍&lt;/h2&gt;&lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt; &lt;em&gt;程序运行的一般步骤：&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;解析程序：程序解析为AST（抽象句树法-abstract syntax tree）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;编译：将AWT编译成为字节码；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行：计算字节码。&lt;/p&gt;
+&lt;h3 id=&quot;但是对于TS而言：&quot;&gt;&lt;a href=&quot;#但是对于TS而言：&quot; class=&quot;headerlink&quot; title=&quot;但是对于TS而言：&quot;&gt;&lt;/a&gt;但是对于TS而言：&lt;/h3&gt;&lt;p&gt;要先用编译器编译为JavaScript，然后执行以上步骤！&lt;/p&gt;
+&lt;h3 id=&quot;TS与JS区别&quot;&gt;&lt;a href=&quot;#TS与JS区别&quot; class=&quot;headerlink&quot; title=&quot;TS与JS区别&quot;&gt;&lt;/a&gt;TS与JS区别&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;JavaScript是动态绑定类型；&lt;br&gt;TypeScript是静态绑定类型。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JavaScript是弱类型语言；&lt;br&gt;TypeScript是渐进式类型语言。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JavaScript会自动转换类型；&lt;br&gt;TypeScript会检查类型，并报错。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;TypeScript配置&quot;&gt;&lt;a href=&quot;#TypeScript配置&quot; class=&quot;headerlink&quot; title=&quot;TypeScript配置&quot;&gt;&lt;/a&gt;TypeScript配置&lt;/h2&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;新建一个文件夹&lt;/li&gt;
+&lt;li&gt;初始化npm：&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;安装TSC、TSLint、NodeJS的类型声明&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install --save-dev typescript tslint @types/node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;最好安装一下全局&quot;&gt;&lt;a href=&quot;#最好安装一下全局&quot; class=&quot;headerlink&quot; title=&quot;最好安装一下全局*&quot;&gt;&lt;/a&gt;最好安装一下全局*&lt;/h3&gt;&lt;h4 id=&quot;Locally-in-your-project&quot;&gt;&lt;a href=&quot;#Locally-in-your-project&quot; class=&quot;headerlink&quot; title=&quot;Locally in your project.&quot;&gt;&lt;/a&gt;Locally in your project.&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -D typescript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -D ts-node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;Or-globally-with-TypeScript&quot;&gt;&lt;a href=&quot;#Or-globally-with-TypeScript&quot; class=&quot;headerlink&quot; title=&quot;Or globally with TypeScript.&quot;&gt;&lt;/a&gt;Or globally with TypeScript.&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g typescript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g ts-node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="前端" scheme="https://kartjim.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://kartjim.top/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>标签插件</title>
+    <link href="https://kartjim.top/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/"/>
+    <id>https://kartjim.top/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</id>
+    <published>2020-12-15T13:06:31.000Z</published>
+    <updated>2020-12-26T13:28:30.486Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p><blockquote><blockquote><p>content</p><footer><strong>[author[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote></blockquote><p>如：</p><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p><footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote><blockquote><p>Every interaction is both precious and an opportunity to delight.</p><footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>......<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="在文章中插入代码。"><a href="#在文章中插入代码。" class="headerlink" title="在文章中插入代码。"></a>在文章中插入代码。</h3><p><em>别名： code</em><br>公式：</p><figure class="highlight plain"><figcaption><span>[title] [lang:language] [url] [link text] [additional options]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure><p>普通的代码块:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure><p>附加说明和网址：</p><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><h3 id="引用其他文章的链接。"><a href="#引用其他文章的链接。" class="headerlink" title="引用其他文章的链接。"></a>引用其他文章的链接。</h3><a href="#">Post not found: filename [title] [escape]</a><p>官网：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></p><h2 id="引用资源"><a href="#引用资源" class="headerlink" title="引用资源"></a>引用资源</h2><h3 id="引用文章的资源。"><a href="#引用文章的资源。" class="headerlink" title="引用文章的资源。"></a>引用文章的资源。</h3><h3 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h3><h4 id="另一种形式的代码块，不同的是它使用三个反引号来包裹。"><a href="#另一种形式的代码块，不同的是它使用三个反引号来包裹。" class="headerlink" title="另一种形式的代码块，不同的是它使用三个反引号来包裹。"></a>另一种形式的代码块，不同的是它使用三个反引号来包裹。</h4><p><code>[language] [title] [url] [link text] code snippet</code></p><h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="官网学习" scheme="https://kartjim.top/tags/%E5%AE%98%E7%BD%91%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分类</title>
+    <link href="https://kartjim.top/hexo/%E5%88%86%E7%B1%BB-12.15/"/>
+    <id>https://kartjim.top/hexo/%E5%88%86%E7%B1%BB-12.15/</id>
+    <published>2020-12-15T12:45:25.000Z</published>
+    <updated>2020-12-26T13:28:30.481Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="分类方法的分歧"><a href="#分类方法的分歧" class="headerlink" title="分类方法的分歧"></a>分类方法的分歧</h3><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p><blockquote><p>categories:<br>    - Diary<br>    - Life</p></blockquote><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><h4 id="如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。"><a href="#如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。" class="headerlink" title="如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。"></a>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</h4><blockquote><p>categories:<br>    - [Diary, PlayStation]<br>    - [Diary, Games]<br>    - [Life]</p></blockquote><p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 Life 是一个没有子分类的分类。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="tags" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/tags/"/>
+    
+    <category term="categories" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/categories/"/>
+    
+    <category term="hexo" scheme="https://kartjim.top/categories/hexo/"/>
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="官网学习" scheme="https://kartjim.top/tags/%E5%AE%98%E7%BD%91%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA实例01-九九乘法表</title>
+    <link href="https://kartjim.top/java/JAVA%E5%AE%9E%E4%BE%8B01-%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/"/>
+    <id>https://kartjim.top/java/JAVA%E5%AE%9E%E4%BE%8B01-%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/</id>
+    <published>2020-12-14T10:39:42.000Z</published>
+    <updated>2020-12-26T13:28:30.451Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JAVA实例01"><a href="#JAVA实例01" class="headerlink" title="JAVA实例01"></a>JAVA实例01</h1><h2 id="——九九乘法表"><a href="#——九九乘法表" class="headerlink" title="——九九乘法表"></a>——九九乘法表</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++) </span><br><span class="line">            &#123;</span><br><span class="line">                System.out.print(j+<span class="string">&quot;×&quot;</span>+i+<span class="string">&quot;=&quot;</span>+i*j+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运算结果：</p><blockquote><p>1×1=1<br>1×2=2   2×2=4<br>1×3=3   2×3=6   3×3=9<br>1×4=4   2×4=8   3×4=12  4×4=16<br>1×5=5   2×5=10  3×5=15  4×5=20  5×5=25<br>1×6=6   2×6=12  3×6=18  4×6=24  5×6=30  6×6=36<br>1×7=7   2×7=14  3×7=21  4×7=28  5×7=35  6×7=42  7×7=49<br>1×8=8   2×8=16  3×8=24  4×8=32  5×8=40  6×8=48  7×8=56  8×8=64<br>1×9=9   2×9=18  3×9=27  4×9=36  5×9=45  6×9=54  7×9=63  8×9=72  9×9=81</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="java" scheme="https://kartjim.top/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://kartjim.top/tags/java/"/>
+    
+    <category term="simple" scheme="https://kartjim.top/tags/simple/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>time</title>
+    <link href="https://kartjim.top/%E9%9A%8F%E7%AC%94/time/"/>
+    <id>https://kartjim.top/%E9%9A%8F%E7%AC%94/time/</id>
+    <published>2020-12-13T11:58:55.000Z</published>
+    <updated>2020-12-26T13:28:30.479Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>…….</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="time" scheme="https://kartjim.top/tags/time/"/>
+    
+  </entry>
+  
+</feed>
