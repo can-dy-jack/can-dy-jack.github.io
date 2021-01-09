@@ -724,4 +724,75 @@ A --> F[... ...]</pre>
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>javascript3-日期和时间</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/javascript3-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>JavaScript中时间和日期对象和java类似，都是Date对象。且都需要进行创建Date对象才能使用。</p>
+<h3 id="当前时间和日期"><a href="#当前时间和日期" class="headerlink" title="当前时间和日期"></a>当前时间和日期</h3><p>新建一个Date对象：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
+<p>date就是一个Date对象，包含创建对象时的日期和时间信息。<br>date具有一些可以操作日期和时间的方法，如：</p>
+<a id="more"></a>
+
+<h4 id="获取年月日"><a href="#获取年月日" class="headerlink" title="获取年月日"></a>获取年月日</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//FullYear();是四位数的年份，如2021;而year();是二位数的年份；为了不引起舞蹈，一般使用FullYear();</span></span><br><span class="line"><span class="keyword">var</span> year = date.getFullYear(); </span><br><span class="line"><span class="comment">//获取的月份是从0-11的数字，需要加上1才是真正的月份，如11表示12月。</span></span><br><span class="line"><span class="keyword">var</span> month = date.getMonth();</span><br><span class="line"><span class="comment">//获取日期，1-31</span></span><br><span class="line"><span class="keyword">var</span> dates = date.getDate();</span><br><span class="line"><span class="comment">//获取星期，0-6，0表示周日，其它正常。</span></span><br><span class="line"><span class="keyword">var</span> day = date.getDay();</span><br></pre></td></tr></table></figure>
+<h4 id="获取几点几分"><a href="#获取几点几分" class="headerlink" title="获取几点几分"></a>获取几点几分</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> hours= date.getHours();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> minute = date.getMinutes();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> seconds = date.getSeconds();</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<h4 id="得到当前具体时间"><a href="#得到当前具体时间" class="headerlink" title="得到当前具体时间"></a>得到当前具体时间</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-9 10:57:16</span><br></pre></td></tr></table></figure>
+<h3 id="创建指定日期和时间的Date对象"><a href="#创建指定日期和时间的Date对象" class="headerlink" title="创建指定日期和时间的Date对象"></a>创建指定日期和时间的Date对象</h3><p>创建Date对象时，给Date对象传参即可创建指定日期和时间的Date对象。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指定从1970-1-1到程序执行时的毫秒数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(ms) </span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用日期字符串</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">String</span>-date)</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;January  9,2021 11:09:16&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用每个参数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,day,hour,minute,seconds,ms);</span><br><span class="line"><span class="comment">// 靠后的参数可以省略，默认为0。</span></span><br></pre></td></tr></table></figure>
+<h3 id="编辑Date对象"><a href="#编辑Date对象" class="headerlink" title="编辑Date对象"></a>编辑Date对象</h3><h4 id="设置自定义时间和日期"><a href="#设置自定义时间和日期" class="headerlink" title="设置自定义时间和日期"></a>设置自定义时间和日期</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//更改 为当月23号</span></span><br><span class="line">date.setDate(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+<p>其它参数同理。<br>注意：</p>
+<ul>
+<li><p><strong>设置新的日期之后，之前获取的日期不会变化！</strong><br>需要重新获取 dates = date.getDate();<br>或者直接输出 date.getDate()</p>
+</li>
+<li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em>[2]</p>
+</li>
+<li><p>更改月份或者日期时，星期几是由设置之后决定的（设置前获取的星期不是）。</p>
+</li>
+</ul>
+<h4 id="转换格式输出"><a href="#转换格式输出" class="headerlink" title="转换格式输出"></a>转换格式输出</h4><p>手动控制日期和时间的输出顺序</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
+<p>要先获得各个参数，还要自己排序输出，比较麻烦。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-23 11:16:34</span><br></pre></td></tr></table></figure>
+<p>利用 <code>toDateString()</code> 方法可以把日期转换格式，并不需要自己一个个获取单个参数，直接输出可以更容易理解的日期。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toDateString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">Sat Jan 23 2021</span><br></pre></td></tr></table></figure>
+<p>同理，<code>toTimeString()</code>是另外一种方式。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toTimeString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">11:16:34 GMT+0800 (GMT+08:00)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/all/test/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>var date = new Date();
+
+var year = date.getFullYear(); 
+var month = date.getMonth()+1;
+var dates = date.getDate();
+var day = date.getDay();
+
+var hour = date.getHours();
+var minute = date.getMinutes();
+var seconds = date.getSeconds();
+
+date.setDate(23);
+dates = date.getDate();
+
+console.log(year+"-"+month+"-"+dates+" "+hour+":"+minute+":"+seconds);
+console.log(date.toDateString());
+console.log(date.toTimeString());
+]]></content>
+  </entry>
 </search>
