@@ -774,7 +774,7 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
-    <title>javascript4-math‘</title>
+    <title>javascript4-math</title>
     <url>/js/%E5%89%8D%E7%AB%AF/javascript4-math/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="javascript之Math对象"><a href="#javascript之Math对象" class="headerlink" title="javascript之Math对象"></a>javascript之Math对象</h2><p><em>与Date对象不同的是，Math对象不需要创建就可以使用</em></p>
 <h3 id="math常用方法"><a href="#math常用方法" class="headerlink" title="math常用方法"></a>math常用方法</h3><table>
