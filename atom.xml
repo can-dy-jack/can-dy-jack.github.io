@@ -6,7 +6,7 @@
   <link href="https://kartjim.top/atom.xml" rel="self"/>
   
   <link href="https://kartjim.top/"/>
-  <updated>2021-01-09T03:34:50.304Z</updated>
+  <updated>2021-01-14T11:08:46.657Z</updated>
   <id>https://kartjim.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript4-math‘</title>
+    <link href="https://kartjim.top/js/%E5%89%8D%E7%AB%AF/javascript4-math/"/>
+    <id>https://kartjim.top/js/%E5%89%8D%E7%AB%AF/javascript4-math/</id>
+    <published>2021-01-14T10:55:48.000Z</published>
+    <updated>2021-01-14T11:08:46.657Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="javascript之Math对象"><a href="#javascript之Math对象" class="headerlink" title="javascript之Math对象"></a>javascript之Math对象</h2><p><em>与Date对象不同的是，Math对象不需要创建就可以使用</em></p><h3 id="math常用方法"><a href="#math常用方法" class="headerlink" title="math常用方法"></a>math常用方法</h3><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>ceil(n)</td><td>向上取整</td></tr><tr><td>floor(n)</td><td>向下取整</td></tr><tr><td>max(a,b…)</td><td>返回最大值</td></tr><tr><td>min(a,b,…)</td><td>返回最小值</td></tr><tr><td>round(n)</td><td>返回一个四舍五入的值</td></tr><tr><td>random()</td><td>返回一个0-1之间的随机数</td></tr></tbody></table><h3 id="数学常数（Math属性）"><a href="#数学常数（Math属性）" class="headerlink" title="数学常数（Math属性）"></a>数学常数（Math属性）</h3><table><thead><tr><th>常数</th><th>值</th></tr></thead><tbody><tr><td>E</td><td>e≈2.718 …</td></tr><tr><td>LN2</td><td>ln2</td></tr><tr><td>LN10</td><td>ln10</td></tr><tr><td>LOG2E</td><td>以2为底e的对数</td></tr><tr><td>LOG10E</td><td>以10为底e的对数</td></tr><tr><td>PI</td><td>π</td></tr><tr><td>SQRT1_2</td><td>2的平方根的倒数</td></tr><tr><td>SQRT2</td><td>2的平方根</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="js" scheme="https://kartjim.top/categories/js/"/>
+    
+    <category term="前端" scheme="https://kartjim.top/categories/js/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="js" scheme="https://kartjim.top/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript3-日期和时间</title>
@@ -530,30 +558,6 @@ A --&gt; F[... ...]&lt;/pre&gt;
     <category term="java" scheme="https://kartjim.top/tags/java/"/>
     
     <category term="simple" scheme="https://kartjim.top/tags/simple/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>time</title>
-    <link href="https://kartjim.top/%E9%9A%8F%E7%AC%94/time/"/>
-    <id>https://kartjim.top/%E9%9A%8F%E7%AC%94/time/</id>
-    <published>2020-12-13T11:58:55.000Z</published>
-    <updated>2020-12-26T13:28:30.479Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>…….</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="随笔" scheme="https://kartjim.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="time" scheme="https://kartjim.top/tags/time/"/>
     
   </entry>
   
