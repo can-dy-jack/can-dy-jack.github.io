@@ -859,4 +859,159 @@ A --> F[... ...]</pre>
         <tag>js</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JavaScript5-数据类型</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/JavaScript5-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><p>js有两种数值类型：</p>
+<ul>
+<li>整数</li>
+<li>浮点数<br>声明时不需要区分，都用 var 声明即可<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> int = <span class="number">23</span>;</span><br><span class="line"><span class="keyword">var</span> float = <span class="number">3.5</span>;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+</li>
+</ul>
+<h4 id="可操作数值的全局方法"><a href="#可操作数值的全局方法" class="headerlink" title="可操作数值的全局方法"></a>可操作数值的全局方法</h4><table>
+<thead>
+<tr>
+<th>全局方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>toString()</td>
+<td>将数字转换为字符串</td>
+</tr>
+<tr>
+<td>toFixed(n)</td>
+<td>也是将数字转换为字符串,但是还可以指定小数位数</td>
+</tr>
+<tr>
+<td>toExponential(n)</td>
+<td>将数字用科学表示法表示，再转换成字符串</td>
+</tr>
+</tbody></table>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> int = <span class="number">23</span>;</span><br><span class="line"><span class="keyword">var</span> float = <span class="number">3.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(int.toString());</span><br><span class="line"><span class="built_in">console</span>.log(int.toFixed(<span class="number">3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(int.toExponential(<span class="number">4</span>));</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">23</span><br><span class="line">23.000</span><br><span class="line">2.3000e+1</span><br></pre></td></tr></table></figure>
+<h3 id="Number对象"><a href="#Number对象" class="headerlink" title="Number对象"></a>Number对象</h3><p>Number对象用来表示各种数值类型<br>Number对象有一些属性和方法，可以直接使用，不需要声明。</p>
+<p><em>Number.可以省略</em><br>|方法|作用|<br>|—|—|<br>|Number.isNaN()|检测是否为 <code>非数值</code> |<br>|Number.isInteger()|检测是否为整数值|<br>|Number.parseFloat()|强制转换成浮点型数值|<br>|Number.parseInt()|强制转换成整数型数值|</p>
+<h3 id="无穷大"><a href="#无穷大" class="headerlink" title="无穷大"></a>无穷大</h3><p>Infinity<br>and<br>-Infinity</p>
+<h3 id="Number函数"><a href="#Number函数" class="headerlink" title="Number函数"></a>Number函数</h3><blockquote>
+<p>Number(n)函数会尽力返回一个对等的数值；如果不能返回数值，则返回NaN。</p>
+</blockquote>
+<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><p>新建一个Date对象并使用Number()函数转换：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(now));</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">1610624530635</span><br></pre></td></tr></table></figure>
+<p>输出的值通常叫做时间戳</p>
+<ul>
+<li>UNIX时间，从1970年1月1日00:00:00(UTC)开始所流逝的毫秒数。</li>
+<li><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3>也是使用 var 来声明。<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4>true 、 false<h4 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h4><h4 id="null"><a href="#null" class="headerlink" title="null"></a>null</h4><h4 id="0"><a href="#0" class="headerlink" title="0"></a>0</h4><h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4></li>
+</ul>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript6-String</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/JavaScript6-String/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串： 由特定字符集（ASCII、Unicode等）里的字符所组成的序列。</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;string&quot;</span>;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h3 id="常用转义字符"><a href="#常用转义字符" class="headerlink" title="常用转义字符"></a>常用转义字符</h3><table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>代表字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>“</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>‘</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>\</td>
+</tr>
+</tbody></table>
+<h3 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h3><blockquote>
+<p>.length 长度</p>
+</blockquote>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat()</td>
+<td>连接字符串，不改变原字符串</td>
+</tr>
+<tr>
+<td>indexOf()</td>
+<td>查找字符串，返回索引 <em>从0开始</em></td>
+</tr>
+<tr>
+<td>lastIndexOf()</td>
+<td>返回最后出现的字符串索引</td>
+</tr>
+<tr>
+<td>repeat(n)</td>
+<td>重复字符串n次</td>
+</tr>
+<tr>
+<td>replace(now,new)</td>
+<td>替换字符串</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>将字符串分解为数组</td>
+</tr>
+<tr>
+<td>substr()</td>
+<td>切割提取字符串</td>
+</tr>
+<tr>
+<td>toLowerCase()</td>
+<td>把字符串全部转换为小写</td>
+</tr>
+<tr>
+<td>toUpperCase()</td>
+<td>把字符串全部转换为大写</td>
+</tr>
+</tbody></table>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }z中来引用字符串。<br>如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;my blog&quot;</span>;</span><br><span class="line"><span class="comment">// 注意 模板字符串必须位于 反单引号 之间。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">`a String of <span class="subst">$&#123;a&#125;</span>.`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">Its a String of aa.</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
 </search>
