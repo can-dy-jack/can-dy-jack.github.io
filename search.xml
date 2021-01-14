@@ -895,7 +895,31 @@ A --> F[... ...]</pre>
 <p>输出：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">23</span><br><span class="line">23.000</span><br><span class="line">2.3000e+1</span><br></pre></td></tr></table></figure>
 <h3 id="Number对象"><a href="#Number对象" class="headerlink" title="Number对象"></a>Number对象</h3><p>Number对象用来表示各种数值类型<br>Number对象有一些属性和方法，可以直接使用，不需要声明。</p>
-<p><em>Number.可以省略</em><br>|方法|作用|<br>|—|—|<br>|Number.isNaN()|检测是否为 <code>非数值</code> |<br>|Number.isInteger()|检测是否为整数值|<br>|Number.parseFloat()|强制转换成浮点型数值|<br>|Number.parseInt()|强制转换成整数型数值|</p>
+<p><em>Number.可以省略</em></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Number.isNaN()</td>
+<td>检测是否为 <code>非数值</code></td>
+</tr>
+<tr>
+<td>Number.isInteger()</td>
+<td>检测是否为整数值</td>
+</tr>
+<tr>
+<td>Number.parseFloat()</td>
+<td>强制转换成浮点型数值</td>
+</tr>
+<tr>
+<td>Number.parseInt()</td>
+<td>强制转换成整数型数值</td>
+</tr>
+</tbody></table>
 <h3 id="无穷大"><a href="#无穷大" class="headerlink" title="无穷大"></a>无穷大</h3><p>Infinity<br>and<br>-Infinity</p>
 <h3 id="Number函数"><a href="#Number函数" class="headerlink" title="Number函数"></a>Number函数</h3><blockquote>
 <p>Number(n)函数会尽力返回一个对等的数值；如果不能返回数值，则返回NaN。</p>
@@ -1001,7 +1025,7 @@ A --> F[... ...]</pre>
 <td>把字符串全部转换为大写</td>
 </tr>
 </tbody></table>
-<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }z中来引用字符串。<br>如：</p>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }中来引用字符串。<br>如：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;my blog&quot;</span>;</span><br><span class="line"><span class="comment">// 注意 模板字符串必须位于 反单引号 之间。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">`a String of <span class="subst">$&#123;a&#125;</span>.`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">Its a String of aa.</span><br></pre></td></tr></table></figure>]]></content>
