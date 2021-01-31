@@ -581,7 +581,7 @@ A --> F[... ...]</pre>
   <entry>
     <title>time</title>
     <url>/%E9%9A%8F%E7%AC%94/time/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>…….</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="kartjim’s-Blog"><a href="#kartjim’s-Blog" class="headerlink" title="kartjim’s Blog."></a>kartjim’s Blog.</h2><p>‘  or ` ?</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1028,7 +1028,7 @@ A --> F[... ...]</pre>
 <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }中来引用字符串。<br>如：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;my blog&quot;</span>;</span><br><span class="line"><span class="comment">// 注意 模板字符串必须位于 反单引号 之间。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">`a String of <span class="subst">$&#123;a&#125;</span>.`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">Its a String of aa.</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">a String of my blog.</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>js</category>
         <category>前端</category>
@@ -1036,6 +1036,28 @@ A --> F[... ...]</pre>
       <tags>
         <tag>前端</tag>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CKEditor</title>
+    <url>/editor/CKEditor/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="CKEditor集成"><a href="#CKEditor集成" class="headerlink" title="CKEditor集成"></a>CKEditor集成</h2><script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/inline/ckeditor.js"></script>
+<h1>Inline editor</h1>
+<div id="editor">
+    <p>This is some sample content.</p>
+</div>
+<script>
+    InlineEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>]]></content>
+      <categories>
+        <category>editor</category>
+      </categories>
+      <tags>
+        <tag>editor</tag>
       </tags>
   </entry>
 </search>

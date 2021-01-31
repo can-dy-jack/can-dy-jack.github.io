@@ -6,7 +6,7 @@
   <link href="https://kartjim.top/atom.xml" rel="self"/>
   
   <link href="https://kartjim.top/"/>
-  <updated>2021-01-14T12:22:22.688Z</updated>
+  <updated>2021-01-31T13:07:04.463Z</updated>
   <id>https://kartjim.top/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CKEditor</title>
+    <link href="https://kartjim.top/editor/CKEditor/"/>
+    <id>https://kartjim.top/editor/CKEditor/</id>
+    <published>2021-01-31T13:05:35.000Z</published>
+    <updated>2021-01-31T13:07:04.463Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="CKEditor集成"><a href="#CKEditor集成" class="headerlink" title="CKEditor集成"></a>CKEditor集成</h2><script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/inline/ckeditor.js"></script><h1>Inline editor</h1><div id="editor">    <p>This is some sample content.</p></div><script>    InlineEditor        .create( document.querySelector( '#editor' ) )        .catch( error => {            console.error( error );        } );</script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="editor" scheme="https://kartjim.top/categories/editor/"/>
+    
+    
+    <category term="editor" scheme="https://kartjim.top/tags/editor/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript6-String</title>
     <link href="https://kartjim.top/js/%E5%89%8D%E7%AB%AF/JavaScript6-String/"/>
     <id>https://kartjim.top/js/%E5%89%8D%E7%AB%AF/JavaScript6-String/</id>
     <published>2021-01-14T11:53:00.000Z</published>
-    <updated>2021-01-14T12:22:22.688Z</updated>
+    <updated>2021-01-14T12:28:11.825Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串： 由特定字符集（ASCII、Unicode等）里的字符所组成的序列。</p><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;string&quot;</span>;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="常用转义字符"><a href="#常用转义字符" class="headerlink" title="常用转义字符"></a>常用转义字符</h3><table><thead><tr><th>转义序列</th><th>代表字符</th></tr></thead><tbody><tr><td>\t</td><td>制表符</td></tr><tr><td>\n</td><td>换行</td></tr><tr><td>\“</td><td>“</td></tr><tr><td>\‘</td><td>‘</td></tr><tr><td>\\</td><td>\</td></tr></tbody></table><h3 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h3><blockquote><p>.length 长度</p></blockquote><h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>concat()</td><td>连接字符串，不改变原字符串</td></tr><tr><td>indexOf()</td><td>查找字符串，返回索引 <em>从0开始</em></td></tr><tr><td>lastIndexOf()</td><td>返回最后出现的字符串索引</td></tr><tr><td>repeat(n)</td><td>重复字符串n次</td></tr><tr><td>replace(now,new)</td><td>替换字符串</td></tr><tr><td>split()</td><td>将字符串分解为数组</td></tr><tr><td>substr()</td><td>切割提取字符串</td></tr><tr><td>toLowerCase()</td><td>把字符串全部转换为小写</td></tr><tr><td>toUpperCase()</td><td>把字符串全部转换为大写</td></tr></tbody></table><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }中来引用字符串。<br>如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;my blog&quot;</span>;</span><br><span class="line"><span class="comment">// 注意 模板字符串必须位于 反单引号 之间。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">`a String of <span class="subst">$&#123;a&#125;</span>.`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">Its a String of aa.</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串： 由特定字符集（ASCII、Unicode等）里的字符所组成的序列。</p><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;string&quot;</span>;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="常用转义字符"><a href="#常用转义字符" class="headerlink" title="常用转义字符"></a>常用转义字符</h3><table><thead><tr><th>转义序列</th><th>代表字符</th></tr></thead><tbody><tr><td>\t</td><td>制表符</td></tr><tr><td>\n</td><td>换行</td></tr><tr><td>\“</td><td>“</td></tr><tr><td>\‘</td><td>‘</td></tr><tr><td>\\</td><td>\</td></tr></tbody></table><h3 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h3><blockquote><p>.length 长度</p></blockquote><h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>concat()</td><td>连接字符串，不改变原字符串</td></tr><tr><td>indexOf()</td><td>查找字符串，返回索引 <em>从0开始</em></td></tr><tr><td>lastIndexOf()</td><td>返回最后出现的字符串索引</td></tr><tr><td>repeat(n)</td><td>重复字符串n次</td></tr><tr><td>replace(now,new)</td><td>替换字符串</td></tr><tr><td>split()</td><td>将字符串分解为数组</td></tr><tr><td>substr()</td><td>切割提取字符串</td></tr><tr><td>toLowerCase()</td><td>把字符串全部转换为小写</td></tr><tr><td>toUpperCase()</td><td>把字符串全部转换为大写</td></tr></tbody></table><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通过将变量名包含在${ 。。。 }中来引用字符串。<br>如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;my blog&quot;</span>;</span><br><span class="line"><span class="comment">// 注意 模板字符串必须位于 反单引号 之间。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">`a String of <span class="subst">$&#123;a&#125;</span>.`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Running] node &quot;e:\test.js&quot;</span><br><span class="line">a String of my blog.</span><br></pre></td></tr></table></figure>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;字符串&quot;&gt;&lt;a href=&quot;#字符串&quot; class=&quot;headerlink&quot; title=&quot;字符串&quot;&gt;&lt;/a&gt;字符串&lt;/h2&gt;&lt;p&gt;字符串： 由特定字符集（ASCII、Unicode等）里的字符所组成的序列。&lt;/p&gt;
@@ -275,7 +299,7 @@ A --&gt; F[... ...]&lt;/pre&gt;
     <link href="https://kartjim.top/all/new/"/>
     <id>https://kartjim.top/all/new/</id>
     <published>2020-12-26T12:20:47.000Z</published>
-    <updated>2020-12-27T00:44:36.781Z</updated>
+    <updated>2021-01-18T12:21:34.174Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="issue："><a href="#issue：" class="headerlink" title="issue："></a>issue：</h2><ul><li>leancloud阅读量异常</li><li>添加音乐</li></ul>]]></content>
     
@@ -530,30 +554,6 @@ A --&gt; F[... ...]&lt;/pre&gt;
     <category term="前端" scheme="https://kartjim.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="TypeScript" scheme="https://kartjim.top/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>标签插件</title>
-    <link href="https://kartjim.top/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/"/>
-    <id>https://kartjim.top/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</id>
-    <published>2020-12-15T13:06:31.000Z</published>
-    <updated>2020-12-26T13:28:30.486Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p><blockquote><blockquote><p>content</p><footer><strong>[author[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote></blockquote><p>如：</p><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p><footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote><blockquote><p>Every interaction is both precious and an opportunity to delight.</p><footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>......<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="在文章中插入代码。"><a href="#在文章中插入代码。" class="headerlink" title="在文章中插入代码。"></a>在文章中插入代码。</h3><p><em>别名： code</em><br>公式：</p><figure class="highlight plain"><figcaption><span>[title] [lang:language] [url] [link text] [additional options]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure><p>普通的代码块:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure><p>附加说明和网址：</p><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure><h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><h3 id="引用其他文章的链接。"><a href="#引用其他文章的链接。" class="headerlink" title="引用其他文章的链接。"></a>引用其他文章的链接。</h3><a href="#">Post not found: filename [title] [escape]</a><p>官网：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></p><h2 id="引用资源"><a href="#引用资源" class="headerlink" title="引用资源"></a>引用资源</h2><h3 id="引用文章的资源。"><a href="#引用文章的资源。" class="headerlink" title="引用文章的资源。"></a>引用文章的资源。</h3><h3 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h3><h4 id="另一种形式的代码块，不同的是它使用三个反引号来包裹。"><a href="#另一种形式的代码块，不同的是它使用三个反引号来包裹。" class="headerlink" title="另一种形式的代码块，不同的是它使用三个反引号来包裹。"></a>另一种形式的代码块，不同的是它使用三个反引号来包裹。</h4><p><code>[language] [title] [url] [link text] code snippet</code></p><h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-    <category term="随笔" scheme="https://kartjim.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="官网学习" scheme="https://kartjim.top/tags/%E5%AE%98%E7%BD%91%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
