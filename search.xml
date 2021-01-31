@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CKEditor</title>
+    <url>/editor/CKEditor/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="CKEditor集成"><a href="#CKEditor集成" class="headerlink" title="CKEditor集成"></a>CKEditor集成</h2><script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/inline/ckeditor.js"></script>
+<h1>Inline editor</h1>
+<div id="editor">
+    <p>This is some sample content.</p>
+</div>
+<script>
+    InlineEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>]]></content>
+      <categories>
+        <category>editor</category>
+      </categories>
+      <tags>
+        <tag>editor</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML5文档的基本结构及创建方法</title>
     <url>/%E5%89%8D%E7%AB%AF/HTML5%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E5%8F%8A%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="HTML5文档基本结构"><a href="#HTML5文档基本结构" class="headerlink" title="HTML5文档基本结构"></a>HTML5文档基本结构</h1><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><p>如果用专门的软件新建一个html文档，会自动出现以下大纲，这是HTML5的基本结构。这些是必须要写的内容。</p>
@@ -71,792 +93,6 @@
       <tags>
         <tag>前端</tag>
         <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript文件后缀</title>
-    <url>/all/JavaScript%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JavaScript文件后缀"><a href="#JavaScript文件后缀" class="headerlink" title="JavaScript文件后缀"></a>JavaScript文件后缀</h1><h2 id="一般都为-js-后缀"><a href="#一般都为-js-后缀" class="headerlink" title="一般都为 .js 后缀"></a>一般都为 .js 后缀</h2><p>按照惯例，JavaScript代码文件的扩展名名.js。但从实际情况来看，胆码的名称可以使用任何扩展名，浏览器都会把其中的内容当做JavaScript代码来解释。</p>
-<h2 id="放在script标签里"><a href="#放在script标签里" class="headerlink" title="放在script标签里"></a>放在script标签里</h2><p> src属性 和 写在其中的代码 只能选一个。<br> 即，要么用src属性导入，要么在其中写入代码。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KotLin - 包的定义与导入</title>
-    <url>/kotlin/KotLin-%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%AF%BC%E5%85%A5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="KotLin-包的定义与导入"><a href="#KotLin-包的定义与导入" class="headerlink" title="KotLin - 包的定义与导入"></a>KotLin - 包的定义与导入</h1><p>包的声明应处于源⽂件顶部：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> my.demo</span><br><span class="line"><span class="keyword">import</span> kotlin.text.*</span><br><span class="line"><span class="comment">// …… </span></span><br></pre></td></tr></table></figure>
-<p>⽬录与包的结构⽆需匹配：源代码可以在⽂件系统的任意位置。</p>
-<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>源⽂件通常以包声明开头：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printMessage</span><span class="params">()</span></span> &#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="comment">// ……</span></span><br></pre></td></tr></table></figure>
-<p>源⽂件所有内容（⽆论是类还是函数）都包含在声明的包内。 所以上例中 <code>printMessage()</code> 的全名是<br><code>org.example.printMessage</code> ， ⽽ <code>Message</code> 的全名是 <code>org.example.Message</code> 。</p>
-<p><a href="https://blog.csdn.net/moriafly/article/details/107279590">博客来自：</a>moriafly</p>
-]]></content>
-      <categories>
-        <category>kotlin</category>
-      </categories>
-      <tags>
-        <tag>kotlin</tag>
-        <tag>andriod</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MyBlog</title>
-    <url>/notes/MyBlog/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p> 我的第一个通过hexo创建的博客！</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>post</tag>
-        <tag>first</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>aplayer+meting添加播放列表</title>
-    <url>/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="aplayer-meting添加播放列表"><a href="#aplayer-meting添加播放列表" class="headerlink" title="aplayer+meting添加播放列表"></a>aplayer+meting添加播放列表</h1><h2 id="看官网"><a href="#看官网" class="headerlink" title="看官网"></a>看官网</h2><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></p>
-<h3 id="使用-hexo-tag-aplayer-插件"><a href="#使用-hexo-tag-aplayer-插件" class="headerlink" title="使用 hexo-tag-aplayer 插件"></a>使用 hexo-tag-aplayer 插件</h3><p>在博客根目录下执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure>
-<p>下载hexo-tag-aplayer插件</p>
-<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><a id="more"></a>
-
-<p>在任意一个Markdown文件里使用 形如以下代码即可使用播放音乐。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer title author url lrc:xxx %&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="标签参数"><a href="#标签参数" class="headerlink" title="标签参数"></a>标签参数</h4><ul>
-<li>title : 曲目标题</li>
-<li>author: 曲目作者</li>
-<li>url: 音乐文件 URL 地址</li>
-<li>lrc:xxx: （可选）歌词文件 URL 地址<h5 id="歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323"><a href="#歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323" class="headerlink" title="歌词URL前一定要加上 lrc: 如：lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323"></a>歌词URL前一定要加上 <code>lrc:</code> 如：<code>lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323</code></h5>更多参数请看官网：<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><h5 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer 断点 张敬轩 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;189323.mp3  https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;cover&amp;id&#x3D;189323 &quot;lrc:https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;lrc&amp;id&#x3D;189323&quot; %&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"><a href="#各大平台音乐的歌曲、歌词、图片查找方法自己百度。" class="headerlink" title="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"></a>各大平台音乐的歌曲、歌词、图片查找方法自己百度。</h4><h3 id="使用meting"><a href="#使用meting" class="headerlink" title="使用meting"></a>使用meting</h3><h4 id="hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上"><a href="#hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上" class="headerlink" title="hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上"></a>hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上</h4><em>（注意不是你的主题配置文件）</em><blockquote>
-<p>aplayer:<br> meting: true</p>
-</blockquote>
-就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
-即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
-    <div id="aplayer-InPgZwvg" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
-    ></div>
-<h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>music</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TypeScript入门</title>
-    <url>/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="TypeScript-part01"><a href="#TypeScript-part01" class="headerlink" title="TypeScript-part01"></a>TypeScript-part01</h1><h2 id="TypeScript介绍"><a href="#TypeScript介绍" class="headerlink" title="TypeScript介绍"></a>TypeScript介绍</h2><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p> <em>程序运行的一般步骤：</em></p>
-<ol>
-<li><p>解析程序：程序解析为AST（抽象句树法-abstract syntax tree）；</p>
-</li>
-<li><p>编译：将AWT编译成为字节码；</p>
-</li>
-<li><p>运行：计算字节码。</p>
-<h3 id="但是对于TS而言："><a href="#但是对于TS而言：" class="headerlink" title="但是对于TS而言："></a>但是对于TS而言：</h3><p>要先用编译器编译为JavaScript，然后执行以上步骤！</p>
-<h3 id="TS与JS区别"><a href="#TS与JS区别" class="headerlink" title="TS与JS区别"></a>TS与JS区别</h3><blockquote>
-<p>JavaScript是动态绑定类型；<br>TypeScript是静态绑定类型。</p>
-</blockquote>
-<blockquote>
-<p>JavaScript是弱类型语言；<br>TypeScript是渐进式类型语言。</p>
-</blockquote>
-<blockquote>
-<p>JavaScript会自动转换类型；<br>TypeScript会检查类型，并报错。</p>
-</blockquote>
-<h2 id="TypeScript配置"><a href="#TypeScript配置" class="headerlink" title="TypeScript配置"></a>TypeScript配置</h2></li>
-</ol>
-<ul>
-<li>新建一个文件夹</li>
-<li>初始化npm：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></li>
-<li>安装TSC、TSLint、NodeJS的类型声明<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save-dev typescript tslint @types/node</span><br></pre></td></tr></table></figure>
-<h3 id="最好安装一下全局"><a href="#最好安装一下全局" class="headerlink" title="最好安装一下全局*"></a>最好安装一下全局*</h3><h4 id="Locally-in-your-project"><a href="#Locally-in-your-project" class="headerlink" title="Locally in your project."></a>Locally in your project.</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -D typescript</span><br><span class="line">npm install -D ts-node</span><br></pre></td></tr></table></figure>
-<h4 id="Or-globally-with-TypeScript"><a href="#Or-globally-with-TypeScript" class="headerlink" title="Or globally with TypeScript."></a>Or globally with TypeScript.</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g typescript</span><br><span class="line">npm install -g ts-node</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="TypeScript创建一个简单的程序"><a href="#TypeScript创建一个简单的程序" class="headerlink" title="TypeScript创建一个简单的程序"></a>TypeScript创建一个简单的程序</h2></li>
-</ul>
-<ol>
-<li>在根目录下新建tsconfig.json 文件，写入：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;lib&quot;</span>: [<span class="string">&quot;es6&quot;</span>],</span><br><span class="line">		<span class="attr">&quot;module&quot;</span>: <span class="string">&quot;commonjs&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;outDir&quot;</span>: <span class="string">&quot;dist&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;sourceMap&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">&quot;strict&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">&quot;target&quot;</span>: <span class="string">&quot;es6&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">&quot;include&quot;</span>: [</span><br><span class="line">	<span class="string">&quot;src&quot;</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体配置请看<a href="https://www.typescriptlang.org/docs/handbook">官方文档</a></p>
-<ol start="2">
-<li>新建tslint.json文件，写入：<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;defaultSeverity&quot;</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;tslint:recommended&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;semicolon&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;trailing-comma&quot;</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-或者使用命令行：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tslint --init</span><br></pre></td></tr></table></figure></li>
-<li>最后新建src文件夹及其之下的index.ts<br>试着写入代码：<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hello TypeScript!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>编译： tsc ./src/index.ts<br>之后文件夹src下会出现编译好的js文件。</li>
-<li>运行（node）：node ./src/index.js</li>
-</ol>
-<p>成功运行第一个TypeScript项目！</p>
-<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
-<li><a href="https://www.npmjs.com/package/ts-node">ts-node</a><br>更快编译、运行</li>
-<li>typescript-node-starter（github上面搜）<br>脚手架工具<hr>
-文章来自我的CSDN博客：<a href="https://blog.csdn.net/qq_46590483/article/details/111345714" title="" target="">CSND</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>TypeScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>/,./and../的区别</title>
-    <url>/%E9%9A%8F%E7%AC%94/and-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>/表示根目录<br>./表示当前目录<br>../表示父级目录</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>fancybox</title>
-    <url>/all/fancybox/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="fancybox效果"><a href="#fancybox效果" class="headerlink" title="fancybox效果"></a>fancybox效果</h1><p>设置fancybox: true即可？</p>
-<h2 id="photo"><a href="#photo" class="headerlink" title="photo:"></a>photo:</h2><p>图片来源：<a href="https://blog.smackgg.cn/2015/05/25/newHexo">https://blog.smackgg.cn/2015/05/25/newHexo</a><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" alt="girl"><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt="book"></p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/default/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>default</category>
-      </categories>
-      <tags>
-        <tag>default</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo插入图片</title>
-    <url>/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo插入图片"><a href="#hexo插入图片" class="headerlink" title="hexo插入图片"></a>hexo插入图片</h1><p><img data-src="/images/clouds.jpg" alt="sky"></p>
-<blockquote>
-<p>将图片放在 source/images 文件夹中，<br>然后通过 ![ ](/images/image.jpg) 的方法访问它们。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javascript3-日期和时间</title>
-    <url>/js/%E5%89%8D%E7%AB%AF/javascript3-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>JavaScript中时间和日期对象和java类似，都是Date对象。且都需要进行创建Date对象才能使用。</p>
-<h3 id="当前时间和日期"><a href="#当前时间和日期" class="headerlink" title="当前时间和日期"></a>当前时间和日期</h3><p>新建一个Date对象：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
-<p>date就是一个Date对象，包含创建对象时的日期和时间信息。<br>date具有一些可以操作日期和时间的方法，如：</p>
-<a id="more"></a>
-
-<h4 id="获取年月日"><a href="#获取年月日" class="headerlink" title="获取年月日"></a>获取年月日</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//FullYear();是四位数的年份，如2021;而year();是二位数的年份；为了不引起舞蹈，一般使用FullYear();</span></span><br><span class="line"><span class="keyword">var</span> year = date.getFullYear(); </span><br><span class="line"><span class="comment">//获取的月份是从0-11的数字，需要加上1才是真正的月份，如11表示12月。</span></span><br><span class="line"><span class="keyword">var</span> month = date.getMonth();</span><br><span class="line"><span class="comment">//获取日期，1-31</span></span><br><span class="line"><span class="keyword">var</span> dates = date.getDate();</span><br><span class="line"><span class="comment">//获取星期，0-6，0表示周日，其它正常。</span></span><br><span class="line"><span class="keyword">var</span> day = date.getDay();</span><br></pre></td></tr></table></figure>
-<h4 id="获取几点几分"><a href="#获取几点几分" class="headerlink" title="获取几点几分"></a>获取几点几分</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> hours= date.getHours();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> minute = date.getMinutes();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> seconds = date.getSeconds();</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
-<h4 id="得到当前具体时间"><a href="#得到当前具体时间" class="headerlink" title="得到当前具体时间"></a>得到当前具体时间</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
-<p>执行结果：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-9 10:57:16</span><br></pre></td></tr></table></figure>
-<h3 id="创建指定日期和时间的Date对象"><a href="#创建指定日期和时间的Date对象" class="headerlink" title="创建指定日期和时间的Date对象"></a>创建指定日期和时间的Date对象</h3><p>创建Date对象时，给Date对象传参即可创建指定日期和时间的Date对象。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指定从1970-1-1到程序执行时的毫秒数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(ms) </span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用日期字符串</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">String</span>-date)</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;January  9,2021 11:09:16&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用每个参数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,day,hour,minute,seconds,ms);</span><br><span class="line"><span class="comment">// 靠后的参数可以省略，默认为0。</span></span><br></pre></td></tr></table></figure>
-<h3 id="编辑Date对象"><a href="#编辑Date对象" class="headerlink" title="编辑Date对象"></a>编辑Date对象</h3><h4 id="设置自定义时间和日期"><a href="#设置自定义时间和日期" class="headerlink" title="设置自定义时间和日期"></a>设置自定义时间和日期</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//更改 为当月23号</span></span><br><span class="line">date.setDate(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
-<p>其它参数同理。<br>注意：</p>
-<ul>
-<li><p><strong>设置新的日期之后，之前获取的日期不会变化！</strong><br>需要重新获取 dates = date.getDate();<br>或者直接输出 date.getDate()</p>
-</li>
-<li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em></p>
-</li>
-<li><p>更改月份或者日期时，星期几是由设置之后决定的（设置前获取的星期不是）。</p>
-</li>
-</ul>
-<h4 id="转换格式输出"><a href="#转换格式输出" class="headerlink" title="转换格式输出"></a>转换格式输出</h4><p>手动控制日期和时间的输出顺序</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
-<p>要先获得各个参数，还要自己排序输出，比较麻烦。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-23 11:16:34</span><br></pre></td></tr></table></figure>
-<p>利用 <code>toDateString()</code> 方法可以把日期转换格式，并不需要自己一个个获取单个参数，直接输出可以更容易理解的日期。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toDateString());</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">Sat Jan 23 2021</span><br></pre></td></tr></table></figure>
-<p>同理，<code>toTimeString()</code>是另外一种方式。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toTimeString());</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">11:16:34 GMT+0800 (GMT+08:00)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>js</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js奇淫技巧1</title>
-    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><ul>
-<li>var</li>
-</ul>
-<p>JavaScript有两种作用域：全局 / 局部作用域</p>
-<blockquote>
-<p>var声明的变量 在函数内部声明的变量只存在于函数内部</p>
-</blockquote>
-<blockquote>
-<p>用 this 可以调用全局作用域</p>
-</blockquote>
-<ul>
-<li>let</li>
-</ul>
-<a id="more"></a>
-
-<p>为了实现变量块级作用域，js用一个<code>let</code>关键字声明具有严格块级作用域的变量。</p>
-<ul>
-<li>const</li>
-</ul>
-<p>const关键字用于声明一个常量，使常量不能被重新赋值或重新声明。</p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>先看一般的匿名函数：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">&quot;Hello&quot;</span>);&#125;;</span><br></pre></td></tr></table></figure>
-<p>箭头函数（arrow function）可以使匿名函数更加简洁：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function">() =&gt;</span> alert(<span class="string">&#x27;Hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>只有包含多个表达式，才需要花括号。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">myFunc = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">     x += y;</span><br><span class="line">     alert(x); </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>=&gt;符号通常被称为胖箭头符号</p>
-</blockquote>
-<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>要指定一个默认参数，只要给函数定义中的参数一个默认值就行。<br>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">warn</span>(<span class="params">temp,subtitle=<span class="string">&#x27;--warning&#x27;</span></span>)</span>&#123;</span><br><span class="line">    alert(subtitle+<span class="string">&quot; , &quot;</span>+temp+<span class="string">&quot; ;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>在函数定义中，一般将有默认值的参数，放在没有默认值的参数后面</strong></p>
-]]></content>
-      <categories>
-        <category>js</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js奇淫技巧2</title>
-    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><pre class="mermaid">graph LR
-A[window] --> B[document]
-A --> C[location]
-A --> D[history]
-A --> E[navigator]
-A --> F[... ...]</pre>
-
-<p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
-<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure>
-<h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure>
-<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p>
-<blockquote>
-<p>history.length</p>
-</blockquote>
-<p>history对象有三个方法：forward()、backward()、go()。</p>
-<ul>
-<li>forward()、backward()对应单页浏览器中前进和后退。</li>
-<li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。</li>
-</ul>
-<h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3><p>location对象包含当前加载页面的URL信息。<br>比如：<a href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：</p>
-<blockquote>
-<p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure>
-<h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3><p>navigator对象包含了浏览器 程序本身的数据。<br>如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>js</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kotlin-String</title>
-    <url>/kotlin/kotlin-String/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Kotlin-字符串"><a href="#Kotlin-字符串" class="headerlink" title="Kotlin - 字符串"></a>Kotlin - 字符串</h1><p>字符串只是一个字符串序列，包含在双引号中。在 Kotlin 中，字符串由类型 <code>String</code> 表示。它是实践中使用最广泛的数据类型之一。</p>
-<h4 id="1-声明"><a href="#1-声明" class="headerlink" title="1. 声明"></a>1. 声明</h4><p>声明字符串变量：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str: String = <span class="string">&quot;Hello Kotlin&quot;</span></span><br></pre></td></tr></table></figure>
-<p>当然，因为 Kotlin 出色的类型推断，您常常无需表明类型：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;Hello Kotlin&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-字符串的长度"><a href="#2-字符串的长度" class="headerlink" title="2. 字符串的长度"></a>2. 字符串的长度</h4><p>您可以获取访问属性的字符串中的字符数。此属性具有类型的值。<code>length</code> <code>Int</code></p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> language = <span class="string">&quot;Kotlin&quot;</span></span><br><span class="line">println(language.length) <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> empty = <span class="string">&quot;&quot;</span></span><br><span class="line">println(empty.length) <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 关于汉字的长度</span></span><br><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;你好&quot;</span></span><br><span class="line">println(str.length) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-访问字符"><a href="#3-访问字符" class="headerlink" title="3. 访问字符"></a>3. 访问字符</h4><p>字符串的元素是单个字符，可以通过其索引访问。字符串的第一个元素具有索引 0 。</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> greeting = <span class="string">&quot;Hello&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">val</span> first = greeting[<span class="number">0</span>]  <span class="comment">// &#x27;H&#x27;</span></span><br><span class="line"><span class="keyword">val</span> second = greeting[<span class="number">1</span>] <span class="comment">// &#x27;e&#x27;</span></span><br><span class="line"><span class="keyword">val</span> five = greeting[<span class="number">4</span>]   <span class="comment">// &#x27;o&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>最后一个元素的索引等于字符串的长度减去 1 。对于字符串，最后一个元素为 。其索引为 4 ，因为字符串的长度为  5 。</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> last = greeting[greeting.length - <span class="number">1</span>] <span class="comment">// &#x27;o&#x27;</span></span><br><span class="line"><span class="keyword">val</span> prelast = greeting[greeting.length - <span class="number">2</span>] <span class="comment">// &#x27;l&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>Kotlin 提供了几种访问字符串的第一个字符和最后一个字符的便捷方法：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">println(greeting.first())   <span class="comment">// &#x27;H&#x27;</span></span><br><span class="line">println(greeting.last())    <span class="comment">// &#x27;o&#x27;</span></span><br><span class="line">println(greeting.lastIndex) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
-<p>您可以使用此功能编写更具可读性的代码。<br>还可以用 for 循环迭代字符串:</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (c <span class="keyword">in</span> str) &#123;</span><br><span class="line">    println(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-不变性"><a href="#4-不变性" class="headerlink" title="4. 不变性"></a>4. 不变性</h4><p>字符串是不可变的，意思是，一旦创建字符串总是相同的。不能修改字符串的元素。因此，下面的示例不起作用：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;string&quot;</span></span><br><span class="line">str[<span class="number">3</span>] = <span class="string">&#x27;o&#x27;</span> <span class="comment">// an error here!</span></span><br></pre></td></tr></table></figure>
-<p>但这个工作：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;string&quot;</span></span><br><span class="line">str = <span class="string">&quot;strong&quot;</span></span><br></pre></td></tr></table></figure>
-<p>实际上，我们不会修改变量中的存储值。相反，我们为它分配一个新值。因此，这是绝对合法的。这是使用字符串的方法之一。如果需要修改字符串，只需创建一个新字符串。</p>
-<h4 id="5-连接字符串"><a href="#5-连接字符串" class="headerlink" title="5. 连接字符串"></a>5. 连接字符串</h4><p>可以使用运算符连接两个字符串：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str1 = <span class="string">&quot;ab&quot;</span></span><br><span class="line"><span class="keyword">val</span> str2 = <span class="string">&quot;cde&quot;</span></span><br><span class="line"><span class="keyword">val</span> result = str1 + str2 <span class="comment">// &quot;abcde&quot;</span></span><br></pre></td></tr></table></figure>
-<p>当我们连接两个字符串时，将创建一个新字符串（因为字符串是不可变的）。</p>
-<p>可以在同一表达式中串联多个字符串：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> firstName = <span class="string">&quot;John&quot;</span></span><br><span class="line"><span class="keyword">val</span> lastName = <span class="string">&quot;Smith&quot;</span></span><br><span class="line"><span class="keyword">val</span> fullName = firstName + <span class="string">&quot; &quot;</span> + lastName</span><br></pre></td></tr></table></figure>
-<p>注意，不一样，因为串联不是换向操作（不像添加）。<br>将值追加到字符串<br>该运算符还适用于将不同类型的值附加到字符串。该值将自动转换为字符串，然后串联到目标字符串。</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;abc&quot;</span> + <span class="number">10</span> + <span class="literal">true</span></span><br><span class="line">println(str) <span class="comment">// abc10true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> code = <span class="string">&quot;123&quot;</span> + <span class="number">456</span> + <span class="string">&quot;789&quot;</span></span><br><span class="line">println(code) <span class="comment">// 123456789</span></span><br></pre></td></tr></table></figure>
-<p>表达式必须始终以字符串为起点，请看下面的示例。它不工作，因为第一个操作数是一个数字：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="number">10</span> + <span class="string">&quot;abc&quot;</span> <span class="comment">// an error here!</span></span><br></pre></td></tr></table></figure>
-<p>下一个可能会令您大吃一惊：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;abc&quot;</span> + <span class="number">11</span> + <span class="number">22</span></span><br><span class="line">println(str) <span class="comment">// abc1122</span></span><br></pre></td></tr></table></figure>
-<p>为什么会这样？因为首先它追加到字符串，然后追加到字符串。</p>
-<h4 id="6-比较字符串"><a href="#6-比较字符串" class="headerlink" title="6. 比较字符串"></a>6. 比较字符串</h4><p>要比较两个字符串，请使用（相等）和（不等于）运算符。两个运算符都使用两个字符串作为操作数，并返回类型 （或 ） 的值。</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> first = <span class="string">&quot;first&quot;</span></span><br><span class="line"><span class="keyword">val</span> second = <span class="string">&quot;second&quot;</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;first&quot;</span></span><br><span class="line"> </span><br><span class="line">println(first == str)  <span class="comment">// true</span></span><br><span class="line">println(first == second) <span class="comment">// false</span></span><br><span class="line">println(first != second) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h4 id="7-字符串模板"><a href="#7-字符串模板" class="headerlink" title="7. 字符串模板"></a>7. 字符串模板</h4><p>字符串字面值可以包含模板表达式 ，即一些小段代码，会求值并把结果合并到字符串中。 模板表达式以美元符（$）开头，由一个简单的名字构成:</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> i = <span class="number">10</span></span><br><span class="line">println(<span class="string">&quot;i = <span class="variable">$i</span>&quot;</span>) <span class="comment">// 输出“i = 10”</span></span><br></pre></td></tr></table></figure>
-<p>或者用花括号括起来的任意表达式:</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> s = <span class="string">&quot;abc&quot;</span></span><br><span class="line">println(<span class="string">&quot;<span class="variable">$s</span>.length is <span class="subst">$&#123;s.length&#125;</span>&quot;</span>) <span class="comment">// 输出“abc.length is 3”</span></span><br></pre></td></tr></table></figure>
-<p>原始字符串与转义字符串内部都支持模板。 如果你需要在原始字符串中表示字面值 $ 字符（它不支持反斜杠转义），你可以用下列语法：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> price = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;<span class="string">&#x27;$&#x27;</span>&#125;</span>9.99</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="8-其他"><a href="#8-其他" class="headerlink" title="8. 其他"></a>8. 其他</h4><p>原始字符串 使用三个引号（”””）分界符括起来，内部没有转义并且可以包含换行以及任何其他字符:</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> text = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    for (c in &quot;foo&quot;)</span></span><br><span class="line"><span class="string">        print(c)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>你可以通过 <code>trimMargin()</code> 函数去除前导空格：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> text = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    |Tell me and I forget.</span></span><br><span class="line"><span class="string">    |Teach me and I remember.</span></span><br><span class="line"><span class="string">    |Involve me and I learn.</span></span><br><span class="line"><span class="string">    |(Benjamin Franklin)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>.trimMargin()</span><br></pre></td></tr></table></figure>
-<p>默认 <code>|</code> 用作边界前缀，但你可以选择其他字符并作为参数传入，比如 <code>trimMargin(&quot;&gt;&quot;)</code> 。<br><a href="https://blog.csdn.net/moriafly/article/details/107165523">文章出处</a></p>
-<p>*[文章出处]:moriafly</p>
-]]></content>
-      <categories>
-        <category>kotlin</category>
-      </categories>
-      <tags>
-        <tag>kotlin</tag>
-        <tag>andriod</tag>
-        <tag>first</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>music-aplayer</title>
-    <url>/music/music-aplayer/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>
-
-        <div id="aplayer-FPqeHzKM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-FPqeHzKM"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 3,
-            music: {
-              title: "夜车",
-              author: "曾轶可",
-              url: "https://music.163.com/song/media/outer/url?id=340376.mp3",
-              pic: "https://api.fczbl.vip/163/?type=cover&id=340376",
-              lrc: "https://api.fczbl.vip/163/?type=lrc&id=340376"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-
-        <div id="aplayer-rakmoePp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-rakmoePp"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 3,
-            music: {
-              title: "断点",
-              author: "张敬轩",
-              url: "https://music.163.com/song/media/outer/url?id=189323.mp3",
-              pic: "https://api.fczbl.vip/163/?type=cover&id=189323",
-              lrc: "https://api.fczbl.vip/163/?type=lrc&id=189323"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>]]></content>
-      <categories>
-        <category>music</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>music</title>
-    <url>/music/music/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>
-
-    <div id="aplayer-TWMwKKqK" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
-    ></div>]]></content>
-      <categories>
-        <category>music</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>hexo</tag>
-        <tag>password</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>new</title>
-    <url>/all/new/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="issue："><a href="#issue：" class="headerlink" title="issue："></a>issue：</h2><ul>
-<li>leancloud阅读量异常</li>
-<li>添加音乐</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/hexo/%E5%88%86%E7%B1%BB-12.15/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="分类方法的分歧"><a href="#分类方法的分歧" class="headerlink" title="分类方法的分歧"></a>分类方法的分歧</h3><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p>
-<blockquote>
-<p>categories:<br>    - Diary<br>    - Life</p>
-</blockquote>
-<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
-<h4 id="如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。"><a href="#如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。" class="headerlink" title="如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。"></a>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</h4><blockquote>
-<p>categories:<br>    - [Diary, PlayStation]<br>    - [Diary, Games]<br>    - [Life]</p>
-</blockquote>
-<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 Life 是一个没有子分类的分类。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>tags</category>
-        <category>categories</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>官网学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>time</title>
-    <url>/%E9%9A%8F%E7%AC%94/time/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="kartjim’s-Blog"><a href="#kartjim’s-Blog" class="headerlink" title="kartjim’s Blog."></a>kartjim’s Blog.</h2><p>‘  or ` ?</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>time</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常见的图像文件格式</title>
-    <url>/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="常见的图像文件格式"><a href="#常见的图像文件格式" class="headerlink" title="常见的图像文件格式"></a>常见的图像文件格式</h1><h2 id="PSD、PDD格式"><a href="#PSD、PDD格式" class="headerlink" title="PSD、PDD格式"></a>PSD、PDD格式</h2><p> PSD、PDD格式是PS自身专用文件格式；</p>
-<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
-<li>能够保存图像数据的细小部分；</li>
-<li>PS打开快</li>
-<li>能够支持从线图到CMYK的所有图像类型；<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3></li>
-</ul>
-<ul>
-<li>文件容量大，所以占用内存大；</li>
-</ul>
-<ul>
-<li>由于这两种格式在其他图像处理软件不能很好兼容，所以通用性不强；<h2 id="TIFF格式"><a href="#TIFF格式" class="headerlink" title="TIFF格式"></a>TIFF格式</h2>TIFF是标签图像格式；<h3 id="advantage："><a href="#advantage：" class="headerlink" title="advantage："></a>advantage：</h3></li>
-<li>对于色彩通道图像友好；</li>
-<li>具有很强的可移植性；<h3 id="drawback："><a href="#drawback：" class="headerlink" title="drawback："></a>drawback：</h3></li>
-<li>结构要比其他格式复杂一点；<h2 id="GIF格式"><a href="#GIF格式" class="headerlink" title="GIF格式"></a>GIF格式</h2>动态图片格式；文件容量比较小，形成一种 8 bit 图形文件，所以可以用来缩短图形的加载时间；</li>
-</ul>
-<h2 id="JPEG格式"><a href="#JPEG格式" class="headerlink" title="JPEG格式"></a>JPEG格式</h2><p>个人觉得是最为常用的一种图形文件格式。<br>JPEG格式既是PS支持的格式，也是一个压缩格式中的“佼佼者”。<br>JPEG压缩比例很大，但相应的也会丢失部分数据。</p>
-<h2 id="EPS格式"><a href="#EPS格式" class="headerlink" title="EPS格式"></a>EPS格式</h2><ul>
-<li>可以用于Windows下几乎所有应用程序。</li>
-<li>EPS格式使用索引色彩，具有丰富色彩。</li>
-<li>还可以进行无损压缩。<h2 id="BMP格式"><a href="#BMP格式" class="headerlink" title="BMP格式"></a>BMP格式</h2>是Ai常用的文件格式，可以用来进行PS和Ai之间交换。<h2 id="PNG格式"><a href="#PNG格式" class="headerlink" title="PNG格式"></a>PNG格式</h2></li>
-</ul>
-<ul>
-<li>压缩比例高，生成文件体积小。</li>
-<li>支持透明色；<h1 id="图片格式的常用用途"><a href="#图片格式的常用用途" class="headerlink" title="图片格式的常用用途"></a>图片格式的常用用途</h1><h2 id="印刷：TIFF、EPS；"><a href="#印刷：TIFF、EPS；" class="headerlink" title="印刷：TIFF、EPS；"></a>印刷：TIFF、EPS；</h2><h2 id="Internet图像：GIF、JPEG、PNG；"><a href="#Internet图像：GIF、JPEG、PNG；" class="headerlink" title="Internet图像：GIF、JPEG、PNG；"></a>Internet图像：GIF、JPEG、PNG；</h2><h2 id="PS：PSD、PDD、TIFF；"><a href="#PS：PSD、PDD、TIFF；" class="headerlink" title="PS：PSD、PDD、TIFF；"></a>PS：PSD、PDD、TIFF；</h2></li>
-</ul>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>基本常识</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标签插件</title>
-    <url>/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p>
-<blockquote>
-<blockquote><p>content</p>
-<footer><strong>[author[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote>
-
-</blockquote>
-<p>如：</p>
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>......
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="在文章中插入代码。"><a href="#在文章中插入代码。" class="headerlink" title="在文章中插入代码。"></a>在文章中插入代码。</h3><p><em>别名： code</em><br>公式：</p>
-<figure class="highlight plain"><figcaption><span>[title] [lang:language] [url] [link text] [additional options]</span></figcaption><table><tr><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
-<p>普通的代码块:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure>
-<p>附加说明和网址：</p>
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-<h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><h3 id="引用其他文章的链接。"><a href="#引用其他文章的链接。" class="headerlink" title="引用其他文章的链接。"></a>引用其他文章的链接。</h3>
-<a href="#">Post not found: filename [title] [escape]</a>
-<p>官网：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></p>
-<h2 id="引用资源"><a href="#引用资源" class="headerlink" title="引用资源"></a>引用资源</h2><h3 id="引用文章的资源。"><a href="#引用文章的资源。" class="headerlink" title="引用文章的资源。"></a>引用文章的资源。</h3>
-
-
-
-<h3 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h3><h4 id="另一种形式的代码块，不同的是它使用三个反引号来包裹。"><a href="#另一种形式的代码块，不同的是它使用三个反引号来包裹。" class="headerlink" title="另一种形式的代码块，不同的是它使用三个反引号来包裹。"></a>另一种形式的代码块，不同的是它使用三个反引号来包裹。</h4><p><code>[language] [title] [url] [link text] code snippet</code></p>
-<h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
-      <tags>
-        <tag>随笔</tag>
-        <tag>官网学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文章摘要</title>
-    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
-<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
-</blockquote>
-<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>官网学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>终端机常用命令</title>
-    <url>/%E9%9A%8F%E7%AC%94/%E7%BB%88%E7%AB%AF%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="终端机常用命令"><a href="#终端机常用命令" class="headerlink" title="终端机常用命令"></a>终端机常用命令</h1><table>
-<thead>
-<tr>
-<th align="center">Windows</th>
-<th align="center">macOS/Linux</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">cd</td>
-<td align="center">cd</td>
-<td>切换目录</td>
-</tr>
-<tr>
-<td align="center">cd</td>
-<td align="center">pwd</td>
-<td>获取当前所在目录</td>
-</tr>
-<tr>
-<td align="center">dir</td>
-<td align="center">ls</td>
-<td>列出当前的文件列表</td>
-</tr>
-<tr>
-<td align="center">mkdir</td>
-<td align="center">mkdir</td>
-<td>创建新的目录</td>
-</tr>
-<tr>
-<td align="center">无</td>
-<td align="center">touch</td>
-<td>创建文件</td>
-</tr>
-<tr>
-<td align="center">copy</td>
-<td align="center">cp</td>
-<td>复制文件</td>
-</tr>
-<tr>
-<td align="center">move</td>
-<td align="center">mv</td>
-<td>移动文件</td>
-</tr>
-<tr>
-<td align="center">del</td>
-<td align="center">rm</td>
-<td>删除文件</td>
-</tr>
-<tr>
-<td align="center">cls</td>
-<td align="center">clear</td>
-<td>清屏</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>防止渲染README.md文件</title>
-    <url>/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo-amp-amp-github防止渲染README-md文件"><a href="#hexo-amp-amp-github防止渲染README-md文件" class="headerlink" title="hexo &amp;&amp; github防止渲染README.md文件"></a>hexo &amp;&amp; github防止渲染README.md文件</h1><h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>以前每次hexo写完博客</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
-<p> 推到github都会将README.md文件渲染成HTML文件，这样很不方便。<br> 于是就想着能不能修改配置文件 _config.yml 来避免将README.md文件渲染成HTML文件。<br> 终于在_config.yml 找到：<code>skip_render: </code><br> 改为<code>skip_render: README.md</code>即可</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网页学习-part01</title>
-    <url>/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/%E7%BD%91%E9%A1%B5%E5%AD%A6%E4%B9%A0-part01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前端学习-part01</p>
-<ul>
-<li>HTML定义了网页的内容</li>
-<li>CSS描述了网页的布局</li>
-<li>JavaScript 制作网页的行为</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>html</tag>
-        <tag>javascript</tag>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javascript4-math</title>
-    <url>/js/%E5%89%8D%E7%AB%AF/javascript4-math/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="javascript之Math对象"><a href="#javascript之Math对象" class="headerlink" title="javascript之Math对象"></a>javascript之Math对象</h2><p><em>与Date对象不同的是，Math对象不需要创建就可以使用</em></p>
-<h3 id="math常用方法"><a href="#math常用方法" class="headerlink" title="math常用方法"></a>math常用方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ceil(n)</td>
-<td>向上取整</td>
-</tr>
-<tr>
-<td>floor(n)</td>
-<td>向下取整</td>
-</tr>
-<tr>
-<td>max(a,b…)</td>
-<td>返回最大值</td>
-</tr>
-<tr>
-<td>min(a,b,…)</td>
-<td>返回最小值</td>
-</tr>
-<tr>
-<td>round(n)</td>
-<td>返回一个四舍五入的值</td>
-</tr>
-<tr>
-<td>random()</td>
-<td>返回一个0-1之间的随机数</td>
-</tr>
-</tbody></table>
-<h3 id="数学常数（Math属性）"><a href="#数学常数（Math属性）" class="headerlink" title="数学常数（Math属性）"></a>数学常数（Math属性）</h3><table>
-<thead>
-<tr>
-<th>常数</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>E</td>
-<td>e≈2.718 …</td>
-</tr>
-<tr>
-<td>LN2</td>
-<td>ln2</td>
-</tr>
-<tr>
-<td>LN10</td>
-<td>ln10</td>
-</tr>
-<tr>
-<td>LOG2E</td>
-<td>以2为底e的对数</td>
-</tr>
-<tr>
-<td>LOG10E</td>
-<td>以10为底e的对数</td>
-</tr>
-<tr>
-<td>PI</td>
-<td>π</td>
-</tr>
-<tr>
-<td>SQRT1_2</td>
-<td>2的平方根的倒数</td>
-</tr>
-<tr>
-<td>SQRT2</td>
-<td>2的平方根</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>js</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -1039,25 +275,789 @@ A --> F[... ...]</pre>
       </tags>
   </entry>
   <entry>
-    <title>CKEditor</title>
-    <url>/editor/CKEditor/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="CKEditor集成"><a href="#CKEditor集成" class="headerlink" title="CKEditor集成"></a>CKEditor集成</h2><script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/inline/ckeditor.js"></script>
-<h1>Inline editor</h1>
-<div id="editor">
-    <p>This is some sample content.</p>
-</div>
-<script>
-    InlineEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>]]></content>
+    <title>JavaScript文件后缀</title>
+    <url>/all/JavaScript%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JavaScript文件后缀"><a href="#JavaScript文件后缀" class="headerlink" title="JavaScript文件后缀"></a>JavaScript文件后缀</h1><h2 id="一般都为-js-后缀"><a href="#一般都为-js-后缀" class="headerlink" title="一般都为 .js 后缀"></a>一般都为 .js 后缀</h2><p>按照惯例，JavaScript代码文件的扩展名名.js。但从实际情况来看，胆码的名称可以使用任何扩展名，浏览器都会把其中的内容当做JavaScript代码来解释。</p>
+<h2 id="放在script标签里"><a href="#放在script标签里" class="headerlink" title="放在script标签里"></a>放在script标签里</h2><p> src属性 和 写在其中的代码 只能选一个。<br> 即，要么用src属性导入，要么在其中写入代码。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KotLin - 包的定义与导入</title>
+    <url>/kotlin/KotLin-%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%AF%BC%E5%85%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="KotLin-包的定义与导入"><a href="#KotLin-包的定义与导入" class="headerlink" title="KotLin - 包的定义与导入"></a>KotLin - 包的定义与导入</h1><p>包的声明应处于源⽂件顶部：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> my.demo</span><br><span class="line"><span class="keyword">import</span> kotlin.text.*</span><br><span class="line"><span class="comment">// …… </span></span><br></pre></td></tr></table></figure>
+<p>⽬录与包的结构⽆需匹配：源代码可以在⽂件系统的任意位置。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>源⽂件通常以包声明开头：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printMessage</span><span class="params">()</span></span> &#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"><span class="comment">// ……</span></span><br></pre></td></tr></table></figure>
+<p>源⽂件所有内容（⽆论是类还是函数）都包含在声明的包内。 所以上例中 <code>printMessage()</code> 的全名是<br><code>org.example.printMessage</code> ， ⽽ <code>Message</code> 的全名是 <code>org.example.Message</code> 。</p>
+<p><a href="https://blog.csdn.net/moriafly/article/details/107279590">博客来自：</a>moriafly</p>
+]]></content>
       <categories>
-        <category>editor</category>
+        <category>kotlin</category>
       </categories>
       <tags>
-        <tag>editor</tag>
+        <tag>kotlin</tag>
+        <tag>andriod</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyBlog</title>
+    <url>/notes/MyBlog/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p> 我的第一个通过hexo创建的博客！</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>post</tag>
+        <tag>first</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TypeScript入门</title>
+    <url>/%E5%89%8D%E7%AB%AF/TypeScript%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="TypeScript-part01"><a href="#TypeScript-part01" class="headerlink" title="TypeScript-part01"></a>TypeScript-part01</h1><h2 id="TypeScript介绍"><a href="#TypeScript介绍" class="headerlink" title="TypeScript介绍"></a>TypeScript介绍</h2><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p> <em>程序运行的一般步骤：</em></p>
+<ol>
+<li><p>解析程序：程序解析为AST（抽象句树法-abstract syntax tree）；</p>
+</li>
+<li><p>编译：将AWT编译成为字节码；</p>
+</li>
+<li><p>运行：计算字节码。</p>
+<h3 id="但是对于TS而言："><a href="#但是对于TS而言：" class="headerlink" title="但是对于TS而言："></a>但是对于TS而言：</h3><p>要先用编译器编译为JavaScript，然后执行以上步骤！</p>
+<h3 id="TS与JS区别"><a href="#TS与JS区别" class="headerlink" title="TS与JS区别"></a>TS与JS区别</h3><blockquote>
+<p>JavaScript是动态绑定类型；<br>TypeScript是静态绑定类型。</p>
+</blockquote>
+<blockquote>
+<p>JavaScript是弱类型语言；<br>TypeScript是渐进式类型语言。</p>
+</blockquote>
+<blockquote>
+<p>JavaScript会自动转换类型；<br>TypeScript会检查类型，并报错。</p>
+</blockquote>
+<h2 id="TypeScript配置"><a href="#TypeScript配置" class="headerlink" title="TypeScript配置"></a>TypeScript配置</h2></li>
+</ol>
+<ul>
+<li>新建一个文件夹</li>
+<li>初始化npm：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></li>
+<li>安装TSC、TSLint、NodeJS的类型声明<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save-dev typescript tslint @types/node</span><br></pre></td></tr></table></figure>
+<h3 id="最好安装一下全局"><a href="#最好安装一下全局" class="headerlink" title="最好安装一下全局*"></a>最好安装一下全局*</h3><h4 id="Locally-in-your-project"><a href="#Locally-in-your-project" class="headerlink" title="Locally in your project."></a>Locally in your project.</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -D typescript</span><br><span class="line">npm install -D ts-node</span><br></pre></td></tr></table></figure>
+<h4 id="Or-globally-with-TypeScript"><a href="#Or-globally-with-TypeScript" class="headerlink" title="Or globally with TypeScript."></a>Or globally with TypeScript.</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g typescript</span><br><span class="line">npm install -g ts-node</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="TypeScript创建一个简单的程序"><a href="#TypeScript创建一个简单的程序" class="headerlink" title="TypeScript创建一个简单的程序"></a>TypeScript创建一个简单的程序</h2></li>
+</ul>
+<ol>
+<li>在根目录下新建tsconfig.json 文件，写入：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;lib&quot;</span>: [<span class="string">&quot;es6&quot;</span>],</span><br><span class="line">		<span class="attr">&quot;module&quot;</span>: <span class="string">&quot;commonjs&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;outDir&quot;</span>: <span class="string">&quot;dist&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;sourceMap&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">&quot;strict&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">&quot;target&quot;</span>: <span class="string">&quot;es6&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">&quot;include&quot;</span>: [</span><br><span class="line">	<span class="string">&quot;src&quot;</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体配置请看<a href="https://www.typescriptlang.org/docs/handbook">官方文档</a></p>
+<ol start="2">
+<li>新建tslint.json文件，写入：<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;defaultSeverity&quot;</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;tslint:recommended&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;semicolon&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;trailing-comma&quot;</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+或者使用命令行：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tslint --init</span><br></pre></td></tr></table></figure></li>
+<li>最后新建src文件夹及其之下的index.ts<br>试着写入代码：<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hello TypeScript!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>编译： tsc ./src/index.ts<br>之后文件夹src下会出现编译好的js文件。</li>
+<li>运行（node）：node ./src/index.js</li>
+</ol>
+<p>成功运行第一个TypeScript项目！</p>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
+<li><a href="https://www.npmjs.com/package/ts-node">ts-node</a><br>更快编译、运行</li>
+<li>typescript-node-starter（github上面搜）<br>脚手架工具<hr>
+文章来自我的CSDN博客：<a href="https://blog.csdn.net/qq_46590483/article/details/111345714" title="" target="">CSND</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>/,./and../的区别</title>
+    <url>/%E9%9A%8F%E7%AC%94/and-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>/表示根目录<br>./表示当前目录<br>../表示父级目录</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>aplayer+meting添加播放列表</title>
+    <url>/music/aplayer-meting%E6%B7%BB%E5%8A%A0%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="aplayer-meting添加播放列表"><a href="#aplayer-meting添加播放列表" class="headerlink" title="aplayer+meting添加播放列表"></a>aplayer+meting添加播放列表</h1><h2 id="看官网"><a href="#看官网" class="headerlink" title="看官网"></a>看官网</h2><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></p>
+<h3 id="使用-hexo-tag-aplayer-插件"><a href="#使用-hexo-tag-aplayer-插件" class="headerlink" title="使用 hexo-tag-aplayer 插件"></a>使用 hexo-tag-aplayer 插件</h3><p>在博客根目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save hexo-tag-aplayer</span></span><br></pre></td></tr></table></figure>
+<p>下载hexo-tag-aplayer插件</p>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><a id="more"></a>
+
+<p>在任意一个Markdown文件里使用 形如以下代码即可使用播放音乐。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer title author url lrc:xxx %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="标签参数"><a href="#标签参数" class="headerlink" title="标签参数"></a>标签参数</h4><ul>
+<li>title : 曲目标题</li>
+<li>author: 曲目作者</li>
+<li>url: 音乐文件 URL 地址</li>
+<li>lrc:xxx: （可选）歌词文件 URL 地址<h5 id="歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323"><a href="#歌词URL前一定要加上-lrc-如：lrc-https-api-fczbl-vip-163-type-lrc-amp-id-189323" class="headerlink" title="歌词URL前一定要加上 lrc: 如：lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323"></a>歌词URL前一定要加上 <code>lrc:</code> 如：<code>lrc:https://api.fczbl.vip/163/?type=lrc&amp;id=189323</code></h5>更多参数请看官网：<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><h5 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer 断点 张敬轩 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;189323.mp3  https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;cover&amp;id&#x3D;189323 &quot;lrc:https:&#x2F;&#x2F;api.fczbl.vip&#x2F;163&#x2F;?type&#x3D;lrc&amp;id&#x3D;189323&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"><a href="#各大平台音乐的歌曲、歌词、图片查找方法自己百度。" class="headerlink" title="各大平台音乐的歌曲、歌词、图片查找方法自己百度。"></a>各大平台音乐的歌曲、歌词、图片查找方法自己百度。</h4><h3 id="使用meting"><a href="#使用meting" class="headerlink" title="使用meting"></a>使用meting</h3><h4 id="hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上"><a href="#hexo-tag-aplayer-插件自带meting，只需要在hexo配置文件下自己加上" class="headerlink" title="hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上"></a>hexo-tag-aplayer 插件自带meting，只需要在hexo配置文件下自己加上</h4><em>（注意不是你的主题配置文件）</em><blockquote>
+<p>aplayer:<br> meting: true</p>
+</blockquote>
+就行<h4 id="然后在任意一个Markdown文件里使用"><a href="#然后在任意一个Markdown文件里使用" class="headerlink" title="然后在任意一个Markdown文件里使用"></a>然后在任意一个Markdown文件里使用</h4>实例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;2410869513&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br></pre></td></tr></table></figure>
+即可使用meting<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4>
+    <div id="aplayer-RskQredn" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+<h5 id="更多参数请看官网："><a href="#更多参数请看官网：" class="headerlink" title="更多参数请看官网："></a>更多参数请看官网：</h5><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E6%92%AD%E6%94%BE%E5%88%97%E8%A1%A8">aplayer中文文档</a><br><a href="https://github.com/metowolf/MetingJS/tree/v1.2">MetingJS</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>music</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fancybox</title>
+    <url>/all/fancybox/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="fancybox效果"><a href="#fancybox效果" class="headerlink" title="fancybox效果"></a>fancybox效果</h1><p>设置fancybox: true即可？</p>
+<h2 id="photo"><a href="#photo" class="headerlink" title="photo:"></a>photo:</h2><p>图片来源：<a href="https://blog.smackgg.cn/2015/05/25/newHexo">https://blog.smackgg.cn/2015/05/25/newHexo</a><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" alt="girl"><br><img data-src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" alt="book"></p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/default/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>default</category>
+      </categories>
+      <tags>
+        <tag>default</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo插入图片</title>
+    <url>/%E9%9A%8F%E7%AC%94/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo插入图片"><a href="#hexo插入图片" class="headerlink" title="hexo插入图片"></a>hexo插入图片</h1><p><img data-src="/images/clouds.jpg" alt="sky"></p>
+<blockquote>
+<p>将图片放在 source/images 文件夹中，<br>然后通过 ![ ](/images/image.jpg) 的方法访问它们。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript3-日期和时间</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/javascript3-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>JavaScript中时间和日期对象和java类似，都是Date对象。且都需要进行创建Date对象才能使用。</p>
+<h3 id="当前时间和日期"><a href="#当前时间和日期" class="headerlink" title="当前时间和日期"></a>当前时间和日期</h3><p>新建一个Date对象：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
+<p>date就是一个Date对象，包含创建对象时的日期和时间信息。<br>date具有一些可以操作日期和时间的方法，如：</p>
+<a id="more"></a>
+
+<h4 id="获取年月日"><a href="#获取年月日" class="headerlink" title="获取年月日"></a>获取年月日</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//FullYear();是四位数的年份，如2021;而year();是二位数的年份；为了不引起舞蹈，一般使用FullYear();</span></span><br><span class="line"><span class="keyword">var</span> year = date.getFullYear(); </span><br><span class="line"><span class="comment">//获取的月份是从0-11的数字，需要加上1才是真正的月份，如11表示12月。</span></span><br><span class="line"><span class="keyword">var</span> month = date.getMonth();</span><br><span class="line"><span class="comment">//获取日期，1-31</span></span><br><span class="line"><span class="keyword">var</span> dates = date.getDate();</span><br><span class="line"><span class="comment">//获取星期，0-6，0表示周日，其它正常。</span></span><br><span class="line"><span class="keyword">var</span> day = date.getDay();</span><br></pre></td></tr></table></figure>
+<h4 id="获取几点几分"><a href="#获取几点几分" class="headerlink" title="获取几点几分"></a>获取几点几分</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> hours= date.getHours();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> minute = date.getMinutes();</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> seconds = date.getSeconds();</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<h4 id="得到当前具体时间"><a href="#得到当前具体时间" class="headerlink" title="得到当前具体时间"></a>得到当前具体时间</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-9 10:57:16</span><br></pre></td></tr></table></figure>
+<h3 id="创建指定日期和时间的Date对象"><a href="#创建指定日期和时间的Date对象" class="headerlink" title="创建指定日期和时间的Date对象"></a>创建指定日期和时间的Date对象</h3><p>创建Date对象时，给Date对象传参即可创建指定日期和时间的Date对象。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指定从1970-1-1到程序执行时的毫秒数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(ms) </span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用日期字符串</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">String</span>-date)</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;January  9,2021 11:09:16&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//使用每个参数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year,month,day,hour,minute,seconds,ms);</span><br><span class="line"><span class="comment">// 靠后的参数可以省略，默认为0。</span></span><br></pre></td></tr></table></figure>
+<h3 id="编辑Date对象"><a href="#编辑Date对象" class="headerlink" title="编辑Date对象"></a>编辑Date对象</h3><h4 id="设置自定义时间和日期"><a href="#设置自定义时间和日期" class="headerlink" title="设置自定义时间和日期"></a>设置自定义时间和日期</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//更改 为当月23号</span></span><br><span class="line">date.setDate(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+<p>其它参数同理。<br>注意：</p>
+<ul>
+<li><p><strong>设置新的日期之后，之前获取的日期不会变化！</strong><br>需要重新获取 dates = date.getDate();<br>或者直接输出 date.getDate()</p>
+</li>
+<li><p><em>设置月份的时候要注意，因为月份并不是真正的月份，而是小一个数！</em></p>
+</li>
+<li><p>更改月份或者日期时，星期几是由设置之后决定的（设置前获取的星期不是）。</p>
+</li>
+</ul>
+<h4 id="转换格式输出"><a href="#转换格式输出" class="headerlink" title="转换格式输出"></a>转换格式输出</h4><p>手动控制日期和时间的输出顺序</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+dates+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+minute+<span class="string">&quot;:&quot;</span>+seconds);</span><br></pre></td></tr></table></figure>
+<p>要先获得各个参数，还要自己排序输出，比较麻烦。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">2021-1-23 11:16:34</span><br></pre></td></tr></table></figure>
+<p>利用 <code>toDateString()</code> 方法可以把日期转换格式，并不需要自己一个个获取单个参数，直接输出可以更容易理解的日期。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toDateString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">Sat Jan 23 2021</span><br></pre></td></tr></table></figure>
+<p>同理，<code>toTimeString()</code>是另外一种方式。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(date.toTimeString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Running] node &quot;e:\hexo\kartjim\test.js&quot;</span><br><span class="line">11:16:34 GMT+0800 (GMT+08:00)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript4-math</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/javascript4-math/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="javascript之Math对象"><a href="#javascript之Math对象" class="headerlink" title="javascript之Math对象"></a>javascript之Math对象</h2><p><em>与Date对象不同的是，Math对象不需要创建就可以使用</em></p>
+<h3 id="math常用方法"><a href="#math常用方法" class="headerlink" title="math常用方法"></a>math常用方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ceil(n)</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>floor(n)</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>max(a,b…)</td>
+<td>返回最大值</td>
+</tr>
+<tr>
+<td>min(a,b,…)</td>
+<td>返回最小值</td>
+</tr>
+<tr>
+<td>round(n)</td>
+<td>返回一个四舍五入的值</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>返回一个0-1之间的随机数</td>
+</tr>
+</tbody></table>
+<h3 id="数学常数（Math属性）"><a href="#数学常数（Math属性）" class="headerlink" title="数学常数（Math属性）"></a>数学常数（Math属性）</h3><table>
+<thead>
+<tr>
+<th>常数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E</td>
+<td>e≈2.718 …</td>
+</tr>
+<tr>
+<td>LN2</td>
+<td>ln2</td>
+</tr>
+<tr>
+<td>LN10</td>
+<td>ln10</td>
+</tr>
+<tr>
+<td>LOG2E</td>
+<td>以2为底e的对数</td>
+</tr>
+<tr>
+<td>LOG10E</td>
+<td>以10为底e的对数</td>
+</tr>
+<tr>
+<td>PI</td>
+<td>π</td>
+</tr>
+<tr>
+<td>SQRT1_2</td>
+<td>2的平方根的倒数</td>
+</tr>
+<tr>
+<td>SQRT2</td>
+<td>2的平方根</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js奇淫技巧1</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A71/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><ul>
+<li>var</li>
+</ul>
+<p>JavaScript有两种作用域：全局 / 局部作用域</p>
+<blockquote>
+<p>var声明的变量 在函数内部声明的变量只存在于函数内部</p>
+</blockquote>
+<blockquote>
+<p>用 this 可以调用全局作用域</p>
+</blockquote>
+<ul>
+<li>let</li>
+</ul>
+<a id="more"></a>
+
+<p>为了实现变量块级作用域，js用一个<code>let</code>关键字声明具有严格块级作用域的变量。</p>
+<ul>
+<li>const</li>
+</ul>
+<p>const关键字用于声明一个常量，使常量不能被重新赋值或重新声明。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>先看一般的匿名函数：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">&quot;Hello&quot;</span>);&#125;;</span><br></pre></td></tr></table></figure>
+<p>箭头函数（arrow function）可以使匿名函数更加简洁：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function">() =&gt;</span> alert(<span class="string">&#x27;Hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只有包含多个表达式，才需要花括号。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">myFunc = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">     x += y;</span><br><span class="line">     alert(x); </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>=&gt;符号通常被称为胖箭头符号</p>
+</blockquote>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>要指定一个默认参数，只要给函数定义中的参数一个默认值就行。<br>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">warn</span>(<span class="params">temp,subtitle=<span class="string">&#x27;--warning&#x27;</span></span>)</span>&#123;</span><br><span class="line">    alert(subtitle+<span class="string">&quot; , &quot;</span>+temp+<span class="string">&quot; ;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在函数定义中，一般将有默认值的参数，放在没有默认值的参数后面</strong></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js奇淫技巧2</title>
+    <url>/js/%E5%89%8D%E7%AB%AF/js%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A72/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><pre class="mermaid">graph LR
+A[window] --> B[document]
+A --> C[location]
+A --> D[history]
+A --> E[navigator]
+A --> F[... ...]</pre>
+
+<p>层级数最顶端的是浏览器window对象，它是页面的DOM表示中一切对象的父对象。<br>window对象有一些子对象：</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>任何HTML页面都会创建一个document对象，包含全部HTML内容和其它构成页面的资源。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h2><p>用  .  调用子对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"><span class="built_in">window</span>.alert</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="window对象下的常用方法"><a href="#window对象下的常用方法" class="headerlink" title="window对象下的常用方法"></a>window对象下的常用方法</h3><p><em>调用window对象下的方法可省略 window ；<br>即 将 <code>window.alert();</code> 简写为 <code>alert();</code></em></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert();</span><br><span class="line">confirm(); <span class="comment">//有选择的两个按钮</span></span><br><span class="line">prompt(); <span class="comment">//允许输入信息，并作为返回值</span></span><br></pre></td></tr></table></figure>
+<h3 id="document对象下的常用方法"><a href="#document对象下的常用方法" class="headerlink" title="document对象下的常用方法"></a>document对象下的常用方法</h3><h4 id="获取标签节点"><a href="#获取标签节点" class="headerlink" title="获取标签节点"></a>获取标签节点</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> getElementById(id)</span><br><span class="line"><span class="number">2.</span> getElementsByName(name) </span><br><span class="line"><span class="number">3.</span> getElementsByTagName(tagname) </span><br></pre></td></tr></table></figure>
+<h4 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h4><p>可通过节点的 innerHTML 属性来访问文本节点的值，可以向HTML里写入文字。<br>HTML：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;textbox&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>your txt<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDom = <span class="built_in">document</span>.getElementById(<span class="string">&quot;textbox&quot;</span>).innerHTML = <span class="string">&quot;&lt;p&gt;更改后的内容&lt;/p&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="history对象下的常用方法"><a href="#history对象下的常用方法" class="headerlink" title="history对象下的常用方法"></a>history对象下的常用方法</h3><p>history对象只有一个属性，就是它的长度，代表用户访问过的页面的数量。</p>
+<blockquote>
+<p>history.length</p>
+</blockquote>
+<p>history对象有三个方法：forward()、backward()、go()。</p>
+<ul>
+<li>forward()、backward()对应单页浏览器中前进和后退。</li>
+<li>go()跳转到历史记录里的相对位置，正数是前进，负数是后退。</li>
+</ul>
+<h3 id="location对象下的常用方法"><a href="#location对象下的常用方法" class="headerlink" title="location对象下的常用方法"></a>location对象下的常用方法</h3><p>location对象包含当前加载页面的URL信息。<br>比如：<a href="http://www.baidu.com/">http://www.baidu.com</a><br>一般组成部分：</p>
+<blockquote>
+<p>[协议]//[主机名]:[端口]/[路径][搜索][hash]</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">location.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span>; <span class="comment">//直接设置对象的herf属性</span></span><br><span class="line">location.replace(<span class="string">&#x27;http://www.baidu.com&#x27;</span>);<span class="comment">// 替换旧的URL</span></span><br><span class="line">location.reload ();  <span class="comment">//刷新页面</span></span><br></pre></td></tr></table></figure>
+<h3 id="navigator对象下的常用方法"><a href="#navigator对象下的常用方法" class="headerlink" title="navigator对象下的常用方法"></a>navigator对象下的常用方法</h3><p>navigator对象包含了浏览器 程序本身的数据。<br>如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//输出浏览器名字,可能会输出错误的浏览器名字！</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(navigator.appCodeName);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kotlin-String</title>
+    <url>/kotlin/kotlin-String/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Kotlin-字符串"><a href="#Kotlin-字符串" class="headerlink" title="Kotlin - 字符串"></a>Kotlin - 字符串</h1><p>字符串只是一个字符串序列，包含在双引号中。在 Kotlin 中，字符串由类型 <code>String</code> 表示。它是实践中使用最广泛的数据类型之一。</p>
+<h4 id="1-声明"><a href="#1-声明" class="headerlink" title="1. 声明"></a>1. 声明</h4><p>声明字符串变量：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str: String = <span class="string">&quot;Hello Kotlin&quot;</span></span><br></pre></td></tr></table></figure>
+<p>当然，因为 Kotlin 出色的类型推断，您常常无需表明类型：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;Hello Kotlin&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-字符串的长度"><a href="#2-字符串的长度" class="headerlink" title="2. 字符串的长度"></a>2. 字符串的长度</h4><p>您可以获取访问属性的字符串中的字符数。此属性具有类型的值。<code>length</code> <code>Int</code></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> language = <span class="string">&quot;Kotlin&quot;</span></span><br><span class="line">println(language.length) <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> empty = <span class="string">&quot;&quot;</span></span><br><span class="line">println(empty.length) <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 关于汉字的长度</span></span><br><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;你好&quot;</span></span><br><span class="line">println(str.length) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-访问字符"><a href="#3-访问字符" class="headerlink" title="3. 访问字符"></a>3. 访问字符</h4><p>字符串的元素是单个字符，可以通过其索引访问。字符串的第一个元素具有索引 0 。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> greeting = <span class="string">&quot;Hello&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">val</span> first = greeting[<span class="number">0</span>]  <span class="comment">// &#x27;H&#x27;</span></span><br><span class="line"><span class="keyword">val</span> second = greeting[<span class="number">1</span>] <span class="comment">// &#x27;e&#x27;</span></span><br><span class="line"><span class="keyword">val</span> five = greeting[<span class="number">4</span>]   <span class="comment">// &#x27;o&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>最后一个元素的索引等于字符串的长度减去 1 。对于字符串，最后一个元素为 。其索引为 4 ，因为字符串的长度为  5 。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> last = greeting[greeting.length - <span class="number">1</span>] <span class="comment">// &#x27;o&#x27;</span></span><br><span class="line"><span class="keyword">val</span> prelast = greeting[greeting.length - <span class="number">2</span>] <span class="comment">// &#x27;l&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>Kotlin 提供了几种访问字符串的第一个字符和最后一个字符的便捷方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">println(greeting.first())   <span class="comment">// &#x27;H&#x27;</span></span><br><span class="line">println(greeting.last())    <span class="comment">// &#x27;o&#x27;</span></span><br><span class="line">println(greeting.lastIndex) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<p>您可以使用此功能编写更具可读性的代码。<br>还可以用 for 循环迭代字符串:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (c <span class="keyword">in</span> str) &#123;</span><br><span class="line">    println(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-不变性"><a href="#4-不变性" class="headerlink" title="4. 不变性"></a>4. 不变性</h4><p>字符串是不可变的，意思是，一旦创建字符串总是相同的。不能修改字符串的元素。因此，下面的示例不起作用：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;string&quot;</span></span><br><span class="line">str[<span class="number">3</span>] = <span class="string">&#x27;o&#x27;</span> <span class="comment">// an error here!</span></span><br></pre></td></tr></table></figure>
+<p>但这个工作：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;string&quot;</span></span><br><span class="line">str = <span class="string">&quot;strong&quot;</span></span><br></pre></td></tr></table></figure>
+<p>实际上，我们不会修改变量中的存储值。相反，我们为它分配一个新值。因此，这是绝对合法的。这是使用字符串的方法之一。如果需要修改字符串，只需创建一个新字符串。</p>
+<h4 id="5-连接字符串"><a href="#5-连接字符串" class="headerlink" title="5. 连接字符串"></a>5. 连接字符串</h4><p>可以使用运算符连接两个字符串：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str1 = <span class="string">&quot;ab&quot;</span></span><br><span class="line"><span class="keyword">val</span> str2 = <span class="string">&quot;cde&quot;</span></span><br><span class="line"><span class="keyword">val</span> result = str1 + str2 <span class="comment">// &quot;abcde&quot;</span></span><br></pre></td></tr></table></figure>
+<p>当我们连接两个字符串时，将创建一个新字符串（因为字符串是不可变的）。</p>
+<p>可以在同一表达式中串联多个字符串：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> firstName = <span class="string">&quot;John&quot;</span></span><br><span class="line"><span class="keyword">val</span> lastName = <span class="string">&quot;Smith&quot;</span></span><br><span class="line"><span class="keyword">val</span> fullName = firstName + <span class="string">&quot; &quot;</span> + lastName</span><br></pre></td></tr></table></figure>
+<p>注意，不一样，因为串联不是换向操作（不像添加）。<br>将值追加到字符串<br>该运算符还适用于将不同类型的值附加到字符串。该值将自动转换为字符串，然后串联到目标字符串。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;abc&quot;</span> + <span class="number">10</span> + <span class="literal">true</span></span><br><span class="line">println(str) <span class="comment">// abc10true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> code = <span class="string">&quot;123&quot;</span> + <span class="number">456</span> + <span class="string">&quot;789&quot;</span></span><br><span class="line">println(code) <span class="comment">// 123456789</span></span><br></pre></td></tr></table></figure>
+<p>表达式必须始终以字符串为起点，请看下面的示例。它不工作，因为第一个操作数是一个数字：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="number">10</span> + <span class="string">&quot;abc&quot;</span> <span class="comment">// an error here!</span></span><br></pre></td></tr></table></figure>
+<p>下一个可能会令您大吃一惊：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> str = <span class="string">&quot;abc&quot;</span> + <span class="number">11</span> + <span class="number">22</span></span><br><span class="line">println(str) <span class="comment">// abc1122</span></span><br></pre></td></tr></table></figure>
+<p>为什么会这样？因为首先它追加到字符串，然后追加到字符串。</p>
+<h4 id="6-比较字符串"><a href="#6-比较字符串" class="headerlink" title="6. 比较字符串"></a>6. 比较字符串</h4><p>要比较两个字符串，请使用（相等）和（不等于）运算符。两个运算符都使用两个字符串作为操作数，并返回类型 （或 ） 的值。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> first = <span class="string">&quot;first&quot;</span></span><br><span class="line"><span class="keyword">val</span> second = <span class="string">&quot;second&quot;</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;first&quot;</span></span><br><span class="line"> </span><br><span class="line">println(first == str)  <span class="comment">// true</span></span><br><span class="line">println(first == second) <span class="comment">// false</span></span><br><span class="line">println(first != second) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-字符串模板"><a href="#7-字符串模板" class="headerlink" title="7. 字符串模板"></a>7. 字符串模板</h4><p>字符串字面值可以包含模板表达式 ，即一些小段代码，会求值并把结果合并到字符串中。 模板表达式以美元符（$）开头，由一个简单的名字构成:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> i = <span class="number">10</span></span><br><span class="line">println(<span class="string">&quot;i = <span class="variable">$i</span>&quot;</span>) <span class="comment">// 输出“i = 10”</span></span><br></pre></td></tr></table></figure>
+<p>或者用花括号括起来的任意表达式:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> s = <span class="string">&quot;abc&quot;</span></span><br><span class="line">println(<span class="string">&quot;<span class="variable">$s</span>.length is <span class="subst">$&#123;s.length&#125;</span>&quot;</span>) <span class="comment">// 输出“abc.length is 3”</span></span><br></pre></td></tr></table></figure>
+<p>原始字符串与转义字符串内部都支持模板。 如果你需要在原始字符串中表示字面值 $ 字符（它不支持反斜杠转义），你可以用下列语法：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> price = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;<span class="string">&#x27;$&#x27;</span>&#125;</span>9.99</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="8-其他"><a href="#8-其他" class="headerlink" title="8. 其他"></a>8. 其他</h4><p>原始字符串 使用三个引号（”””）分界符括起来，内部没有转义并且可以包含换行以及任何其他字符:</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> text = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    for (c in &quot;foo&quot;)</span></span><br><span class="line"><span class="string">        print(c)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>你可以通过 <code>trimMargin()</code> 函数去除前导空格：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> text = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    |Tell me and I forget.</span></span><br><span class="line"><span class="string">    |Teach me and I remember.</span></span><br><span class="line"><span class="string">    |Involve me and I learn.</span></span><br><span class="line"><span class="string">    |(Benjamin Franklin)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>.trimMargin()</span><br></pre></td></tr></table></figure>
+<p>默认 <code>|</code> 用作边界前缀，但你可以选择其他字符并作为参数传入，比如 <code>trimMargin(&quot;&gt;&quot;)</code> 。<br><a href="https://blog.csdn.net/moriafly/article/details/107165523">文章出处</a></p>
+<p>*[文章出处]:moriafly</p>
+]]></content>
+      <categories>
+        <category>kotlin</category>
+      </categories>
+      <tags>
+        <tag>kotlin</tag>
+        <tag>andriod</tag>
+        <tag>first</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>music-aplayer</title>
+    <url>/music/music-aplayer/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="aplayer-插件音乐"><a href="#aplayer-插件音乐" class="headerlink" title="aplayer 插件音乐"></a>aplayer 插件音乐</h2><a id="more"></a>
+
+        <div id="aplayer-qRnQxjZL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-qRnQxjZL"),
+            narrow: false,
+            autoplay: false,
+            showlrc: 3,
+            music: {
+              title: "夜车",
+              author: "曾轶可",
+              url: "https://music.163.com/song/media/outer/url?id=340376.mp3",
+              pic: "https://api.fczbl.vip/163/?type=cover&id=340376",
+              lrc: "https://api.fczbl.vip/163/?type=lrc&id=340376"
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+
+        <div id="aplayer-UsYMeiYF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-UsYMeiYF"),
+            narrow: false,
+            autoplay: false,
+            showlrc: 3,
+            music: {
+              title: "断点",
+              author: "张敬轩",
+              url: "https://music.163.com/song/media/outer/url?id=189323.mp3",
+              pic: "https://api.fczbl.vip/163/?type=cover&id=189323",
+              lrc: "https://api.fczbl.vip/163/?type=lrc&id=189323"
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>]]></content>
+      <categories>
+        <category>music</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>music</title>
+    <url>/music/music/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="password-123456"><a href="#password-123456" class="headerlink" title="password: 123456"></a>password: 123456</h2><a id="more"></a>
+
+    <div id="aplayer-JlyqsiZI" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="2410869513" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>music</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>hexo</tag>
+        <tag>password</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>new</title>
+    <url>/all/new/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="issue："><a href="#issue：" class="headerlink" title="issue："></a>issue：</h2><ul>
+<li>leancloud阅读量异常</li>
+<li>添加音乐</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>time</title>
+    <url>/%E9%9A%8F%E7%AC%94/time/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="kartjim’s-Blog"><a href="#kartjim’s-Blog" class="headerlink" title="kartjim’s Blog."></a>kartjim’s Blog.</h2><p>‘  or ` ?</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>time</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/hexo/%E5%88%86%E7%B1%BB-12.15/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="分类方法的分歧"><a href="#分类方法的分歧" class="headerlink" title="分类方法的分歧"></a>分类方法的分歧</h3><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p>
+<blockquote>
+<p>categories:<br>    - Diary<br>    - Life</p>
+</blockquote>
+<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<h4 id="如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。"><a href="#如果你需要为文章添加多个分类，可以尝试以下-list-中的方法。" class="headerlink" title="如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。"></a>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</h4><blockquote>
+<p>categories:<br>    - [Diary, PlayStation]<br>    - [Diary, Games]<br>    - [Life]</p>
+</blockquote>
+<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 Life 是一个没有子分类的分类。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>tags</category>
+        <category>categories</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的图像文件格式</title>
+    <url>/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="常见的图像文件格式"><a href="#常见的图像文件格式" class="headerlink" title="常见的图像文件格式"></a>常见的图像文件格式</h1><h2 id="PSD、PDD格式"><a href="#PSD、PDD格式" class="headerlink" title="PSD、PDD格式"></a>PSD、PDD格式</h2><p> PSD、PDD格式是PS自身专用文件格式；</p>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
+<li>能够保存图像数据的细小部分；</li>
+<li>PS打开快</li>
+<li>能够支持从线图到CMYK的所有图像类型；<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3></li>
+</ul>
+<ul>
+<li>文件容量大，所以占用内存大；</li>
+</ul>
+<ul>
+<li>由于这两种格式在其他图像处理软件不能很好兼容，所以通用性不强；<h2 id="TIFF格式"><a href="#TIFF格式" class="headerlink" title="TIFF格式"></a>TIFF格式</h2>TIFF是标签图像格式；<h3 id="advantage："><a href="#advantage：" class="headerlink" title="advantage："></a>advantage：</h3></li>
+<li>对于色彩通道图像友好；</li>
+<li>具有很强的可移植性；<h3 id="drawback："><a href="#drawback：" class="headerlink" title="drawback："></a>drawback：</h3></li>
+<li>结构要比其他格式复杂一点；<h2 id="GIF格式"><a href="#GIF格式" class="headerlink" title="GIF格式"></a>GIF格式</h2>动态图片格式；文件容量比较小，形成一种 8 bit 图形文件，所以可以用来缩短图形的加载时间；</li>
+</ul>
+<h2 id="JPEG格式"><a href="#JPEG格式" class="headerlink" title="JPEG格式"></a>JPEG格式</h2><p>个人觉得是最为常用的一种图形文件格式。<br>JPEG格式既是PS支持的格式，也是一个压缩格式中的“佼佼者”。<br>JPEG压缩比例很大，但相应的也会丢失部分数据。</p>
+<h2 id="EPS格式"><a href="#EPS格式" class="headerlink" title="EPS格式"></a>EPS格式</h2><ul>
+<li>可以用于Windows下几乎所有应用程序。</li>
+<li>EPS格式使用索引色彩，具有丰富色彩。</li>
+<li>还可以进行无损压缩。<h2 id="BMP格式"><a href="#BMP格式" class="headerlink" title="BMP格式"></a>BMP格式</h2>是Ai常用的文件格式，可以用来进行PS和Ai之间交换。<h2 id="PNG格式"><a href="#PNG格式" class="headerlink" title="PNG格式"></a>PNG格式</h2></li>
+</ul>
+<ul>
+<li>压缩比例高，生成文件体积小。</li>
+<li>支持透明色；<h1 id="图片格式的常用用途"><a href="#图片格式的常用用途" class="headerlink" title="图片格式的常用用途"></a>图片格式的常用用途</h1><h2 id="印刷：TIFF、EPS；"><a href="#印刷：TIFF、EPS；" class="headerlink" title="印刷：TIFF、EPS；"></a>印刷：TIFF、EPS；</h2><h2 id="Internet图像：GIF、JPEG、PNG；"><a href="#Internet图像：GIF、JPEG、PNG；" class="headerlink" title="Internet图像：GIF、JPEG、PNG；"></a>Internet图像：GIF、JPEG、PNG；</h2><h2 id="PS：PSD、PDD、TIFF；"><a href="#PS：PSD、PDD、TIFF；" class="headerlink" title="PS：PSD、PDD、TIFF；"></a>PS：PSD、PDD、TIFF；</h2></li>
+</ul>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>基本常识</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章摘要</title>
+    <url>/all/%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要:"></a>文章摘要:</h2><h4 id="在需要显示摘要的地方添加如下代码即可："><a href="#在需要显示摘要的地方添加如下代码即可：" class="headerlink" title="在需要显示摘要的地方添加如下代码即可："></a>在需要显示摘要的地方添加如下代码即可：</h4><blockquote>
+<p>以上是摘要<br>&lt;!–more–&gt;<br>以下是余下全文</p>
+</blockquote>
+<h4 id="more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。"><a href="#more以上内容即是文章摘要，在主页显示，more以下内容点击『-more-gt-gt-』链接打开全文才显示。" class="headerlink" title="more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。"></a>more以上内容即是文章摘要，在主页显示，more以下内容点击『 more &gt;&gt; 』链接打开全文才显示。</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo中所有文件的编码格式均是UTF-8。</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>标签插件</title>
+    <url>/all/%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><h3 id="在文章中插入引言，可包含作者、来源和标题。"><a href="#在文章中插入引言，可包含作者、来源和标题。" class="headerlink" title="在文章中插入引言，可包含作者、来源和标题。"></a>在文章中插入引言，可包含作者、来源和标题。</h3><p><strong><em>别号： quote</em></strong></p>
+<blockquote>
+<blockquote><p>content</p>
+<footer><strong>[author[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote>
+
+</blockquote>
+<p>如：</p>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>......
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="在文章中插入代码。"><a href="#在文章中插入代码。" class="headerlink" title="在文章中插入代码。"></a>在文章中插入代码。</h3><p><em>别名： code</em><br>公式：</p>
+<figure class="highlight plain"><figcaption><span>[title] [lang:language] [url] [link text] [additional options]</span></figcaption><table><tr><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
+<p>普通的代码块:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure>
+<p>附加说明和网址：</p>
+<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><h3 id="引用其他文章的链接。"><a href="#引用其他文章的链接。" class="headerlink" title="引用其他文章的链接。"></a>引用其他文章的链接。</h3>
+<a href="#">Post not found: filename [title] [escape]</a>
+<p>官网：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></p>
+<h2 id="引用资源"><a href="#引用资源" class="headerlink" title="引用资源"></a>引用资源</h2><h3 id="引用文章的资源。"><a href="#引用文章的资源。" class="headerlink" title="引用文章的资源。"></a>引用文章的资源。</h3>
+
+
+
+<h3 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h3><h4 id="另一种形式的代码块，不同的是它使用三个反引号来包裹。"><a href="#另一种形式的代码块，不同的是它使用三个反引号来包裹。" class="headerlink" title="另一种形式的代码块，不同的是它使用三个反引号来包裹。"></a>另一种形式的代码块，不同的是它使用三个反引号来包裹。</h4><p><code>[language] [title] [url] [link text] code snippet</code></p>
+<h2 id="文章摘要和截断"><a href="#文章摘要和截断" class="headerlink" title="文章摘要和截断"></a>文章摘要和截断</h2><h4 id="文章来自："><a href="#文章来自：" class="headerlink" title="文章来自："></a>文章来自：<a href="https://hexo.io/zh-cn/docs/tag-plugins" title="" target="">Hexo 3.8.0</a></h4>]]></content>
+      <tags>
+        <tag>随笔</tag>
+        <tag>官网学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终端机常用命令</title>
+    <url>/%E9%9A%8F%E7%AC%94/%E7%BB%88%E7%AB%AF%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="终端机常用命令"><a href="#终端机常用命令" class="headerlink" title="终端机常用命令"></a>终端机常用命令</h1><table>
+<thead>
+<tr>
+<th align="center">Windows</th>
+<th align="center">macOS/Linux</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">cd</td>
+<td align="center">cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td align="center">cd</td>
+<td align="center">pwd</td>
+<td>获取当前所在目录</td>
+</tr>
+<tr>
+<td align="center">dir</td>
+<td align="center">ls</td>
+<td>列出当前的文件列表</td>
+</tr>
+<tr>
+<td align="center">mkdir</td>
+<td align="center">mkdir</td>
+<td>创建新的目录</td>
+</tr>
+<tr>
+<td align="center">无</td>
+<td align="center">touch</td>
+<td>创建文件</td>
+</tr>
+<tr>
+<td align="center">copy</td>
+<td align="center">cp</td>
+<td>复制文件</td>
+</tr>
+<tr>
+<td align="center">move</td>
+<td align="center">mv</td>
+<td>移动文件</td>
+</tr>
+<tr>
+<td align="center">del</td>
+<td align="center">rm</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td align="center">cls</td>
+<td align="center">clear</td>
+<td>清屏</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页学习-part01</title>
+    <url>/%E5%89%8D%E7%AB%AF/%E9%9A%8F%E7%AC%94/%E7%BD%91%E9%A1%B5%E5%AD%A6%E4%B9%A0-part01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前端学习-part01</p>
+<ul>
+<li>HTML定义了网页的内容</li>
+<li>CSS描述了网页的布局</li>
+<li>JavaScript 制作网页的行为</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>html</tag>
+        <tag>javascript</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>防止渲染README.md文件</title>
+    <url>/%E5%89%8D%E7%AB%AF/%E9%98%B2%E6%AD%A2%E6%B8%B2%E6%9F%93README-md%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="hexo-amp-amp-github防止渲染README-md文件"><a href="#hexo-amp-amp-github防止渲染README-md文件" class="headerlink" title="hexo &amp;&amp; github防止渲染README.md文件"></a>hexo &amp;&amp; github防止渲染README.md文件</h1><h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>以前每次hexo写完博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+<p> 推到github都会将README.md文件渲染成HTML文件，这样很不方便。<br> 于是就想着能不能修改配置文件 _config.yml 来避免将README.md文件渲染成HTML文件。<br> 终于在_config.yml 找到：<code>skip_render: </code><br> 改为<code>skip_render: README.md</code>即可</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
