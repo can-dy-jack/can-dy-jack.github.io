@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>hexo中添加音乐</title>
+    <link href="/2021/10/15/music/"/>
+    <url>/2021/10/15/music/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span><div class="note note-info">            <p>图片：</p>          </div><p>找出：&amp;songmid=003IgzYb2zRkt1&amp;  其中003IgzYb2zRkt1即为歌曲id。</p><p><a href="https://i.y.qq.com/n2/m/playsong/index.html?ADTAG=cbshare&amp;_wv=1&amp;appshare=android_qq&amp;appsongtype=1&amp;appversion=10180010&amp;channelId=10036163&amp;hosteuin=owCq7wosNKE57v**&amp;openinqqmusic=1&amp;platform=11&amp;songmid=003IgzYb2zRkt1&amp;type=0">https://i.y.qq.com/n2/m/playsong/index.html?ADTAG=cbshare&amp;_wv=1&amp;appshare=android_qq&amp;appsongtype=1&amp;appversion=10180010&amp;channelId=10036163&amp;hosteuin=owCq7wosNKE57v%2A%2A&amp;openinqqmusic=1&amp;platform=11&amp;songmid=003IgzYb2zRkt1&amp;type=0</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>一、地球形状与地理坐标</title>
     <link href="/2021/10/15/navigation01/"/>
     <url>/2021/10/15/navigation01/</url>
