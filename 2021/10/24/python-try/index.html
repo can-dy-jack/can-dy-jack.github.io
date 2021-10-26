@@ -13,35 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="问题：
-
-
-
-
-
-
-渔业资源学：研究可捕种群的自然生长史。
-渔业资源：是指具有开发利用价值的鱼、虾、蟹、贝、藻和海兽类等经济动植物的总称；是渔业生产的基础。">
+  <meta name="description" content="python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误。">
   <meta name="author" content="kart jim">
   <meta name="keywords" content="knowledge">
-  <meta name="description" content="问题：       渔业资源学：研究可捕种群的自然生长史。 渔业资源：是指具有开发利用价值的鱼、虾、蟹、贝、藻和海兽类等经济动植物的总称；是渔业生产的基础。">
+  <meta name="description" content="python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="四、渔业资源学">
-<meta property="og:url" content="https://kartjim.top/2021/10/14/2021fish04/index.html">
+<meta property="og:title" content="python的try...catch...finally">
+<meta property="og:url" content="https://kartjim.top/2021/10/24/python-try/index.html">
 <meta property="og:site_name" content="陈科衡的知识库">
-<meta property="og:description" content="问题：       渔业资源学：研究可捕种群的自然生长史。 渔业资源：是指具有开发利用价值的鱼、虾、蟹、贝、藻和海兽类等经济动植物的总称；是渔业生产的基础。">
+<meta property="og:description" content="python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/08/30/odAfe9ycwug1vkr.png">
-<meta property="og:image" content="https://i.loli.net/2021/08/30/xM6iEPup7nbthLg.png">
-<meta property="article:published_time" content="2021-10-14T04:43:11.000Z">
-<meta property="article:modified_time" content="2021-10-26T11:50:57.764Z">
+<meta property="article:published_time" content="2021-10-24T08:11:07.000Z">
+<meta property="article:modified_time" content="2021-10-24T08:52:48.932Z">
 <meta property="article:author" content="kart jim">
-<meta property="article:tag" content="渔业导论">
-<meta property="article:tag" content="渔业资源学">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="try...catch...finally">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.loli.net/2021/08/30/odAfe9ycwug1vkr.png">
   
-  <title>四、渔业资源学 - 陈科衡的知识库</title>
+  <title>python的try...catch...finally - 陈科衡的知识库</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -194,12 +183,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/bg/2001462.jpg') no-repeat center center;
+         style="background: url('/img/bg/320526.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="四、渔业资源学">
+            <span class="h2" id="subtitle" title="python的try...catch...finally">
               
             </span>
 
@@ -214,8 +203,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-10-14 12:43" pubdate>
-        2021年10月14日 下午
+      <time datetime="2021-10-24 16:11" pubdate>
+        2021年10月24日 下午
       </time>
     </span>
   
@@ -225,7 +214,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      330 字
     </span>
   
 
@@ -234,7 +223,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      1 分钟
     </span>
   
 
@@ -271,155 +260,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">四、渔业资源学</h1>
+            <h1 style="display: none">python的try...catch...finally</h1>
             
             <div class="markdown-body">
-              <p>问题：</p>
-<ul>
-<li><p><img src="https://i.loli.net/2021/08/30/odAfe9ycwug1vkr.png" srcset="/img/loading.gif" lazyload alt="鱼类的认识"></p>
-</li>
-<li><p><img src="https://i.loli.net/2021/08/30/xM6iEPup7nbthLg.png" srcset="/img/loading.gif" lazyload alt="鱼类作用"></p>
-</li>
-</ul>
-<p>渔业资源学：研究可捕种群的自然生长史。</p>
-<p>渔业资源：是指具有开发利用价值的鱼、虾、蟹、贝、藻和海兽类等经济动植物的总称；是渔业生产的基础。</p>
-<span id="more"></span>
-<p>种群：（Population）</p>
-<ul>
-<li>是渔业生物学、水域生物群落组成、种间关系、生态系统研究的基本单元</li>
-<li>特定时间内占据特定空间的同种有机体的集合群。</li>
-<li>特征：<ul>
-<li>空间特征</li>
-<li>数量特征</li>
-<li>遗传特征</li>
-</ul>
-</li>
-</ul>
-<p>自然生活史：</p>
-<ul>
-<li><p>繁殖</p>
-</li>
-<li><p>摄食</p>
-</li>
-<li><p>生长</p>
-</li>
-<li><p><strong>洄游</strong></p>
-</li>
-</ul>
-<p>种群动态：研究种群数量在时间和空间上的变动规律</p>
-<p>渔业资源管理</p>
-<h2 id="渔业资源发展现状"><a href="#渔业资源发展现状" class="headerlink" title="渔业资源发展现状"></a>渔业资源发展现状</h2><p>研究层次</p>
-<ul>
-<li>单鱼种</li>
-<li>多鱼种</li>
-<li>生态系统</li>
-<li>基于社会经济生态的渔业资源开发</li>
-</ul>
-<p>个体研究对象 -&gt;</p>
-<ul>
-<li>年龄与生长</li>
-<li>种群结构</li>
-<li>繁殖特性</li>
-<li>摄食特性</li>
-<li>洄游及生活史</li>
-</ul>
-<p>群体研究对象 -&gt;</p>
-<ul>
-<li>发生量</li>
-<li>不冲量</li>
-<li>可捕量</li>
-<li>集群分布，重要栖息地</li>
-<li>生态系统</li>
-</ul>
-<p>资源开发 -&gt; </p>
-<ul>
-<li>捕捞行为</li>
-<li>管理策略</li>
-<li>市场贸易</li>
-<li>社会行为</li>
-<li>渔情预测</li>
-</ul>
-<p>研究手段：多学科的综合</p>
-<p>研究理念：生态系统水平下的利用和管理</p>
-<p>问题：</p>
-<ul>
-<li>养殖产量增长大于捕捞产量</li>
-<li>全球气候变化影响</li>
-<li>海洋酸化</li>
-<li>海洋污染及生态环境的破坏</li>
-</ul>
-<h2 id="科技进步对渔业资源学科发展的案例"><a href="#科技进步对渔业资源学科发展的案例" class="headerlink" title="科技进步对渔业资源学科发展的案例"></a>科技进步对渔业资源学科发展的案例</h2><h3 id="个体对象"><a href="#个体对象" class="headerlink" title="个体对象"></a>个体对象</h3><ul>
-<li>分子生物学技术<ul>
-<li>主要用于种群划分中</li>
-<li>海洋生物地理学</li>
-<li>分子系统地理学</li>
-</ul>
-</li>
-<li>电子技术<ul>
-<li>用于标记鱼类</li>
-</ul>
-</li>
-<li>化学技术<ul>
-<li>硬组织微结构和微化学</li>
-</ul>
-</li>
-</ul>
-<h3 id="群体对象"><a href="#群体对象" class="headerlink" title="群体对象"></a>群体对象</h3><ul>
-<li>海洋遥感<br>——环境信息获取<ul>
-<li>政府卫星<ul>
-<li>NOAA<ul>
-<li>100分钟左右围绕一圈</li>
-<li>数据作用广泛</li>
-<li>瞬时、同步、大面积。。。</li>
-</ul>
-</li>
-<li>FY-2</li>
-</ul>
-</li>
-<li>商业卫星</li>
-</ul>
-</li>
-<li>地理信息系统<br>——空间叠加、地学统计分析</li>
-<li>栖息地理论<br>——资源分布与管理</li>
-<li>物理海洋学<br>——生活史过程模拟与预测</li>
-<li>统计学和计算机<br>——资源量评估与管理模型</li>
-</ul>
-<p>CPUE——单位捕捞努力量</p>
-<p>CPUE标准化</p>
-<p><strong>生物学参考点理论</strong></p>
-<h3 id="统计学和计算机"><a href="#统计学和计算机" class="headerlink" title="统计学和计算机"></a>统计学和计算机</h3><blockquote>
-<p>基于贝叶斯统计的渔业资源评估与管理策略的风险评估</p>
-</blockquote>
-<h3 id="经济学和资源经济学"><a href="#经济学和资源经济学" class="headerlink" title="经济学和资源经济学"></a>经济学和资源经济学</h3><blockquote>
-<p>发展生物社会经济模型，实现渔业资源优化配置</p>
-</blockquote>
-<h3 id="资源经济学和生态学"><a href="#资源经济学和生态学" class="headerlink" title="资源经济学和生态学"></a>资源经济学和生态学</h3><blockquote>
-<p>渔业资源价值核算，实现渔业资源的资产化管理</p>
-</blockquote>
-<h2 id="渔业资源学发展展望"><a href="#渔业资源学发展展望" class="headerlink" title="渔业资源学发展展望"></a>渔业资源学发展展望</h2><ul>
-<li>难度大</li>
-<li>要求越来越高</li>
-</ul>
-<blockquote>
-<p>渔业资源学科发展的理念是人与自然作为一个整体系统。</p>
-</blockquote>
-<ul>
-<li>发展管理目标</li>
-</ul>
-<p>传统单鱼种——多鱼种——生态系统——生态社会经济系统</p>
-<p>最终实现<strong>渔业资源可持续利用</strong></p>
-<ul>
-<li>多学科的交叉</li>
-<li>研究技术和手段<ul>
-<li>微观、宏观</li>
-<li>更加符合和接近实际</li>
-<li>数据及时、准确</li>
-</ul>
-</li>
-</ul>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><div class="note note-success">
-            <!-- 1.<span style="color: red;">对</span> --><ol><li><p>【单选题】 渔业资源学是研究可捕种群的自然生活史＿＿＿＿和资源数量估算方法，种群数量变动规律和可能渔获量的预报方法以及渔业资源繁殖保护措施等，从而为合理的渔业生产、科学的管理渔业资源提供依据的科学。<br>A.繁殖、摄食、生长和洄游<br>B.繁殖、摄食、生长<br>C.繁殖、摄食和洄游<br>D.摄食、生长和洄游<br>正确答案：A</p></li><li><p>【单选题】 1999年世界水产养殖产量约占总渔业产量的____<br>A.10-15%<br>B.15-20%<br>C.25-30%<br>D.35-40%<br>正确答案：C</p></li><li><p>【判断题】 影响渔业资源的外部因子越来越突出，影响程度已经超过了渔业资源本身的适应能力。<br>A.对<br>B.错<br>正确答案：A</p></li><li><p>【判断题】 地理信息系统具有数据储存，整理，分析能力，对复杂和不同类型的空间特性的数据进行图形显示，已经成为渔业学科的重要研究工具。<br>A.对<br>B.错<br>正确答案：A</p></li><li><p>【判断题】 栖息地理论可以用来推测未知海域的资源分布，可以用于重要渔业资源分布推测和资源量评估。<br>A.对<br>B.错<br>正确答案：A</p></li></ol>
+              <div class="note note-info">
+            <p>python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误。</p><ul><li>异常处理</li><li>断言(Assertions)</li></ul>
           </div>
+
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;try...&#x27;</span>)<br>    r = <span class="hljs-number">10</span> / <span class="hljs-number">3</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;result:&#x27;</span>, r)<br><span class="hljs-keyword">except</span> ZeroDivisionError <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;except:&#x27;</span>, e)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;没有出错！&#x27;</span>)<br><span class="hljs-keyword">finally</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;finally&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt;&gt;<span class="hljs-keyword">import</span> sys<br>&gt;&gt;&gt;<span class="hljs-keyword">assert</span> <span class="hljs-string">&#x27;win32&#x27;</span> <span class="hljs-keyword">in</span> sys.platform<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -429,7 +279,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%B8%94%E4%B8%9A%E5%AF%BC%E8%AE%BA%E7%9F%A5%E8%AF%86%E5%BA%93/">渔业导论知识库</a>
+                      <a class="hover-with-bg" href="/categories/Python%E7%9F%A5%E8%AF%86%E5%BA%93/">Python知识库</a>
                     
                   </div>
                 
@@ -437,9 +287,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%B8%94%E4%B8%9A%E5%AF%BC%E8%AE%BA/">渔业导论</a>
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%B8%94%E4%B8%9A%E8%B5%84%E6%BA%90%E5%AD%A6/">渔业资源学</a>
+                      <a class="hover-with-bg" href="/tags/try-catch-finally/">try...catch...finally</a>
                     
                   </div>
                 
@@ -456,9 +306,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/10/14/2021fish05/">
+                      <a href="/2021/10/24/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">五、水产加工业</span>
+                        <span class="hidden-mobile">python字符串格式化</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -466,8 +316,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/14/2021fish03/">
-                        <span class="hidden-mobile">三、捕捞学</span>
+                      <a href="/2021/10/16/nav01/">
+                        <span class="hidden-mobile">一、地球形状与地理坐标</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
