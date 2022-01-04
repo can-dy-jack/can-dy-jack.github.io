@@ -1293,6 +1293,9 @@ mjx-container svg:focus,
   overflow: hidden;
   text-overflow: ellipsis;
 }
+::selection {
+  background-color: rgba(141,214,249,0.45);
+}
 .index-card {
   margin-bottom: 2.5rem;
 }
