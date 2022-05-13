@@ -1,33 +1,31 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="
-            本文首发在个人博客；
-          
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.0">
 
-搭建开发环境
-            解析和执行PHP脚本，需要安装PHP运行环境；PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。
-          ">
-  <meta name="author" content="kart jim">
-  <meta name="keywords" content="knowledge">
-  <meta name="description" content="本文首发在个人博客；             搭建开发环境             解析和执行PHP脚本，需要安装PHP运行环境；PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kartjim.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文首发在个人博客；   搭建开发环境解析和执行PHP脚本，需要安装PHP运行环境；PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php环境配置">
 <meta property="og:url" content="https://kartjim.top/2021/11/25/php01/index.html">
 <meta property="og:site_name" content="陈科衡的知识库">
-<meta property="og:description" content="本文首发在个人博客；             搭建开发环境             解析和执行PHP脚本，需要安装PHP运行环境；PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。">
+<meta property="og:description" content="本文首发在个人博客；   搭建开发环境解析和执行PHP脚本，需要安装PHP运行环境；PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/11/26/ryjfbPYU1l4SEmv.png">
 <meta property="og:image" content="https://i.loli.net/2021/11/26/MfbIwcVlma5o3Ng.png">
@@ -40,254 +38,215 @@
 <meta property="article:author" content="kart jim">
 <meta property="article:tag" content="php学习">
 <meta property="article:tag" content="bug记录">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/11/26/ryjfbPYU1l4SEmv.png">
-  
-  <title>php环境配置 - 陈科衡的知识库</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+<link rel="canonical" href="https://kartjim.top/2021/11/25/php01/">
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/seti-ui.min.css" />
-    
-  
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kartjim.top/2021/11/25/php01/","path":"2021/11/25/php01/","title":"php环境配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>php环境配置 | 陈科衡的知识库</title>
   
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"kartjim.top","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"always","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#0456ef","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2yNWAjC2VwipmitO3Or3MAdy-gzGzoHsz","app_key":"dOjHUUnI9tOX5ojMVirXPVL5","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>知识库</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
-</nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="php环境配置">
-              
-            </span>
+  <div class="site-meta">
 
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      kart jim
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-25 21:30" pubdate>
-        2021年11月25日 晚上
-      </time>
-    </span>
-  
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">陈科衡的知识库</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Time wait for no one.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      2.9k 字
-    </span>
-  
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      9 分钟
-    </span>
-  
 
+
+
+
+
+</div>
+        
   
-  
-    
-      <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="leancloud-page-views"></span> 次
-      </span>
-    
-  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">搭建开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache"><span class="nav-number">1.1.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96apache"><span class="nav-number">1.1.1.</span> <span class="nav-text">获取apache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEApache"><span class="nav-number">1.1.2.</span> <span class="nav-text">配置Apache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85apache"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装apache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8apache"><span class="nav-number">1.1.4.</span> <span class="nav-text">启动apache</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP"><span class="nav-number">1.2.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PHP%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.1.</span> <span class="nav-text">PHP的优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96PHP"><span class="nav-number">1.2.2.</span> <span class="nav-text">获取PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8Apache%E4%B8%AD%E5%BC%95%E7%94%A8PHP%E6%A8%A1%E5%9D%97"><span class="nav-number">1.2.4.</span> <span class="nav-text">在Apache中引用PHP模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95PHP%E6%A8%A1%E5%9D%97"><span class="nav-number">1.2.5.</span> <span class="nav-text">测试PHP模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text">bug解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#the-requested-operation-has-failed"><span class="nav-number">2.1.</span> <span class="nav-text">the requested operation has failed</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">kart jim</p>
+  <div class="site-description" itemprop="description">knowledge</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
 </div>
 
-            
-          </div>
 
-          
+
         </div>
       </div>
     </div>
-  </header>
+  </aside>
+  <div class="sidebar-dimmer"></div>
 
-  <main>
+
+    </header>
+
     
-      
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">php环境配置</h1>
-            
-            <div class="markdown-body">
-              <div class="note note-danger">
-            <p>本文首发在<a href="https://kartjim.top/delicate">个人博客</a>；</p>
-          </div>
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-<h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><div class="note note-default">
-            <p>解析和执行PHP脚本，需要安装PHP运行环境；<br>PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。</p>
-          </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kartjim.top/2021/11/25/php01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kart jim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈科衡的知识库">
+      <meta itemprop="description" content="knowledge">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="php环境配置 | 陈科衡的知识库">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          php环境配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-25 21:30:40" itemprop="dateCreated datePublished" datetime="2021-11-25T21:30:40+08:00">2021-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-04 19:02:59" itemprop="dateModified" datetime="2022-01-04T19:02:59+08:00">2022-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note danger"><p>本文首发在<a href="https://kartjim.top/delicate">个人博客</a>；</p>
+</div>
+
+<h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><div class="note "><p>解析和执行PHP脚本，需要安装PHP运行环境；<br>PHP既可以独立运行，也可以作为Apache的模块运行；本文主要介绍PHP为apache的模块运行。</p>
+</div>
 
 <span id="more"></span>
 
-<h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><h4 id="获取apache"><a href="#获取apache" class="headerlink" title="获取apache"></a>获取apache</h4><p>去官网可获取apache的源码：<a target="_blank" rel="noopener" href="https://httpd.apache.org/">apache</a>，但没有提供编译后的apache。<br>我们可以从apache官网上找到第三方打包后的apache，比如说：<a target="_blank" rel="noopener" href="https://www.apachelounge.com/">Apache Lounge</a>：<br><img src="https://i.loli.net/2021/11/26/ryjfbPYU1l4SEmv.png" srcset="/img/loading.gif" lazyload alt="1.png"><br>这里我选择<code>httpd-2.4.51-win64-VS16.zip</code>下载。</p>
-<p>下载好之后解压文件，准备好一个文件夹把解压得到的文件放里面。<br>我就存放在f盘下：<code>F:\PHP\LAMP\apache\Apache24</code>，其中目录结构如下图：<br><img src="https://i.loli.net/2021/11/26/MfbIwcVlma5o3Ng.png" srcset="/img/loading.gif" lazyload alt="f"><br>其中：</p>
+<h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><h4 id="获取apache"><a href="#获取apache" class="headerlink" title="获取apache"></a>获取apache</h4><p>去官网可获取apache的源码：<a target="_blank" rel="noopener" href="https://httpd.apache.org/">apache</a>，但没有提供编译后的apache。<br>我们可以从apache官网上找到第三方打包后的apache，比如说：<a target="_blank" rel="noopener" href="https://www.apachelounge.com/">Apache Lounge</a>：<br><img src="https://i.loli.net/2021/11/26/ryjfbPYU1l4SEmv.png" alt="1.png"><br>这里我选择<code>httpd-2.4.51-win64-VS16.zip</code>下载。</p>
+<p>下载好之后解压文件，准备好一个文件夹把解压得到的文件放里面。<br>我就存放在f盘下：<code>F:\PHP\LAMP\apache\Apache24</code>，其中目录结构如下图：<br><img src="https://i.loli.net/2021/11/26/MfbIwcVlma5o3Ng.png" alt="f"><br>其中：</p>
 <table>
 <thead>
 <tr>
@@ -317,15 +276,15 @@
 <p>在<code>httpd.conf</code>里，”#” 是注释符</p>
 </blockquote>
 <p>（1）、配置Apache安装路径<br>把<code>Define SRVROOT &quot;c:/apache24&quot;</code>改为：（大概第37行）</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">Define SRVROOT <span class="hljs-string">&quot;F:/PHP/LAMP/apache/Apache24&quot;</span> <span class="hljs-comment"># 后面填上你自己的apache路径！</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Define SRVROOT <span class="string">&quot;F:/PHP/LAMP/apache/Apache24&quot;</span> <span class="comment"># 后面填上你自己的apache路径！</span></span><br></pre></td></tr></table></figure>
 
 <p>（2）、配置服务器域名<br>搜索<code>ServerName</code>，找到<code>#ServerName www.example.com:80</code><br>因为暂时没有域名，所以取消注释即可（不取消注释之后会报错）。</p>
 <h4 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h4><p>以管理员身份运行cmd，并切换到apache的bin目录之下，输入一下命令进行安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">httpd -k install -n apacheName<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -k install -n apacheName</span><br></pre></td></tr></table></figure>
 
 <p><code>-n</code>之后是apache的名称，任意取。</p>
 <p>如果需要卸载：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">httpd -k uninstall -n apacheName<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -k uninstall -n apacheName</span><br></pre></td></tr></table></figure>
 
 <h4 id="启动apache"><a href="#启动apache" class="headerlink" title="启动apache"></a>启动apache</h4><p>在安装好apache之后，去bin目录下找到程序<code>ApacheMonitor.exe</code>，双击即可启动。</p>
 <blockquote>
@@ -333,13 +292,11 @@
 </blockquote>
 <p>启动之后，打开浏览器，输入<code>http://localhost/</code>即可看到apache已经成功启动。</p>
 <p>上面提到过<code>htdocs</code>文件夹是默认的网站根目录，里面有一个<code>index.html</code>文件，上面你看到的页面就是这个文件。</p>
-<div class="note note-success">
-            <p>现在你可以随意修改它，并且在浏览器查看效果！</p>
-          </div>
-<p><img src="https://i.loli.net/2021/11/26/N5nAfeTLpOPd3iB.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<div class="note note-primary">
-            <p>你甚至可以在其它设备的浏览器 通过你的电脑的IP地址 查看效果！</p>
-          </div>
+<div class="note success"><p>现在你可以随意修改它，并且在浏览器查看效果！</p>
+</div>
+<p><img src="https://i.loli.net/2021/11/26/N5nAfeTLpOPd3iB.png" alt="image.png"></p>
+<div class="note primary"><p>你甚至可以在其它设备的浏览器 通过你的电脑的IP地址 查看效果！</p>
+</div>
 
 <h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><h4 id="PHP的优势"><a href="#PHP的优势" class="headerlink" title="PHP的优势"></a>PHP的优势</h4><ul>
 <li>开源免费</li>
@@ -348,19 +305,17 @@
 <li>支持多种数据库</li>
 <li>快捷性</li>
 </ul>
-<div class="note note-default">
-            <p>语法与使用方式十分接近 本博客框架使用的语言 ejs</p>
-          </div>
+<div class="note "><p>语法与使用方式十分接近 本博客框架使用的语言 ejs</p>
+</div>
 
 <blockquote>
 <p>尽管PHP的优势现在已经不太明显，但还是有必要学一下；<br>有利于理解后端的知识，并在学习的过程中掌握更多网络相关的知识，不只是PHP；</p>
 </blockquote>
 <h4 id="获取PHP"><a href="#获取PHP" class="headerlink" title="获取PHP"></a>获取PHP</h4><p>你可以去<a target="_blank" rel="noopener" href="https://www.php.net/">PHP官网</a>找到最新版的PHP。</p>
-<div class="note note-default">
-            <p>但是，在下载之前你需要特别注意apache支持的PHP版本；如果你下载最新版本的PHP，但是你使用的apache并不支持，就会报错。</p>
-          </div>
+<div class="note "><p>但是，在下载之前你需要特别注意apache支持的PHP版本；如果你下载最新版本的PHP，但是你使用的apache并不支持，就会报错。</p>
+</div>
 <p>还有，PHP官网会提供两种版本的PHP，一个是<code>&#39;Thread Safe&#39;（线程安全）</code>版本，一个是<code>&#39;Non Thread Safe&#39;（非线程安全）</code>版本；<br>如果你使用apache运行PHP，则必须下载<code>&#39;Thread Safe&#39;（线程安全）</code>版本！</p>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>解压下载好的PHP，放进准备好的文件夹，这里我放在f盘：<code>F:\PHP\LAMP\php7.3</code>;文件目录结构如下：<br><img src="https://i.loli.net/2021/11/26/gumVS3yGfpFZjX1.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>解压下载好的PHP，放进准备好的文件夹，这里我放在f盘：<code>F:\PHP\LAMP\php7.3</code>;文件目录结构如下：<br><img src="https://i.loli.net/2021/11/26/gumVS3yGfpFZjX1.png" alt="image.png"></p>
 <table>
 <thead>
 <tr>
@@ -391,334 +346,100 @@
 <p>注：在<code>php.ini</code>里，<code>;</code>是注释符。</p>
 </blockquote>
 <p>修改以下：<br>（1）、搜索<code>extension_dir</code>找到<code>;extension_dir = &quot;ext&quot;</code>,修改为</p>
-<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-attr">extension_dir</span> = <span class="hljs-string">&quot;F:\PHP\LAMP\php7.3\ext&quot;</span> <br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">extension_dir</span> = <span class="string">&quot;F:\PHP\LAMP\php7.3\ext&quot;</span> </span><br></pre></td></tr></table></figure>
 <p>后面填写你的 php中的ext 所在目录</p>
 <p>（2）、查找<code>date.timezone</code>,将<code>;date.timezone</code>,修改为：</p>
-<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-attr">date.timezone</span> = UTC<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">date.timezone</span> = UTC</span><br></pre></td></tr></table></figure>
 <p>后面填 <code>UTC</code>（世界时）、 <code>PRC</code> （中国时区）或 <code>Asia/Shanghai</code>（上海） 等时区。</p>
 <h4 id="在Apache中引用PHP模块"><a href="#在Apache中引用PHP模块" class="headerlink" title="在Apache中引用PHP模块"></a>在Apache中引用PHP模块</h4><p>回到apache配置文件，在大约186行，引入PHP模块；<br>在其中插入以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">LoadModule php7_module &quot;F:/PHP/LAMP/php7.3/php7apache2_4.dll&quot;<br>&lt;FilesMatch &quot;\.php$&quot;&gt;<br>    setHandler application/x-httpd-php<br>&lt;/FilesMatch&gt;<br>PHPIniDir &quot;F:/PHP/LAMP/php7.3&quot;<br>LoadFile &quot;F:/PHP/LAMP/php7.3/libssh2.dll&quot;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LoadModule php7_module &quot;F:/PHP/LAMP/php7.3/php7apache2_4.dll&quot;</span><br><span class="line">&lt;FilesMatch &quot;\.php$&quot;&gt;</span><br><span class="line">    setHandler application/x-httpd-php</span><br><span class="line">&lt;/FilesMatch&gt;</span><br><span class="line">PHPIniDir &quot;F:/PHP/LAMP/php7.3&quot;</span><br><span class="line">LoadFile &quot;F:/PHP/LAMP/php7.3/libssh2.dll&quot;</span><br></pre></td></tr></table></figure>
 
-<div class="note note-default">
-            <p>注意需要将后面的路径换成你自己的！</p>
-          </div>
+<div class="note "><p>注意需要将后面的路径换成你自己的！</p>
+</div>
 
 <p>之后查找<code>dir_module</code>,将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html<br>&lt;/IfModule&gt;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule dir_module&gt;</span><br><span class="line">    DirectoryIndex index.html</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
 
 <p>改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html index.php<br>&lt;/IfModule&gt;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule dir_module&gt;</span><br><span class="line">    DirectoryIndex index.html index.php</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
 
 <p>即，把<code>index.php</code>当做第二默认文件。</p>
-<div class="note note-default">
-            <p>点击apache图标，重新启动apache（Restart）。<br><img src="https://i.loli.net/2021/11/26/yELObGFx1twVn5S.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>如果没有报错，即为配置成功！</p>
-          </div>
+<div class="note "><p>点击apache图标，重新启动apache（Restart）。<br><img src="https://i.loli.net/2021/11/26/yELObGFx1twVn5S.png" alt="image.png"><br>如果没有报错，即为配置成功！</p>
+</div>
 
 <h4 id="测试PHP模块"><a href="#测试PHP模块" class="headerlink" title="测试PHP模块"></a>测试PHP模块</h4><p>在<code>htdocs</code>目录下新建<code>index.php</code>，删去<code>index.html</code>；<br>打开<code>index.php</code>，写入：</p>
-<figure class="highlight php"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Hello PHP!&#x27;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&#x27;Hello PHP!&#x27;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>打开浏览器，访问<code>http://localhost/</code>，即可看到运行成功：<br><img src="https://i.loli.net/2021/11/26/VDUcdplnmg3vJSN.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>打开浏览器，访问<code>http://localhost/</code>，即可看到运行成功：<br><img src="https://i.loli.net/2021/11/26/VDUcdplnmg3vJSN.png" alt="image.png"></p>
 <h2 id="bug解决"><a href="#bug解决" class="headerlink" title="bug解决"></a>bug解决</h2><h3 id="the-requested-operation-has-failed"><a href="#the-requested-operation-has-failed" class="headerlink" title="the requested operation has failed"></a>the requested operation has failed</h3><p>造成<code>the requested operation has failed</code>的原因有很多：</p>
 <ol>
 <li>你使用的apache版本并不支持你使用的PHP版本</li>
 </ol>
 <p>简单来讲就是你使用的PHP版本不在 apache支持的PHP版本 </p>
 <p>这个时候需要去百度你使用的apache版本支持哪个版本的PHP，然后重新安装PHP环境与配置。</p>
-<div class="note note-info">
-            <p>例如，我使用的是Apache/2.4.51 (Win64) ，第一次下载的PHP是7.4版本的，报错。之后改用PHP7.3就成功运行。</p>
-          </div>
+<div class="note info"><p>例如，我使用的是Apache/2.4.51 (Win64) ，第一次下载的PHP是7.4版本的，报错。之后改用PHP7.3就成功运行。</p>
+</div>
 
 <ol start="2">
 <li>你下载的PHP不是’Thread Safe’（线程安全）版本</li>
 </ol>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/php/">php</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/php%E5%AD%A6%E4%B9%A0/">php学习</a>
-                    
-                      <a class="hover-with-bg" href="/tags/bug%E8%AE%B0%E5%BD%95/">bug记录</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/11/14/markdown%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">
-                        <span class="hidden-mobile">markdown测试文件</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#comments', function() {
-      var light = 'github-light';
-      var dark = 'github-dark';
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema === 'dark') {
-        schema = dark;
-      } else {
-        schema = light;
-      }
-      window.UtterancesThemeLight = light;
-      window.UtterancesThemeDark = dark;
-      var s = document.createElement('script');
-      s.setAttribute('src', 'https://utteranc.es/client.js');
-      s.setAttribute('repo', 'can-dy-jack/commit-utterance');
-      s.setAttribute('issue-term', 'pathname');
-      
-      s.setAttribute('label', 'utterances');
-      
-      s.setAttribute('theme', schema);
-      s.setAttribute('crossorigin', 'anonymous');
-      document.getElementById('comments').appendChild(s);
-    })
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
     </div>
+
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/php%E5%AD%A6%E4%B9%A0/" rel="tag"># php学习</a>
+              <a href="/tags/bug%E8%AE%B0%E5%BD%95/" rel="tag"># bug记录</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/14/markdown%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/" rel="prev" title="markdown测试文件">
+                  <i class="fa fa-chevron-left"></i> markdown测试文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
 
-      </div>
-    
-  </div>
+
+
+
+
+
 </div>
-
-<!-- Custom -->
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-  </div>
-  
-  <div class="statistics">
-    
-    
+  <footer class="footer">
+    <div class="footer-inner">
 
-    
-      
-        <!-- LeanCloud 统计PV -->
-        <span id="leancloud-site-pv-container" style="display: none">
-            总访问量 
-            <span id="leancloud-site-pv"></span>
-             次
-          </span>
-      
-      
-        <!-- LeanCloud 统计UV -->
-        <span id="leancloud-site-uv-container" style="display: none">
-            总访客数 
-            <span id="leancloud-site-uv"></span>
-             人
-          </span>
-      
 
-    
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kart jim</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
+    </div>
+  </footer>
 
   
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-  <script defer src="/js/leancloud.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -726,27 +447,10 @@
 
 
 
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
 
 
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>
