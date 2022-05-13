@@ -55,7 +55,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/seti-ui.min.css" />
     
   
 
@@ -80,7 +80,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"kartjim.top","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#0456ef","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2yNWAjC2VwipmitO3Or3MAdy-gzGzoHsz","app_key":"dOjHUUnI9tOX5ojMVirXPVL5","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"kartjim.top","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"always","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#0456ef","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2yNWAjC2VwipmitO3Or3MAdy-gzGzoHsz","app_key":"dOjHUUnI9tOX5ojMVirXPVL5","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -317,15 +317,15 @@
 <p>在<code>httpd.conf</code>里，”#” 是注释符</p>
 </blockquote>
 <p>（1）、配置Apache安装路径<br>把<code>Define SRVROOT &quot;c:/apache24&quot;</code>改为：（大概第37行）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">Define SRVROOT <span class="hljs-string">&quot;F:/PHP/LAMP/apache/Apache24&quot;</span> <span class="hljs-comment"># 后面填上你自己的apache路径！</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">Define SRVROOT <span class="hljs-string">&quot;F:/PHP/LAMP/apache/Apache24&quot;</span> <span class="hljs-comment"># 后面填上你自己的apache路径！</span><br></code></pre></div></td></tr></table></figure>
 
 <p>（2）、配置服务器域名<br>搜索<code>ServerName</code>，找到<code>#ServerName www.example.com:80</code><br>因为暂时没有域名，所以取消注释即可（不取消注释之后会报错）。</p>
 <h4 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h4><p>以管理员身份运行cmd，并切换到apache的bin目录之下，输入一下命令进行安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">httpd -k install -n apacheName<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">httpd -k install -n apacheName<br></code></pre></div></td></tr></table></figure>
 
 <p><code>-n</code>之后是apache的名称，任意取。</p>
 <p>如果需要卸载：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">httpd -k uninstall -n apacheName<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">httpd -k uninstall -n apacheName<br></code></pre></div></td></tr></table></figure>
 
 <h4 id="启动apache"><a href="#启动apache" class="headerlink" title="启动apache"></a>启动apache</h4><p>在安装好apache之后，去bin目录下找到程序<code>ApacheMonitor.exe</code>，双击即可启动。</p>
 <blockquote>
@@ -391,23 +391,23 @@
 <p>注：在<code>php.ini</code>里，<code>;</code>是注释符。</p>
 </blockquote>
 <p>修改以下：<br>（1）、搜索<code>extension_dir</code>找到<code>;extension_dir = &quot;ext&quot;</code>,修改为</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">extension_dir</span> = <span class="hljs-string">&quot;F:\PHP\LAMP\php7.3\ext&quot;</span> <br></code></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-attr">extension_dir</span> = <span class="hljs-string">&quot;F:\PHP\LAMP\php7.3\ext&quot;</span> <br></code></pre></div></td></tr></table></figure>
 <p>后面填写你的 php中的ext 所在目录</p>
 <p>（2）、查找<code>date.timezone</code>,将<code>;date.timezone</code>,修改为：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">date.timezone</span> = UTC<br></code></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-attr">date.timezone</span> = UTC<br></code></pre></div></td></tr></table></figure>
 <p>后面填 <code>UTC</code>（世界时）、 <code>PRC</code> （中国时区）或 <code>Asia/Shanghai</code>（上海） 等时区。</p>
 <h4 id="在Apache中引用PHP模块"><a href="#在Apache中引用PHP模块" class="headerlink" title="在Apache中引用PHP模块"></a>在Apache中引用PHP模块</h4><p>回到apache配置文件，在大约186行，引入PHP模块；<br>在其中插入以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs conf">LoadModule php7_module &quot;F:/PHP/LAMP/php7.3/php7apache2_4.dll&quot;<br>&lt;FilesMatch &quot;\.php$&quot;&gt;<br>    setHandler application/x-httpd-php<br>&lt;/FilesMatch&gt;<br>PHPIniDir &quot;F:/PHP/LAMP/php7.3&quot;<br>LoadFile &quot;F:/PHP/LAMP/php7.3/libssh2.dll&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">LoadModule php7_module &quot;F:/PHP/LAMP/php7.3/php7apache2_4.dll&quot;<br>&lt;FilesMatch &quot;\.php$&quot;&gt;<br>    setHandler application/x-httpd-php<br>&lt;/FilesMatch&gt;<br>PHPIniDir &quot;F:/PHP/LAMP/php7.3&quot;<br>LoadFile &quot;F:/PHP/LAMP/php7.3/libssh2.dll&quot;<br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-default">
             <p>注意需要将后面的路径换成你自己的！</p>
           </div>
 
 <p>之后查找<code>dir_module</code>,将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html<br>&lt;/IfModule&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html<br>&lt;/IfModule&gt;<br></code></pre></div></td></tr></table></figure>
 
 <p>改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html index.php<br>&lt;/IfModule&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">&lt;IfModule dir_module&gt;<br>    DirectoryIndex index.html index.php<br>&lt;/IfModule&gt;<br></code></pre></div></td></tr></table></figure>
 
 <p>即，把<code>index.php</code>当做第二默认文件。</p>
 <div class="note note-default">
@@ -415,7 +415,7 @@
           </div>
 
 <h4 id="测试PHP模块"><a href="#测试PHP模块" class="headerlink" title="测试PHP模块"></a>测试PHP模块</h4><p>在<code>htdocs</code>目录下新建<code>index.php</code>，删去<code>index.html</code>；<br>打开<code>index.php</code>，写入：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Hello PHP!&#x27;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Hello PHP!&#x27;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>打开浏览器，访问<code>http://localhost/</code>，即可看到运行成功：<br><img src="https://i.loli.net/2021/11/26/VDUcdplnmg3vJSN.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <h2 id="bug解决"><a href="#bug解决" class="headerlink" title="bug解决"></a>bug解决</h2><h3 id="the-requested-operation-has-failed"><a href="#the-requested-operation-has-failed" class="headerlink" title="the requested operation has failed"></a>the requested operation has failed</h3><p>造成<code>the requested operation has failed</code>的原因有很多：</p>

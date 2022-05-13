@@ -44,7 +44,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/seti-ui.min.css" />
     
   
 
@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"kartjim.top","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#0456ef","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2yNWAjC2VwipmitO3Or3MAdy-gzGzoHsz","app_key":"dOjHUUnI9tOX5ojMVirXPVL5","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"kartjim.top","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"always","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#0456ef","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2yNWAjC2VwipmitO3Or3MAdy-gzGzoHsz","app_key":"dOjHUUnI9tOX5ojMVirXPVL5","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -265,11 +265,11 @@
             <h1 style="display: none">markdown测试文件</h1>
             
             <div class="markdown-body">
-              <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">## 标题2</span><br><span class="hljs-section">### 标题3</span><br><span class="hljs-section">#### 标题4</span><br><span class="hljs-section">##### 标题5</span><br></code></pre></td></tr></table></figure>
+              <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown"><span class="hljs-section">## 标题2</span><br><span class="hljs-section">### 标题3</span><br><span class="hljs-section">#### 标题4</span><br><span class="hljs-section">##### 标题5</span><br></code></pre></div></td></tr></table></figure>
 
 <h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3><h4 id="标题4"><a href="#标题4" class="headerlink" title="标题4"></a>标题4</h4><h5 id="标题5"><a href="#标题5" class="headerlink" title="标题5"></a>标题5</h5><hr>
 <p>文本样式</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-strong">**加粗**</span>  <span class="hljs-strong">__斜体__</span>  <span class="hljs-emphasis">_斜体_</span>  <span class="hljs-emphasis">*斜体*</span>  ~~划线~~  ~划线~<br><span class="hljs-quote">&gt; 引用文本</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown"><span class="hljs-strong">**加粗**</span>  <span class="hljs-strong">__斜体__</span>  <span class="hljs-emphasis">_斜体_</span>  <span class="hljs-emphasis">*斜体*</span>  ~~划线~~  ~划线~<br><span class="hljs-quote">&gt; 引用文本</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>加粗</strong>  <strong>斜体</strong>  <em>斜体</em>  <em>斜体</em>  <del>划线</del>  <del>划线</del></p>
 <blockquote>
@@ -277,7 +277,7 @@
 </blockquote>
 <hr>
 <p>列表样式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 列表<br><span class="hljs-bullet">*</span> 列表<br><span class="hljs-bullet">*</span> 列表<br><br><span class="hljs-bullet">-</span> 列表<br><span class="hljs-bullet">-</span> 列表<br><span class="hljs-bullet">-</span> 列表<br> <br><span class="hljs-bullet">+</span> 列表<br><span class="hljs-bullet">+</span> 列表<br><span class="hljs-bullet">+</span> 列表<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 列表<br><span class="hljs-bullet">*</span> 列表<br><span class="hljs-bullet">*</span> 列表<br><br><span class="hljs-bullet">-</span> 列表<br><span class="hljs-bullet">-</span> 列表<br><span class="hljs-bullet">-</span> 列表<br> <br><span class="hljs-bullet">+</span> 列表<br><span class="hljs-bullet">+</span> 列表<br><span class="hljs-bullet">+</span> 列表<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>列表</li>
@@ -294,7 +294,7 @@
 <li>列表</li>
 <li>列表</li>
 </ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 项目<br><span class="hljs-bullet">  *</span> 项目<br><span class="hljs-bullet">    +</span> 项目<br><br><span class="hljs-bullet">1.</span> 项目1<br><span class="hljs-bullet">2.</span> 项目2<br><span class="hljs-bullet">3.</span> 项目3<br><br><span class="hljs-bullet">-</span> [ ] 计划任务<br><span class="hljs-bullet">-</span> [x] 完成任务<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> 项目<br><span class="hljs-bullet">  *</span> 项目<br><span class="hljs-bullet">    +</span> 项目<br><br><span class="hljs-bullet">1.</span> 项目1<br><span class="hljs-bullet">2.</span> 项目2<br><span class="hljs-bullet">3.</span> 项目3<br><br><span class="hljs-bullet">-</span> [ ] 计划任务<br><span class="hljs-bullet">-</span> [x] 完成任务<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>项目<ul>
@@ -320,9 +320,9 @@
 <hr>
 <p>内联代码块:<code>code</code></p>
 <p>代码块：</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">var foo</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">var foo</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// An highlighted block</span><br><span class="hljs-keyword">var</span> foo = <span class="hljs-string">&#x27;bar&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">// An highlighted block</span><br><span class="hljs-keyword">var</span> foo = <span class="hljs-string">&#x27;bar&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
 
 <hr>
 <p>表格：</p>
@@ -359,14 +359,14 @@
 <blockquote>
 <p>常用于记录代码或文字的更替</p>
 </blockquote>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-addition">+ this will be highlighted in green</span><br><span class="hljs-deletion">- this will be highlighted in red</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs diff"><span class="hljs-addition">+ this will be highlighted in green</span><br><span class="hljs-deletion">- this will be highlighted in red</span><br></code></pre></div></td></tr></table></figure>
 
 <hr>
 <h3 id="公式-MathJax"><a href="#公式-MathJax" class="headerlink" title="公式-MathJax"></a>公式-MathJax</h3><p>需要 front-matter 添加 <code>mathjax: true</code></p>
 <blockquote>
 <p>语法参考官网：<a target="_blank" rel="noopener" href="https://www.mathjax.org/">mathjax</a></p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">直接在markdown文件中添加下面的语句即可，即包含在 $$ 内的文字会被解析为数学公式<br>$$x = &#123;-b \pm \sqrt&#123;b^2-4ac&#125; \over 2a&#125;.$$<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">直接在markdown文件中添加下面的语句即可，即包含在 $$ 内的文字会被解析为数学公式<br>$$x = &#123;-b \pm \sqrt&#123;b^2-4ac&#125; \over 2a&#125;.$$<br></code></pre></div></td></tr></table></figure>
 
 <p>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
 <p>有公式才加载MathJax，没有公式仍然加载js渲染公式，会影响页面加载速度。</p>
