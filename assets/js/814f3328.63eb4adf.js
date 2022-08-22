@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_blog=self.webpackChunknew_blog||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Promises/A+ \u89c4\u8303","permalink":"/blog/js-promise"},{"title":"JavaScript\u6280\u5de7\u4e4bconsole","permalink":"/blog/js-console"}]}')}}]);
