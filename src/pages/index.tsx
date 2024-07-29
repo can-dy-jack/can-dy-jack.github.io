@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import HomeSpring from '../components/HomeSpring/HomeSpring';
 
 import styles from './index.module.css';
 
@@ -20,7 +21,12 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            进入知识库
+          </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/blog">
+            进入我的博客
           </Link>
         </div>
       </div>
@@ -33,11 +39,12 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="首页">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
       </main>
+      <HomeSpring />
     </Layout>
   );
 }

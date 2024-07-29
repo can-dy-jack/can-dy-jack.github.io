@@ -1,0 +1,9 @@
+.HomeSpring {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 400px;
+
+  background-color: #eee;
+}
