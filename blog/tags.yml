@@ -1,16 +1,40 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
   description: Docusaurus tag description
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+
+blog: 
+  label: blog
+  permalink: /blog
+  description: 博客
+
+makefiles: 
+  label: makefiles
+  permalink: /makefiles
+  description: makefiles
+
+转载: 
+  label: 转载
+  permalink: /转载
+  description: 转载
+
+Linux: 
+  label: Linux
+  permalink: /linux
+  description: Linux
+
+MacOS: 
+  label: MacOS
+  permalink: /MacOS
+  description: MacOS
+
+Bash: 
+  label: Bash
+  permalink: /Bash
+  description: Bash
+
+DevOps: 
+  label: DevOps
+  permalink: /DevOps
+  description: DevOps
+

@@ -1,0 +1,452 @@
+---
+authors:
+  - name: Tomasz Gągor
+    title: from Tom's Blog
+    url: https://gagor.pro/about/
+    image_url: https://gagor.pro/favicon-36x36.avif
+slug: makefiles
+tags: [blog, makefiles, 转载, Linux, MacOS, Bash, DevOps]
+image: https://gagor.pro/2024/02/how-i-stopped-worrying-a…e86b701311_184880_1500x0_resize_q75_h2_box_2.webp
+---
+# How I stopped worrying and loved Makefiles
+
+> 转载：[How I stopped worrying and loved Makefiles](https://gagor.pro/2024/02/how-i-stopped-worrying-and-loved-makefiles/)
+
+![](https://gagor.pro/2024/02/how-i-stopped-worrying-a…e86b701311_184880_1500x0_resize_q75_h2_box_2.webp)
+
+## First contact with make
+When I was invited for my first job interview in the IT, I’ve been asked such question:
+
+> How would you typically build a program from sources, what commands will you use?
+
+I answered:
+
+> It’s obvious:
+> ```markfiles
+> ./configure
+> make
+> make install
+> ```
+
+Those times belong to the past now and nowadays not many programmers use GNU Make[^1]. Try asking this question and you will see disgust at best.
+
+For many it’s the fist contact with make and often the last one, but not for me 😉
+
+[^1]: https://www.gnu.org/software/make/
+
+{/* truncate */}
+
+## What `make` does?
+
+Let build a base line. `make` orchestrates tasks based on dependencies, executing commands to generate target files and keep them up to date efficiently. It streamlines software compilation and project management.
+
+As simple as it is, it does few things pretty well:
+
+- detects changes in files (source -> binary),
+- manages dependencies,
+- manages default values for variables much easier than Bash,
+- allows to build in parallel,
+- OS detection,
+- on my system binary is only 16kB in size,
+- is available on any OS,
+- and much more!
+
+## My second contact with make - Postfix
+
+The second non obvious use of `make` I stood, was the way to refresh Postfix’s map files. 
+With Postfix servers, you’ve been usually writing a bunch of text files like `aliases`, `transports`, etc, 
+which have to be indexed to the binary Berkley DB format.
+
+```makefile title="/etc/postfix/main.cf"
+alias_maps = hash:/etc/postfix/aliases
+```
+
+To “generate” Berkley DB file you have to run:
+
+```makefile title="Generate aliases database"
+postalias aliases
+```
+
+Which was producing `aliases.db` file.
+ Other types of files required to use `postmap` command to generate them.
+
+The more complicated the Postfix configuration, the more files you had. 
+If you missed to update one of map files,
+ your configuration wasn’t effective and you could spend hours debugging: 
+ why this f… alias do not work?
+
+That’s where `make` comes handy[^2]. You can just drop the file like this:
+
+[^2]: https://www.postfix.org/DATABASE_README.html 
+
+```makefile title="cat Makefile"
+.PHONY: reload
+
+all: aliases.db access.db virtual.db reload
+
+aliases.db: aliases
+    postalias aliases
+
+access.db: access
+    postmap access
+
+virtual.db: virtual
+    postmap virtual
+
+reload:
+    postfix reload
+```
+
+Let me explain what happens here.
+
+1. `.PHONY: reload`: This line declares the target `reload` as a phony target[^3]. 
+Phony targets are ones that do not represent actual files. 
+This is typically used for targets that don’t produce output files, such as clean, all, etc. 
+It ensures that even if a file named `reload` exists in the directory, the `reload` target will still be executed.
+
+2. `all: aliases.db access.db virtual.db reload`: This line specifies that when you run `make all`, 
+it will generate the files `aliases.db`, `access.db`, and `virtual.db`, and then execute the `reload` target. 
+As `all` target is the default, it’s enough to just run `make`.
+
+3. `aliases.db`: aliases: This line specifies that `aliases.db` depends on the file `aliases`. 
+If `aliases` file is newer than `aliases.db` or `aliases.db` doesn’t exist, the commands listed below will be executed.
+
+4. `postalias aliases`: This line is the command to generate the `aliases.db` file from the `aliases` file 
+using the `postalias` command. `postalias` is a command used in Postfix to create or update the alias database.
+
+5. Similarly, `access.db`: access and `virtual.db: virtual` are rules to generate `access.db` and `virtual.db` files 
+from `access` and `virtual` files respectively using the `postmap` command.
+
+6. `reload:`: This line declares the `reload` target. When you run `make reload`, it will execute the command listed below.
+
+7. `postfix reload`: This line is the command to reload the Postfix service. It tells Postfix to reload its configuration, applying any changes that may have been made.
+
+[^3]: https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html 
+
+
+Summing up, when you run `make`, it will generate or update the necessary database files 
+for Postfix configuration (`aliases.db`, `access.db`, `virtual.db`) 
+and then reload the Postfix service.
+
+Now you won’t make mistakes again.
+
+I know that today many of you would say: “just use Ansible dude!” 
+But at that time, there was no Ansible yet. 
+I didn’t use this pattern for years now, so let check more up to date usage examples.
+
+## Use of `make` in Python projects
+I love Python for it’s simplicity… at least when it comes to coding, 
+because when you start managing dependencies, it’s getting tricky. 
+What do you use: raw `dependencies.txt` or rather [Poetry](https://python-poetry.org/)  or [Pipenv ](https://pipenv.pypa.io/en/latest/) ? 
+Do you use system Python or maybe [pyenv ](https://github.com/pyenv/pyenv) ?
+
+My answer: it depends 😃
+
+For simple projects, I usually just use `pip`. 
+Sometimes even without `requirements.txt` files, 
+just listing in the README what to install. 
+But the more projects I wrote, the harder it is to remember how to test them. 
+Again, that’s where Make comes handy.
+
+
+```makefile title="Simple Makefile for Python projects"
+.PHONY: requirements test
+
+.venv:
+    python3 -m venv .venv
+
+requirements:
+    source .venv/bin/activate && \
+        python3 -m pip install -r requirements.txt && \
+        python3 -m pip install pytest
+
+test: .venv requirements dev-requirements
+    source .venv/bin/activate && \
+        pytest
+```
+
+What happens here?
+
+1. `.PHONY: requirements test`: Declares `requirements` and `test` as phony targets to ensure they are always executed regardless of file existence.
+
+2. `.venv:`: Creates a Python virtual environment named `.venv` if it doesn’t already exist.
+
+3. `requirements:`: Installs Python packages listed in `requirements.txt` into the virtual environment created earlier. Additionally, it installs the `pytest` package globally.
+
+4. `test: .venv requirements dev-requirements`: Sets up dependencies for testing, including the virtual environment and specified requirements. Then, it activates the virtual environment and runs the tests using `pytest`.
+
+Alternative config for Poetry, might look more or less like that:
+
+```makefile title="Simple Makefile for Python projects"
+.PHONY: requirements test
+
+requirements:
+    poetry install
+
+test: requirements
+    poetry run pytest
+```
+
+When I see `Makefile` in a Python project, I can blindly run `make test` and it will do what I expect -> run tests. 
+Whatever it requires to configure or run, it will just happen.
+
+## `make` in Terraform projects
+Similar situation to Python, I have with [Terraform ](https://www.terraform.io/) projects. In simple project you just need:
+
+```makefile title="Typical Terraform flow"
+terraform init
+terraform plan
+terraform apply
+```
+
+But what if you use different accounts for PROD and DEV environments? 
+What if you need to fetch latest version of modules?
+
+I have a `Makefile` for this too.
+
+```makefile title="Terraform Makefile" showLineNumbers
+.PHONY: init
+SHELL=/bin/bash
+
+# those variables you should initialize outside of this script
+# and export, Make will just set then based on what you will
+# have set in your environment. You can use for eg. `aws sts`
+AWS_ACCESS_KEY_ID ?=
+AWS_SECRET_ACCESS_KEY ?=
+AWS_REGION ?= "us-west-2"
+
+# dev by default
+ENVIRONMENT ?= dev
+STATE_FILE_BUCKET ?= s3-bucket-$(AWS_ACCESS_KEY_ID)-$(ENVIRONMENT)-terraform-state
+STATE_FILE_KEY ?= state/some_service/$(ENVIRONMENT)/terraform.tfstate
+
+# make some variable available in Terraform
+export TF_VAR_something ?= something1
+export TF_VAR_something_else ?= something-else
+
+.terraform:
+    terraform init \
+		-reconfigure \
+		-backend-config='key=$(STATE_FILE_KEY)' \
+		-backend-config='bucket=$(STATE_FILE_BUCKET)' \
+		-var-file=environments/$(ENVIRONMENT)/variables.tfvars \
+		-out terraform.plan
+
+	terraform get
+
+# this will switch Terraform version to the one that your project needs
+# https://github.com/tfutils/tfenv
+init: .terraform
+	tfenv install
+
+plan: init
+    terraform plan
+
+apply: plan
+    terraform apply \
+		-auto-approve \
+		terraform.plan
+
+destroy:
+    terraform destroy \
+		-auto-approve \
+		-var-file=environments/$(ENVIRONMENT)/variables.tfvars
+
+dev-plan: export AWS_ACCESS_KEY_ID=dev-key
+dev-plan: plan
+
+dev-apply: export AWS_ACCESS_KEY_ID=dev-key
+dev-apply: apply
+
+dev-destroy: export AWS_ACCESS_KEY_ID=dev-key
+dev-destroy: destroy
+
+prod-plan: export AWS_ACCESS_KEY_ID=prod-key
+prod-plan: plan
+
+prod-apply: export AWS_ACCESS_KEY_ID=prod-key
+prod-apply: apply
+
+clean:
+    @rm -rf .terraform/modules
+    @rm -f terraform.*
+```
+
+This file expects a directory structure like
+
+```bash title="Directory structure"
+$ tree example/
+.
+├── main.tf
+├── variables.tf
+├── provider.tf
+├── backend.tf
+├── outputs.tf
+├── ...
+├── environments/
+│   ├── dev
+│   │   ├── variables.tfars
+│   ├── prod/
+│   │   ├── variables.tfars
+│   ├── .../
+```
+
+Backends configuration in the `backend.tf` file can be just basic:
+
+```tf title="backend.tf"
+terraform {
+	backend "s3" {
+		region = "us-west-2"
+		encrypt = true
+	}
+}
+```
+
+Rest of parameters are provided in the Makefile - 
+it’s called partial backend configuration[^4]. 
+This configuration allows me to use same codebase for all the environments. 
+All customizations have to be listed as variables in `variables.tfvars` files. 
+It can be easily extended to suport 4 or 6 environments and the only think I need to remember is:
+
+
+[^4]: https://developer.hashicorp.com/terraform/language/settings/backends/configuration#partial-configuration
+
+```makefile
+make dev-plan
+make dev-apply
+```
+
+## make for `Hugo` blogging
+
+Even for blogging with Hugo I have a `Makefile`[^5] that I use across multiple sites. 
+It’s simplifying some of the steps, that I won’t need to remember them.
+
+[^5]: https://github.com/getpelican/pelican-blog/blob/main/Makefile
+
+```makefile title="Makefile for Hugo" showLineNumbers
+BASEDIR=$(CURDIR)
+INPUTDIR=$(BASEDIR)/content
+STATICDIR=$(BASEDIR)/static
+OUTPUTDIR=$(BASEDIR)/public
+RESOURCESDIR=$(BASEDIR)/resources
+PORT=1313
+
+FTP_HOST=localhost
+FTP_USER=anonymous
+FTP_TARGET_DIR=/
+
+SSH_HOST=vc1
+SSH_PORT=22
+SSH_USER=root
+SSH_TARGET_DIR=/var/www/hugo
+SSH_CHOWN=33:33
+
+S3_BUCKET=my_s3_bucket
+
+CLOUDFILES_USERNAME=my_rackspace_username
+CLOUDFILES_API_KEY=my_rackspace_api_key
+CLOUDFILES_CONTAINER=my_cloudfiles_container
+
+DROPBOX_DIR=~/Dropbox/Public/
+
+GITHUB_PAGES_BRANCH=gh-pages
+
+all: html
+
+publish: html gzip_static rsync_upload
+
+help:
+	@echo 'Makefile for a hugo Web site                                              '
+	@echo '                                                                          '
+	@echo 'Usage:                                                                    '
+	@echo '   make html                           (re)generate the web site          '
+	@echo '   make clean                          remove the generated files         '
+	@echo '   make publish                        generate using production settings '
+	@echo '   make server [PORT=1313]             serve site at http://localhost:1313'
+	@echo '   make ssh_upload                     upload the web site via SSH        '
+	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
+	@echo '   make dropbox_upload                 upload the web site via Dropbox    '
+	@echo '   make ftp_upload                     upload the web site via FTP        '
+	@echo '   make s3_upload                      upload the web site via S3         '
+	@echo '   make cf_upload                      upload the web site via Cloud Files'
+	@echo '   make github                         upload the web site via gh-pages   '
+	@echo '                                                                          '
+
+html: clean
+	hugo --minify
+
+clean:
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && mkdir -p $(OUTPUTDIR) && touch $(OUTPUTDIR)/.placeholder
+	rm -rf $(RESOURCESDIR)
+
+server:
+ifdef PORT
+	hugo server -D -p $(PORT) --disableFastRender --buildExpired --buildFuture
+else
+	hugo server -D --disableFastRender --buildExpired --buildFuture
+endif
+
+generate: clean
+	cd $(BASEDIR); hugo
+
+check_urls:
+	@cd /tmp; wget -r --spider http://localhost:$(PORT) 2>&1 | grep -B 2 "404 Not Found" | grep http:// | cut -d " " -f 4 | sort -u
+
+markdownlint:
+	@docker run --rm -ti -v ${PWD}:/data:ro markdownlint/markdownlint content
+
+gzip_static:
+	for pattern in "*.js" "*.json" "*.css" "*.htm" "*.html" "*.xml"; do \
+		find $(OUTPUTDIR) -iname $$pattern -print0 | xargs -0 -I'{}' sh -c 'gzip -c9 "{}" > "{}.gz" && touch -r "{}" "{}.gz"'; \
+	done
+
+optimize_images:
+	find $(STATICDIR) -mtime -7 -iname *.png -print | parallel optipng -quiet -preserve -o7
+	find $(INPUTDIR)  -mtime -7 -iname *.png -print | parallel optipng -quiet -preserve -o7
+	find $(STATICDIR) -mtime -7 -iname *.jpg -print | parallel jpegtran -optimize -progressive -copy none -outfile "{}" "{}"
+	find $(INPUTDIR)  -mtime -7 -iname *.jpg -print | parallel jpegtran -optimize -progressive -copy none -outfile "{}" "{}"
+
+ssh_upload: generate
+	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+
+rsync_upload: generate gzip_static
+ifdef SSH_CHOWN
+	rsync -e "ssh -p $(SSH_PORT)" -P -avh --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --chown $(SSH_CHOWN)
+else
+	rsync -e "ssh -p $(SSH_PORT)" -P -avh --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+endif
+
+dropbox_upload: generate
+	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
+
+ftp_upload: generate
+	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+
+s3_upload: generate
+	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
+
+cf_upload: generate
+	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
+
+github: generate
+	# ghp-import -m "Generate Hugo site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	# git push origin $(GITHUB_PAGES_BRANCH)
+	cd $(OUTPUTDIR)
+	git add --all
+	git commit -m "Update"
+	git push
+
+.PHONY: all html help clean generate server ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+```
+
+This Makefile is actually [an extension](https://github.com/getpelican/pelican-blog/blob/main/Makefile)  of one dedicated [Pelican](https://getpelican.com/) static page generator
+
+## Summary
+
+There are many creative ways to use `Makefiles` to automate and simplify daily tasks. 
+Tool is small and simple, available on any platform (even on Windows via WSL or [Cygwin](https://www.cygwin.com/) ). 
+Many of my colleagues considered this tool an “old school” or “obsolete” initially, 
+but they eventually fall under impression of the recipes simplicity and now just replicate them all around.
+
+I hope, I will also impress you 😉 Good luck and happy automating!
+

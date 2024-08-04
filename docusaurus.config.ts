@@ -43,14 +43,20 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/kj.png',
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: false,
+      },
+    },
     navbar: {
       title: '陈科衡的个人博客',
       logo: {
         alt: '陈科衡的个人博客',
         src: 'img/kj.png',
       },
+      hideOnScroll: true,
       items: [
         {
           type: 'docSidebar',
@@ -58,7 +64,11 @@ const config: Config = {
           position: 'left',
           label: '知识库',
         },
-        {to: '/blog', label: '博客', position: 'left'},
+        { to: '/blog', label: '博客', position: 'left' },
+        {
+          type: 'search',
+          position: 'right',
+        },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -122,6 +132,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['Makefile'],
     },
   } satisfies Preset.ThemeConfig,
 };
