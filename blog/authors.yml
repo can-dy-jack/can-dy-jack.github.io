@@ -3,3 +3,9 @@ jim:
   title: author of the blog
   url: https://github.com/can-dy-jack
   image_url: https://github.com/can-dy-jack.png
+
+阮一峰:
+  name: 阮一峰
+  title: 阮一峰的网络日志
+  url: https://www.ruanyifeng.com/blog/
+  image_url: https://www.ruanyifeng.com/blog/images/person2_s.jpg
