@@ -8,7 +8,7 @@ const themes = process.env.NODE_ENV === "development" ? [] : [
 ]
 
 const config: Config = {
-  title: '陈科衡的个人博客' + process.env,
+  title: '陈科衡的个人博客',
   tagline: '分享知识，但不只是知识',
   favicon: 'img/favicon.ico',
 
