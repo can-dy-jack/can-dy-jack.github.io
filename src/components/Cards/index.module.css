@@ -1,0 +1,64 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  cursor: pointer;
+  border: 1px solid var(--self-desc-color);
+  border-radius: 5px;
+  padding: 20px;
+  flex: 0 0 calc(50% - 10px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s cubic-bezier(0.56, 0.06, 0.21, 0.91);
+  position: relative;
+  overflow: hidden;
+  min-height: 10rem;
+}
+.card:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1),
+    0 0 0 1px var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+.title {
+  color: var(--self-title-color);
+  font-size: 1.2em;
+  line-height: normal;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  text-align: center;
+}
+.desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: var(--self-desc-color);
+  text-indent: 2em;
+}
+.corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary-lightest),
+    var(--ifm-color-primary-darkest)
+  );
+  border-radius: 0 4px 0 32px;
+}
+.arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+
+  line-height: 2em;
+  text-align: center;
+}

@@ -8,6 +8,9 @@
   --ifm-color-primary-lightest: #8fcfff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --self-title-color: #262626;
+  --self-desc-color: #aaa;
 }
 [data-theme='dark'] {
   --ifm-color-primary: #33c2ff;
@@ -18,13 +21,15 @@
   --ifm-color-primary-lighter: #61d0ff;
   --ifm-color-primary-lightest: #8fddff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --self-title-color: #dfdfdf;
+  --self-desc-color: #888;
 }
 
 html, body {
   scroll-behavior: smooth;
 }
 
-/* 加评论系统 */
 
 /* 八股 */
 /* leetcode */
