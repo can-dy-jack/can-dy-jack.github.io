@@ -2,8 +2,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const themes = process.env.NODE_ENV === "development" ? [] : [
+  // 搜索 https://getcanary.dev/docs/integrations/docusaurus
+  require.resolve("@getcanary/docusaurus-theme-search-pagefind"),
+]
+
 const config: Config = {
-  title: '陈科衡的个人博客',
+  title: '陈科衡的个人博客' + process.env,
   tagline: '分享知识，但不只是知识',
   favicon: 'img/favicon.ico',
 
@@ -42,6 +47,8 @@ const config: Config = {
     ],
   ],
 
+  themes,
+
   themeConfig: {
     image: 'img/kj.png',
     docs: {
@@ -67,7 +74,7 @@ const config: Config = {
         { to: '/blog', label: '博客', position: 'left' },
         {
           type: 'search',
-          position: 'right',
+          position: 'left',
         },
         {
           href: 'https://github.com/facebook/docusaurus',
