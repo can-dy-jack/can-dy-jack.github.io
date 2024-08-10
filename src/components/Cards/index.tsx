@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 
 const posts = [
     {
-        url: "./Git/intro",
+        url: "/docs/GIT/intro",
         title: "常用Git命令",
         desc: "本文总结了一些常用的git命令"
     },

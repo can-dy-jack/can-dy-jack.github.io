@@ -77,7 +77,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/candy-jack',
           label: 'GitHub',
           position: 'right',
         },
