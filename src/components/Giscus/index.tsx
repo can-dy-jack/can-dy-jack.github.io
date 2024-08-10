@@ -3,6 +3,7 @@ import Giscus from "@giscus/react";
 import { useColorMode } from "@docusaurus/theme-common";
 
 // pnpm run swizzle @docusaurus/theme-classic BlogPostItem -- --wrap
+// yarn run swizzle @docusaurus/theme-classic BlogPostPage -- --eject --typescript 
 // pnpm run swizzle @docusaurus/theme-classic DocItem/Footer -- --wrap
 
 export default function GiscusComponent() {
@@ -19,7 +20,7 @@ export default function GiscusComponent() {
       strict="0"
       reactionsEnabled="1"
       emitMetadata="0"
-      inputPosition="bottom"
+      inputPosition="top"
       theme={colorMode}
       lang="zh-CN"
       loading="lazy"
