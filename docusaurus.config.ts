@@ -2,6 +2,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 const themes = process.env.NODE_ENV === "development" ? [] : [
   // 搜索 https://getcanary.dev/docs/integrations/docusaurus
   require.resolve("@getcanary/docusaurus-theme-search-pagefind"),
@@ -34,6 +37,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/can-dy-jack/can-dy-jack.github.io/edit/main/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
@@ -45,6 +50,12 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+  stylesheets: [
+    {
+      href: '/katex/katex.min.css',
+      type: 'text/css',
+    },
   ],
 
   themes,
@@ -77,7 +88,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/candy-jack',
+          href: 'https://github.com/can-dy-jack',
           label: 'GitHub',
           position: 'right',
         },

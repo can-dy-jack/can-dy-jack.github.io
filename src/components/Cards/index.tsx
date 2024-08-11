@@ -1,11 +1,24 @@
 import styles from "./index.module.css";
 import Link from "@docusaurus/Link";
 
-const posts = [
+type PostsType = {
+    url: string,
+    title: string,
+    desc: string,
+    active?: boolean
+}
+
+const posts: PostsType[] = [
     {
         url: "/docs/GIT/intro",
         title: "常用Git命令",
         desc: "本文总结了一些常用的git命令"
+    },
+    {
+        url: "/docs/leetcode/1035/",
+        title: "算法题目：不相交的线",
+        desc: "LeetCode 1035. 不相交的线 -- 动态规划解题",
+        active: true
     },
     {
         url: "#",
@@ -19,7 +32,7 @@ function Cards() {
         <div className={styles.cards}>
             {
                 posts.map(post => (
-                    <Link href={post.url} className={styles.card}>
+                    <Link href={post.url} className={styles.card + (post.active ? " " + styles.active : "")} key={post.title}>
                         <div className={styles.title}>{post.title}</div>
                         <div className={styles.desc}>{post.desc}</div>
                         <div className={styles.corner}>

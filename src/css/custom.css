@@ -12,7 +12,7 @@
   --self-title-color: #262626;
   --self-desc-color: #aaa;
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #33c2ff;
   --ifm-color-primary-dark: #14b9ff;
   --ifm-color-primary-darker: #05b4ff;
@@ -26,15 +26,15 @@
   --self-desc-color: #888;
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
 }
-
 
 /* 八股 */
 /* leetcode */
 /* 技术新闻 */
 /* buy me a coffee */
+/* latex 基本语法 */
 
 /* 做个自我介绍？ */
-
