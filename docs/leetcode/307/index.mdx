@@ -1,0 +1,129 @@
+---
+title: 307
+position: 307
+tags: [
+    中等,
+    设计,
+    树状数组,
+    线段树,
+    数组,
+]
+sidebar_position: 307
+---
+import DifficultyTag from "../../../src/components/DifficultyTag";
+
+# 307. 区域和检索 - 数组可修改
+
+## 题目描述 <DifficultyTag level={2} />
+
+:::info
+
+题目来源：[LeetCode官网题目](https://leetcode.cn/problems/range-sum-query-mutable/description/)
+
+:::
+
+给你一个数组 `nums` ，请你完成两类查询。
+
+- 其中一类查询要求 更新 数组 `nums` 下标对应的值
+- 另一类查询要求返回数组 `nums` 中索引 `left` 和索引 `right` 之间（ 包含 ）的`nums`元素的 和 ，其中 `left <= right`
+
+实现 `NumArray` 类：
+
+- `NumArray(int[] nums)` 用整数数组 `nums` 初始化对象
+- `void update(int index, int val)` 将 `nums[index]` 的值 **更新** 为 `val`
+- `int sumRange(int left, int right)` 返回数组 `nums` 中索引 `left` 和索引 `right` 之间（ **包含** ）的nums元素的 **和** （即，`nums[left] + nums[left + 1], ..., nums[right]`）
+
+示例 1：
+
+> 输入：  
+> ["NumArray", "sumRange", "update", "sumRange"]  
+> [[[1, 3, 5]], [0, 2], [1, 2], [0, 2]]  
+> 输出：  
+> [null, 9, null, 8]  
+> 
+> 解释：   
+> NumArray numArray = new NumArray([1, 3, 5]);  
+> numArray.sumRange(0, 2); // 返回 1 + 3 + 5 = 9  
+> numArray.update(1, 2);   // nums = [1,2,5]  
+> numArray.sumRange(0, 2); // 返回 1 + 2 + 5 = 8  
+
+题目限制：
+- `1 <= nums.length <= 3 * 104`
+- `-100 <= nums[i] <= 100`
+- `0 <= index < nums.length`
+- `-100 <= val <= 100`
+- `0 <= left <= right < nums.length`
+- 调用 `update` 和 `sumRange` 方法次数不大于 `3 * 104 `
+
+## 题解
+根据题目描述，可以看出本题就是让我们实现 **线段树** 的数据结构。具体设计细节可以参考 [数据结构之线段树](/docs/leetcode/算法与数据结构/线段树/) 来实现
+
+代码：
+```ts
+class NumArray {
+    nums: number[]
+    dp: number[]
+    n: number
+    constructor(nums: number[]) {
+        this.n = nums.length;
+        this.nums = nums;
+        this.dp = new Array(this.n * 4);
+        this.build(0, this.n - 1, 1);
+    }
+
+    build(s: number, t: number, p: number) {
+        if (s === t) {
+            this.dp[p] = this.nums[s];
+            return;
+        }
+        const mid = s + Math.floor((t - s) / 2);
+        this.build(s, mid, p * 2);
+        this.build(mid + 1, t, p * 2 + 1);
+        this.dp[p] = this.dp[p * 2] + this.dp[p * 2 + 1];
+    }
+
+    update(index: number, val: number): void {
+        this.update_inner(index, val, 0, this.n - 1, 1);
+    }
+
+    update_inner(idx: number, val: number, s: number, t: number, p: number) {
+        if (s === t) {
+            this.dp[p] = val;
+            return;
+        }
+        const mid = s + Math.floor((t - s) / 2);
+        if (idx <= mid) {
+            this.update_inner(idx, val, s, mid, p * 2);
+        } else {
+            this.update_inner(idx, val, mid + 1, t, p * 2 + 1)
+        }
+        this.dp[p] = this.dp[p * 2] + this.dp[p * 2 + 1];
+    }
+
+    sumRange(left: number, right: number): number {
+        return this.sum_inner(left, right, 0, this.n - 1, 1);
+    }
+
+    sum_inner(l: number, r: number, s: number, t: number, p: number) {
+        if (l === s && r === t) {
+            return this.dp[p];
+        }
+        const mid = s + Math.floor((t - s) / 2);
+        if (r <= mid) {
+            return  this.sum_inner(l, r, s, mid, p * 2);
+        } else if (l > mid) {
+            return this.sum_inner(l, r, mid + 1, t, p * 2 + 1);
+        } else {
+            return this.sum_inner(l, mid, s, mid, p * 2) + this.sum_inner(mid + 1, r, mid + 1, t, p * 2 + 1);
+        }
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * var obj = new NumArray(nums)
+ * obj.update(index,val)
+ * var param_2 = obj.sumRange(left,right)
+ */
+```
+

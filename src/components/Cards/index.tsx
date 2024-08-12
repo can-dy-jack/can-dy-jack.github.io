@@ -21,9 +21,15 @@ const posts: PostsType[] = [
         active: true
     },
     {
-        url: "#",
-        title: "grid布局学习笔记",
-        desc: "本文系统的介绍了 Grid 的基本内容，包括网格容器的所有属性和网格项的所有属性以及他们的简单使用，还有相关的函数 repeat() 等和特殊单位 fr 等"
+        url: "/docs/leetcode/307/",
+        title: "算法题目：区域和检索 - 数组可修改",
+        desc: "LeetCode 307。线段树的设计与应用",
+    },
+    {
+        url: "/docs/leetcode/算法与数据结构/线段树/",
+        title: "数据结构之线段树",
+        active: true,
+        desc: "线段树可以在 O(logN) 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。"
     },
 ];
 
