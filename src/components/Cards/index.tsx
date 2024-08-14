@@ -31,6 +31,11 @@ const posts: PostsType[] = [
         active: true,
         desc: "线段树可以在 O(logN) 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。"
     },
+    {
+        url: "/docs/leetcode/3152/",
+        title: "算法题目：特殊数组 ",
+        desc: "LeetCode 3152. 特殊数组 II - 前缀和、动态规划",
+    },
 ];
 
 function Cards() {
