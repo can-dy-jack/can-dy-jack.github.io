@@ -148,9 +148,17 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()}, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneDark, // github oneDark oneLight vsDark
+      darkTheme: prismThemes.oneDark, // dracula nightOwl oceanicNext oneDark
       additionalLanguages: ['Makefile', 'bash'],
+    },
+    announcementBar: {
+      id: 'self-announce',
+      content:
+        '原先博客内容暂时迁移至 <a target="_blank" target="_blank" href="https://kartjim.github.io/">kartjim.github.io</a>，后续会陆续迁移回来',
+      backgroundColor: '#aaa',
+      textColor: '#fff',
+      isCloseable: true,
     },
   } satisfies Preset.ThemeConfig,
 };

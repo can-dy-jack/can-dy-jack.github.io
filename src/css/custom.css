@@ -31,6 +31,23 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  scroll-margin: 60px;
+}
+
+div[role="banner"] {
+  background: repeating-linear-gradient(
+    35deg,
+    rgb(93, 190, 255),
+    rgb(93, 190, 255) 20px,
+    rgb(255, 153, 153) 10px,
+    rgb(255, 153, 153) 40px
+  ) !important;
+}
+div[role="banner"]>button {
+  color: #fff;
+}
+
 /* 八股 */
 /* 技术新闻 */
 /* buy me a coffee */
