@@ -32,9 +32,13 @@ const FeatureList: FeatureItem[] = [
     title: '关于我',
     Svg: require('@site/static/img/home3.svg').default,
     description: (
-      <>
-        本人是双非一本，在大学学习生活中逐渐接触到前端，并一直对前端抱有强烈的兴趣爱好，目前正在努力成为一名前端开发者！
-      </>
+      <div className='self-feature'>
+        <div>邮箱: jjack_chen3@163.com</div>
+        <div>微信: 15856941255</div>
+        <div>QQ: 2696369915</div>
+        <div>GitHub: <Link href='https://github.com/can-dy-jack'>@can-dy-jack</Link></div>
+        <div>力扣: <Link href='https://leetcode.cn/u/kartjim/'>@kartjim</Link></div>
+      </div>
     ),
   },
 ];
