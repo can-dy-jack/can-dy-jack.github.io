@@ -1,7 +1,144 @@
 ---
-title: SVG 加载器
+title: SVG Loading Spinners
+tags: [css, svg, loading, spinner]
 ---
-import SVGCircleDraw from "@site/src/components/SVGCircleDraw"
+
+## 教程
+
+### 第一步，画一个圆
+
+首先指定 svg 的工作空间，viewBox 属性控制坐标系。
+在这里，`0 0 200 200`将原点设置在左上角，宽度和高度各为 200 个单位。
+
+然后我们创建一个 `circle` 标签。`cx` 和 `cy` 属性设置圆的中心，`r` 为半径，`stroke-width`设置边框宽度， `stroke` 设置边框的颜色。
+`fill="none"` 确保圆是空心的，形成我们旋转器的基本形状。
+
+绘制出来的样式如下实时编辑器所示，你可以在右侧工具区实时调试这几个属性：
+
+import SVGCircleDraw from "@site/src/components/SVGCircleDraw";
+
+<SVGCircleDraw showRadius showSW showStroke></SVGCircleDraw>
+
+### `stroke-dasharray` 绘制一部分圆
+
+因为我们的 Loading Spinners 是有动画旋转着的，并不是一个完整的圆，而是一个圆的一部分。
+
+> [`stroke-dasharray`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/stroke-dasharray) 表现属性定义了用于绘制形状轮廓的虚线段和间隙的排列形式。
+
+该属性使用方式如下所示：
+
+```html live
+<svg viewBox="0 0 30 12" xmlns="http://www.w3.org/2000/svg">
+  {/* 这里的 strokeDasharray 应该是 stroke-dasharray，这里因为是jsx */} {/*
+  没有虚线和间隙 */}
+  <line x1="0" y1="1" x2="30" y2="1" stroke="#e89" />
+
+  {/* 虚线段和间隙长度相同 */}
+  <line x1="0" y1="3" x2="30" y2="3" strokeDasharray="4" stroke="#e89" />
+
+  {/* 虚线段和间隙长度不同 */}
+  <line x1="0" y1="5" x2="30" y2="5" strokeDasharray="4 1" stroke="#e89" />
+
+  {/* 具有奇数个不同长度的虚线段和间隙 */}
+  <line x1="0" y1="7" x2="30" y2="7" strokeDasharray="4 1 2" stroke="#e89" />
+
+  {/* 具有偶数个不同长度的虚线段和间隙 */}
+  <line x1="0" y1="9" x2="30" y2="9" strokeDasharray="4 1 2 3" stroke="#e89" />
+
+  {/* 以间隙开始的虚线 */}
+  <line x1="0" y1="11" x2="30" y2="11" strokeDasharray="0 4 0" stroke="#e89" />
+</svg>
+```
+
+对于圆，我们可以设置线段和间隙两个值来控制弧度大小。
+
+线段设置为 0 时，看不到任何东西，因为都是间隙。  
+线段设置的最大值为圆的周长 2 _ π _ 50 ≈ 315。
+
+你可以在下面实时更改值来试一下效果：
 
 <SVGCircleDraw showSDR></SVGCircleDraw>
+
+### `stroke-linecap` 加端点弧度
+
+<SVGCircleDraw showSDR isRound></SVGCircleDraw>
+
+### `stroke-dashoffset` 控制绘制起点偏移
+
+`stroke-dashoffset`属性允许我们控制偏移的起始位置：
+
+<SVGCircleDraw showSDR isRound showOffset></SVGCircleDraw>
+
+### 添加旋转
+
+只需一个简单的 CSS 动画，即可使我们的圆圈围绕其中心连续旋转：
+
+<SVGCircleDraw showSDR isRound showAnimate></SVGCircleDraw>
+
+### 使用`stroke-dasharray`做动画
+
+<SVGCircleDraw isRound showAnimate isDashAnimate></SVGCircleDraw>
+
+### 动态漩涡效果
+
+设置动画 dasharray 和 dashoffset 值可以创建动态漩涡效果：
+
+import Spin2 from "@site/src/components/SVGCircleDraw/Spin2";
+
+<Spin2 />
+
+```html
+<style>
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin2 {
+    0% {
+      stroke-dasharray: 1, 800;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 400, 400;
+      stroke-dashoffset: -200px;
+    }
+    100% {
+      stroke-dasharray: 800, 1;
+      stroke-dashoffset: -800px;
+    }
+  }
+
+  .spin2 {
+    transform-origin: center;
+    animation: spin2 2s ease-in-out infinite, spin 2.5s linear infinite;
+    animation-direction: alternate;
+  }
+</style>
+
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <circle
+    class="spin2"
+    cx="400"
+    cy="400"
+    fill="none"
+    r="200"
+    stroke-width="50"
+    stroke="#E387FF"
+    stroke-dasharray="189 1400"
+    stroke-linecap="round"
+  />
+</svg>
+```
+
+## 总结
+
+以上便是使用 svg 实现 Loading Spinners 的基本代码，
+当然实现的是基本的功能，更多华丽的动画可以自行实现。
+
+## 参考资料
+
+- [Making SVG Loading Spinners: An Interactive Guide](https://www.fffuel.co/svg-spinner/)
+- [https://uiverse.io/](https://uiverse.io/)
 

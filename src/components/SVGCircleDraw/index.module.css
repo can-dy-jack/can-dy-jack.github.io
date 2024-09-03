@@ -15,6 +15,7 @@
 .svgShow {
   flex: 0 1 200px;
   height: 200px;
+  align-self: center;
 }
 .svgShow svg {
   width: 200px;
