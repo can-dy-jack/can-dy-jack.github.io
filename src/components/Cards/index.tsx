@@ -10,6 +10,11 @@ type PostsType = {
 
 const posts: PostsType[] = [
     {
+        url: "/docs/工程化/eslint/",
+        title: "ESLint 原理",
+        desc: "eslint工作原理解析；知识点涉及AST、babel、ESLint的使用方式和实现原理",
+    },
+    {
         url: "/docs/GIT/intro",
         title: "常用Git命令",
         desc: "本文总结了一些常用的git命令"

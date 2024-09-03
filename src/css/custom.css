@@ -87,6 +87,9 @@ div[role="banner"]>button {
 .self-feature>div:nth-child(6)::before {
   background-color: rgb(247, 219, 247);
 }
+.rangeslider .rangeslider__fill {
+  background-color: var(--ifm-color-primary) !important;
+}
 
 /* 八股 */
 /* 技术新闻 */

@@ -16,8 +16,9 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.1",
-    "@docusaurus/preset-classic": "^3.5.1",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/theme-live-codeblock": "^3.5.2",
     "@getcanary/docusaurus-theme-search-pagefind": "^0.0.2",
     "@getcanary/web": "^0.0.71",
     "@giscus/react": "^3.0.0",
@@ -30,14 +31,15 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-rangeslider": "^2.2.0",
     "rehype-katex": "7",
     "remark-math": "6",
     "three": "^0.167.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.5.1",
-    "@docusaurus/tsconfig": "^3.5.1",
-    "@docusaurus/types": "^3.5.1",
+    "@docusaurus/module-type-aliases": "^3.5.2",
+    "@docusaurus/tsconfig": "^3.5.2",
+    "@docusaurus/types": "^3.5.2",
     "typescript": "~5.2.2"
   },
   "browserslist": {

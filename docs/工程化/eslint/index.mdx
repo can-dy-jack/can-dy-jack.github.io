@@ -1,0 +1,585 @@
+---
+title: ESLint 原理
+sidebar_position: 2
+---
+
+## JavaScript AST
+
+`AST` 抽象语法树，用于代码语法的检查、代码风格检查、代码规范化、代码高亮、自动补全等。
+
+展示网站：[AST explorer](https://astexplorer.net/)
+
+主要有三步：
+
+1. 代码转化为 AST 语法树  `esprima`
+2. 深度优先遍历 AST  `estraverse`
+3. 代码生成  `escodegen`
+
+代码测试：
+
+```other
+# 安装
+pnpm add esprima estraverse escodegen
+```
+
+测试代码：
+
+```javascript
+const esprima = require('esprima');
+const estraverse = require('estraverse');
+const escodegen = require('escodegen');
+
+// 源代码
+let code = `function ast(){}`;
+
+// 1、code 转换为 AST
+let ast = esprima.parseScript(code);
+
+// 2、 遍历 AST
+estraverse.traverse(ast, {
+    enter(node) {
+        console.log('enter', node.type)
+        if(node.type === 'FunctionDeclaration') {
+            node.id.name = 'es'
+        }
+    },
+    leave(node) {
+        console.log('leave', node.type)
+    }
+})
+
+// 3、AST 转换为 code
+let res = escodegen.generate(ast)
+
+console.log(res); // 调试
+```
+
+输出：
+
+```other
+enter Program
+enter FunctionDeclaration
+enter Identifier
+leave Identifier
+enter BlockStatement
+leave BlockStatement
+leave FunctionDeclaration
+leave Program
+function es() {
+}
+```
+
+---
+
+## babel
+
+> 前端经常会使用 `babel` 将 ES6 代码转换为 ES5 语法，这就是典型的语法转化，需要借助 `AST`
+
+> @bable\core  可以放入babel插件，babel会默认加载这些插件。
+
+举例：将箭头函数转换为普通函数。
+
+下载：
+
+```other
+pnpm add @bable/core @babel/types
+```
+
+使用第三方插件 `babel-plugin-transform-es2015-arrow-functions` ：
+
+```javascript
+const babel = require('@babel/core');
+const transformFunction = require('babel-plugin-transform-es2015-arrow-functions');
+
+// 代码
+const code = `const add = (a, b) => a + b`;
+
+const answer = babel.transform(code, {
+    plugins: [transformFunction]
+})
+
+console.log(answer.code);
+/*
+const add = function (a, b) {
+  return a + b;
+};
+*/
+```
+
+> babel 通过 AST 来进行代码转换。AST 由：
+
+```json
+// const add = (a, b) => a + b
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "add"
+          },
+          "init": {
+            "type": "ArrowFunctionExpression",
+            "id": null,
+            "expression": true,
+            "generator": false,
+            "async": false,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "a"
+              },
+              {
+                "type": "Identifier",
+                "name": "b"
+              }
+            ],
+            "body": {
+              "type": "BinaryExpression",
+              "left": {
+                "type": "Identifier",
+                "name": "a"
+              },
+              "operator": "+",
+              "right": {
+                "type": "Identifier",
+                "name": "b"
+              }
+            }
+          }
+        }
+      ],
+      "kind": "const"
+    }
+  ],
+  "sourceType": "module"
+}
+```
+
+转换为：
+
+```json
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "add"
+          },
+          "init": {
+            "type": "FunctionExpression",
+            "id": null,
+            "expression": false,
+            "generator": false,
+            "async": false,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "a"
+              },
+              {
+                "type": "Identifier",
+                "name": "b"
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "BinaryExpression",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "a"
+                    },
+                    "operator": "+",
+                    "right": {
+                      "type": "Identifier",
+                      "name": "b"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "kind": "const"
+    }
+  ],
+  "sourceType": "module"
+}
+```
+
+下面图片标识出差别：
+
+![ast-diff.png](https://res.craft.do/user/full/92de3a3e-4267-721f-393c-568f164c3f07/doc/c58b2360-5ed5-48fd-a096-430e599fcb14/a88e397a-65f3-45ff-95c7-966f6fd09d5e)
+
+也可以自己写一个简单的 babel 插件进行转换，用以理解 AST 的转换:
+
+```javascript
+const transformFunction = {
+    visitor: {
+        ArrowFunctionExpression(path) {
+            let { node } = path;
+            node.type = "FunctionExpression";
+
+            let old_body = node.body;
+            if(!types.isBlockStatement(old_body)) {
+                node.body = types.blockStatement([types.returnStatement(old_body)])
+            }
+        }
+    }
+}
+```
+
+---
+
+## [ESLint](https://eslint.org/)
+
+> ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
+
+> 保证团队协作开发时，编写出来的 代码风格 保持一致。
+
+1. `ESLint` 使用 `Espree` 进行 JavaScript 解析
+2. `ESLint` 使用 AST 来评估代码中的模式
+3. `ESLint` 每一条规则都是一个插件（*js函数*），灵活实用
+
+> 几种解析器：
+
+- > esprima 经典解析器
+- > acorn 后来者
+- > @babel/parser (babylon)基于 acorn
+- > espree 最初来源于 esprima ，现在基于acorn
+
+### 使用
+
+```shell
+# 下载 ESLint
+pnpm add eslint -D
+# 生成 ESLint 配置文件
+pnpm create @eslint/config
+# 或者使用npm
+# npm init @eslint/config
+```
+
+一般编辑器中都支持ESLint，或者通过下载插件支持（VSCode），之后在项目中即可使用 ESLint。
+
+> 或者可以在命令行手动使用：`npx eslint [filename]` ；使用命令 `npx eslint [filename] --fix` 可以修复文件。
+
+生成的 `.eslintrc.js`  配置文件类似于：
+
+```javascript
+module.exports = {
+  env: { // 支持的环境
+    browser: true,
+    commonjs: true,
+    es2021: true,
+    node: true,
+  },
+  extends: 'airbnb-base', // 别人写好的规则； extends == plugins + rules
+  overrides: [
+  ],
+  parserOptions: { 
+    ecmaVersion: 'latest',
+  },
+  rules: { // 自定义规则
+  },
+  globals: {
+    // 可添加全局变量
+  },
+  parser: "", // 指定 AST 解析器
+  plugins: "" // 插件
+};
+```
+
+> 可在项目根目录下添加 `.eslintignore` 文件，用来忽略某些文件。
+
+配置规则不仅可以使用配置文件（`.eslintrc.js` | `.eslinrc.json` 等），还可以使用注释或禁用配置。如：`/*eslint no-const-assign: "error"*/` ，配置后面还可以添加注释。
+
+ESLint 常见规则（`rules`）
+
+| 语法规则                        | 功能                     |
+| --------------------------- | ---------------------- |
+| indent                      | 缩进控制                   |
+| quotes                      | 字符串使用单引号还是双引号          |
+| space-before-function-paren | 函数形参前是否加空格             |
+| no-trailing-spaces          | 行末禁止多余的空格              |
+| semi                        | 需要省略不必要的分号             |
+| eol-last                    | 文件末尾必须包含一个空白行          |
+| no-multiple-empty-lines     | 不允许出现连续的空行             |
+| eqeqeq                      | 使用类型安全的相等运算符 === 和 !== |
+| curly                       | 当一个块只包含一个语句时，是否省略大括号。  |
+
+全部规则在这里：[规则 - ESLint - 插件化的 JavaScript 代码检查工具](https://zh-hans.eslint.org/docs/latest/rules/)
+
+### 1、修正错误的几种方式
+
+#### 1.1、命令修正
+
+基本使用例子：`npx eslint index.js --fix` 将 `index.js` 文件修复。
+
+可以使用 `npm`脚本，添加一个 npm scripts 来运行 ESLint 规则。例如：
+
+```json
+"scripts": {
+  "lint:fix": "eslint . --fix" // 不需要 npx
+}
+// 命令行运行 npm run lint:fix 即可
+```
+
+可以指定后缀和特定文件夹，例如：
+
+```json
+"scripts": {
+  "lint": "eslint --fix --ext .js,.ts src"
+}
+```
+
+更多命令行选项可查看官网：[命令行 - ESLint - 插件化的 JavaScript 代码检查工具](https://zh-hans.eslint.org/docs/latest/user-guide/command-line-interface)
+
+#### 1.2、插件修正
+
+vscode中安装 eslint 插件即可。插件可以修正错误，也可以忽视错误。将鼠标移动到错误上选择快速修复即可看到推荐的选项。
+
+### 2、配置ESLint
+
+ESLint有多种配置文件格式。如果在同一目录下存在多个配置文件，ESLint 将按照以下优先顺序。
+
+1. `.eslintrc.js`
+2. `.eslintrc.cjs`
+3. `.eslintrc.yaml`
+4. `.eslintrc.yml`
+5. `.eslintrc.json`
+6. 写在`package.json`里的配置，写在：`"eslintConfig": {}` 里。
+
+#### 2.1、环境配置
+
+`env` 键指定环境，默认都为 `false` ，将每个环境设置为 `true` 想启用的环境。
+
+```json
+{
+  env: {
+    browser: true,
+    commonjs: true,
+    es2021: true,
+    node: true,
+  },
+}
+```
+
+#### 2.2、配置规则
+
+ESLint 有大量的内置规则，你可以通过插件添加更多的规则。你也可以通过配置注释或配置文件来修改你的项目使用哪些规则。
+
+要改变一个规则的设置，你必须把规则的 ID 设置为这些值之一：
+
+- `"off"` 或 `0` - 关闭规则
+- `"warn"` 或 `1` - 启用并视作警告（不影响退出）。
+- `"error"` 或 `2` - 启用并视作错误（触发时退出代码为 1）
+
+使用配置注释在文件中配置规则：
+
+`/* eslint eqeqeq: "off", curly: "error" */`
+
+或使用数字：
+
+`/* eslint eqeqeq: 0, curly: 2 */`
+
+如果一个规则有额外的选项，你可以使用数组字面的语法来指定它们：
+
+`/* eslint quotes: ["error", "double"], curly: 2 */`
+
+配置注释可以包括描述，解释为什么注释是必要的。描述必须出现在配置之后，并以两个或多个连续的 `-` 字符与配置分开。比如：
+
+```json
+/* eslint eqeqeq: "off", curly: "error" -- Here's a description about why this configuration is necessary. */
+
+/* eslint eqeqeq: "off", curly: "error"
+    ---
+    Here's a description about why this configuration is necessary. */
+
+/* eslint eqeqeq: "off", curly: "error"
+ * ---
+ * This will not work due to the line above starting with a '*' character.
+ */
+```
+
+使用配置文件是更好的选项：
+
+```json
+{
+    "plugins": [ // 插件
+        "myplugin"
+    ],
+    "rules": {
+        "eqeqeq": "off",
+        "curly": "error",
+        "quotes": ["error", "double"],
+        "mmyplugin/rule1": "error" // 插件规则
+    }
+}
+```
+
+#### 2.3、禁用规则
+
+要在你的文件中暂时禁用规则警告，可以使用以下格式的块状注释：
+
+```javascript
+/* eslint-disable */
+
+console.log('foo');
+
+/* eslint-enable */
+```
+
+你还可以禁用或启用特定规则的警告：
+
+```javascript
+/* eslint-disable no-alert, no-console */
+
+alert('foo');
+console.log('bar');
+
+/* eslint-enable no-alert, no-console */
+```
+
+> **注意**：`/* eslint-enable */` 没有列出任何特定的规则将导致所有被禁用的规则被重新启用。
+
+要禁用某一特定行的所有规则：
+
+```javascript
+alert('foo'); // eslint-disable-line no-alert
+
+// eslint-disable-next-line no-alert
+alert('foo');
+
+/* eslint-disable-next-line */
+alert('foo');
+
+alert('foo'); /* eslint-disable-line */
+```
+
+要在配置文件中禁用一组文件的规则，请使用 `overrides` 键和 `files` 键：
+
+```javascript
+{
+  "rules": {
+    
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js","*.spec.js"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
+```
+
+要禁用所有内联配置注释，请使用 `noInlineConfig` 设置
+
+```javascript
+{
+  "rules": {
+    
+  },
+  "noInlineConfig": true
+}
+```
+
+#### 2.4、`ignorePatterns`
+
+配置文件中使用 `ignorePatterns` 来告诉 ESLint 忽略特定的文件和目录。`ignorePatterns` 模式遵循与 `.eslintignore` 相同的规则。
+
+- `ignorePatterns` 中的 glob 模式是相对于配置文件所在的目录而言的。
+- 你不能在 `overrides` 属性中使用 `ignorePatterns` 属性。
+- 在 `.eslintignore` 中定义的模式优先于配置文件的 `ignorePatterns` 属性。
+
+#### 2.5、`eslintignore` 文件
+
+> 你可以通过在项目的根目录下创建 `.eslintignore` 文件来告诉 ESLint 要忽略哪些文件和目录。`.eslintignore` 文件是一个纯文本文件，其中每一行都是一个 glob 模式，表示哪些路径应该被省略掉。
+
+- 以 `#` 开头的行被视为注释，不影响忽略模式。
+- 路径是相对于当前工作目录的。这也适用于通过 `--ignore-pattern`[命令](https://zh-hans.eslint.org/docs/latest/user-guide/command-line-interface#--ignore-pattern)``传递的路径。
+- 前面有 `!` 的行是否定模式，重新包括被先前模式忽略的模式。
+- 忽略模式的行为与 `.gitignore` [规范](https://git-scm.com/docs/gitignore)一致。
+
+除了 `.eslintignore` 文件中的任何模式外，ESLint 总是遵循一些隐含的忽略规则，即使通过了 `--no-ignore` 标志。这些隐含的规则如下：
+
+- 忽略 `node_modules/`
+- 忽略点文件（除了 `.eslintrc.*`），以及点文件夹和它们的内容
+
+### 3、规范包
+
+#### 3.1、内置规范包
+
+内置有两种规范包
+
+1. `eslint-all` 200多个规则
+2. `eslint-recommended` 50多个规范
+
+#### 3.2、标准规范包
+
+第三方包：`eslint-config-standard`
+
+> 可能需要将 ESLint 降低一些版本支持
+
+> #### 3.3、`airbnb`
+
+> 第三方规范包其中最流行的一个！`eslint-config-airbnb-base`
+
+```shell
+npm info "eslint-config-airbnb-base@latest" peerDependencies
+
+npx install-peerdeps --dev eslint-config-airbnb-base
+```
+
+下载好之后，在配置文件中指定：`extends: 'airbnb-base'` 即可。
+
+---
+
+## ESLint原理
+
+### ESLint运行流程
+
+查看 `package.json` 文件，得到主文件：`"main": "./lib/api.js"` 。但实质的入口文件(ESLint命令入口) 是：
+
+#### `./bin/eslint.js`:
+
+```json
+{
+  "bin": {
+    "eslint": "./bin/eslint.js"
+  },
+}
+```
+
+而在 `eslint.js` 文件中调用了 `require("../lib/cli").execute()` ，进入 `cli.js` 文件
+
+大致原理整理如下：
+
+![ESLint原理.png](https://res.craft.do/user/full/92de3a3e-4267-721f-393c-568f164c3f07/doc/c58b2360-5ed5-48fd-a096-430e599fcb14/2287d134-b6aa-4e68-9cbc-37f874b68a6c)
+
+---
+
+## ESLint插件开发
+
+```shell
+npm install yo generator-eslint -g # 安装插件生成工具
+
+yo eslint:plugin # 生成插件框架
+yo eslint:rule # 生成插件规则
+```
+
