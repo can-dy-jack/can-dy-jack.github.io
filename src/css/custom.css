@@ -91,20 +91,6 @@ div[role="banner"]>button {
   background-color: var(--ifm-color-primary) !important;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes dash-spin {
-  from {
-    stroke-dasharray: 0 315;
-  }
-  to {
-    stroke-dasharray: 315 400;
-  }
-}
-
 /* 八股 */
 /* 技术新闻 */
 /* buy me a coffee */

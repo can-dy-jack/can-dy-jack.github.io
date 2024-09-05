@@ -1,4 +1,5 @@
 import style from "./index.module.css";
+import "./animate.css";
 
 import { Highlight } from "prism-react-renderer";
 import { usePrismTheme } from "@docusaurus/theme-common";
