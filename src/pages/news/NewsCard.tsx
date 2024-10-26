@@ -1,6 +1,8 @@
 import style from './NewsCard.module.css'
 import {useEffect, useState} from "react";
 
+export default function NewsCard() {}
+
 export function WeiboCard() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
