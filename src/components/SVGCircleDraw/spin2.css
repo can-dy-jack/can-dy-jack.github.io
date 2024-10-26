@@ -1,3 +1,16 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin3 {
+  from {
+    stroke-dasharray: 0 315;
+  }
+  to {
+    stroke-dasharray: 315 400;
+  }
+}
 @keyframes spin2 {
   0% {
     stroke-dasharray: 1, 800;

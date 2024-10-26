@@ -22,7 +22,7 @@ export default function Spin2() {
           cy="400"
           fill="none"
           r="200"
-          stroke-width="50"
+          strokeWidth="50"
           stroke="#E3876F"
           strokeDasharray="189 1400"
           strokeLinecap="round"

@@ -1,11 +1,9 @@
-import style from "./index.module.css";
-import "./animate.css";
-
 import { Highlight } from "prism-react-renderer";
 import { usePrismTheme } from "@docusaurus/theme-common";
 import { useState } from "react";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
+import "./index.scss";
 
 export default function SVGCircleDraw({
   showSW = false,
@@ -70,14 +68,14 @@ export default function SVGCircleDraw({
             ? {
                 transformOrigin: "center",
                 // animation: "spin 4s ease-in infinite",
-                animation: `${isDashAnimate ? "dash-spin" : "spin"} ${
+                animation: `${isDashAnimate ? "b" : "a"} ${
                   state.speed
                 }s ${state.easing} infinite`,
                 animationDirection: isDashAnimate ? "alternate" : "normal",
               }
             : {}
         }
-        className="spin"
+        className={isDashAnimate ? "SVGCircleDraw2" : "SVGCircleDraw"}
       />
     </svg>
   );
@@ -124,12 +122,12 @@ export default function SVGCircleDraw({
     `${showAnimate ? `\n    class="spin"` : ""}`;
 
   return (
-    <div className={style.svgBox}>
-      <div className={style.svgTop}>
-        <div className={style.svgShow}>{SVGDOM}</div>
-        <div className={style.svgTools}>
+    <div className="svgBox">
+      <div className="svgTop">
+        <div className="svgShow">{SVGDOM}</div>
+        <div className="svgTools">
           {showSW && (
-            <div className={style.sw}>
+            <div className="sw">
               <span>Stroke width</span>
               <Slider
                 min={1}
@@ -141,7 +139,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showRadius && (
-            <div className={style.radius}>
+            <div className="radius">
               <span>Radius</span>
               <Slider
                 min={1}
@@ -153,7 +151,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showStroke && (
-            <div className={style.stroke}>
+            <div className="stroke">
               <label htmlFor="stroke">stroke: </label>
               <input
                 type="color"
@@ -166,7 +164,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showSDR && (
-            <div className={style.sdr}>
+            <div className="sdr">
               <span>stroke-dasharray: </span>
               <Slider
                 min={0}
@@ -178,7 +176,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showOffset && (
-            <div className={style.offset}>
+            <div className="offset">
               <span>stroke-dashoffset: </span>
               <Slider
                 min={-300}
@@ -190,7 +188,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showAnimate && (
-            <div className={style.speed}>
+            <div className="speed">
               <span>Animation speed: </span>
               <Slider
                 min={0.2}
@@ -207,7 +205,7 @@ export default function SVGCircleDraw({
             </div>
           )}
           {showAnimate && (
-            <div className={style.aesing}>
+            <div className="aesing">
               <span>Easing: </span>
               <select
                 name="easing"
@@ -225,7 +223,7 @@ export default function SVGCircleDraw({
           )}
         </div>
       </div>
-      <div className={style.svgCode}>
+      <div className="svgCode">
         <Highlight
           code={`${styleStr}<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <circle 

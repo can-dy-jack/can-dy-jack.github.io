@@ -52,7 +52,7 @@ const config: Config = {
             "https://github.com/can-dy-jack/can-dy-jack.github.io/edit/main/",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./src/css/custom.scss",
         },
       } satisfies Preset.Options,
     ],
@@ -65,6 +65,7 @@ const config: Config = {
   ],
 
   themes,
+  plugins: ['docusaurus-plugin-sass'],
 
   themeConfig: {
     image: "img/kj.png",
@@ -89,6 +90,7 @@ const config: Config = {
           label: "知识库",
         },
         { to: "/blog", label: "博客", position: "left" },
+        { to: "/news", label: "时事新闻", position: "left" },
         {
           type: "search",
           position: "left",

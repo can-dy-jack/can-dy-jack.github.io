@@ -28,12 +28,14 @@
     "@react-three/drei": "^9.109.2",
     "@react-three/fiber": "^8.16.8",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-rangeslider": "^2.2.0",
     "rehype-katex": "7",
     "remark-math": "6",
+    "sass": "^1.78.0",
     "three": "^0.167.0"
   },
   "devDependencies": {

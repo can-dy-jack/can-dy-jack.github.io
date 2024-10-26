@@ -10,6 +10,11 @@ type PostsType = {
 
 const posts: PostsType[] = [
     {
+        url: "/docs/CSS/svg-circle/",
+        title: "SVG Loading Spinners",
+        desc: "使用 svg 实现 Loading Spinners教程",
+    },
+    {
         url: "/docs/工程化/eslint/",
         title: "ESLint 原理",
         desc: "eslint工作原理解析；知识点涉及AST、babel、ESLint的使用方式和实现原理",
