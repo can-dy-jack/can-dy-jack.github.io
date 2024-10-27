@@ -6,13 +6,11 @@ import Loading from "@site/static/img/loading.svg";
 interface NewsCardProps {
   type: "weibo" | "zhihu",
   renderFunc: (item: any, idx: number) => JSX.Element,
-  header: {
-    linkTo: string,
-    title: string
-  }
+  linkTo: string,
+  title: string
 }
 
-export default function NewsCard({type, renderFunc, header}: NewsCardProps) {
+export default function NewsCard({type, renderFunc, linkTo, title}: NewsCardProps) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -39,9 +37,9 @@ export default function NewsCard({type, renderFunc, header}: NewsCardProps) {
   return (
     <div className={style.card}>
       <div className={style.header}>
-        <a href={header.linkTo} target="_blank"
+        <a href={linkTo || ""} target="_blank"
            rel="noopener noreferrer" style={{color: "#fff"}}>
-          {header.title}
+          {title}
         </a>
         {
           loading ?
@@ -79,10 +77,9 @@ export function WeiboCard() {
           <span>{idx + 1}、{item.word}</span>
         </a>
       </div>
-    )} header={{
-      linkTo: "https://s.weibo.com/top/summary",
-      title: "微博热搜榜"
-    }} />
+    )} linkTo="https://s.weibo.com/top/summary"
+      title="微博热搜榜"
+    />
   )
 }
 
@@ -96,9 +93,8 @@ export function ZhihuCard() {
           <span>{idx + 1}、{item.target.title}</span>
         </a>
       </div>
-    )} header={{
-      linkTo: "https://www.zhihu.com/hot",
-      title: "知乎热榜"
-    }} />
+    )} linkTo="https://www.zhihu.com/hot"
+      title="知乎热榜"
+     />
   )
 }
