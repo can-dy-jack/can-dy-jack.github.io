@@ -1,0 +1,13 @@
+.box {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.link {
+}
+.link svg {
+  width: 28px;
+  height: 28px;
+}
