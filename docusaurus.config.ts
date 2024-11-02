@@ -91,6 +91,7 @@ const config: Config = {
         },
         { to: "/blog", label: "博客", position: "left" },
         { to: "/news", label: "时事新闻", position: "left" },
+        { to: "/rss", label: "RSS订阅", position: "left" },
         {
           type: "search",
           position: "left",

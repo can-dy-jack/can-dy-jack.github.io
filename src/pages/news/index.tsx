@@ -1,7 +1,6 @@
 import BaseLayout from "../../components/BaseLayout"
 import {WeiboCard, ZhihuCard} from "@site/src/pages/news/NewsCard";
 
-
 const cards = [];
 
 export default function NewsPage() {
