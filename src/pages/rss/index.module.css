@@ -83,3 +83,17 @@
   text-align: right;
   padding: 10px;
 }
+
+@media (max-width: 996px) {
+  .box {
+    flex-direction: column;
+  }
+  .aside {
+    padding: 10px 0;
+    background: #fff;
+    top: 0;
+  }
+  .content_box {
+    margin: 0 auto;
+  }
+}
