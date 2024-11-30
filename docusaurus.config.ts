@@ -90,6 +90,12 @@ const config: Config = {
           label: "知识库",
         },
         { to: "/blog", label: "博客", position: "left" },
+        {
+          type: "docSidebar",
+          sidebarId: "sidebar2",
+          label: "奇闻趣事",
+          position: "left"
+        },
         { to: "/news", label: "时事新闻", position: "left" },
         { to: "/rss", label: "RSS订阅", position: "left" },
         {
