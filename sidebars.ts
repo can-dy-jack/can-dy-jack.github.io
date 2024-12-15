@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
     createSidebar('工程化'),
     createSidebar('CSS'),
     createSidebar('GIT'),
+    "frontendmaster",
   ],
   sidebar2: [
     {

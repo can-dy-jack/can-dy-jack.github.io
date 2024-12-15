@@ -11,6 +11,7 @@
 
   --self-title-color: #262626;
   --self-desc-color: #aaa;
+  --self-collapse-bg: rgba(0,0,0,0.02);
 }
 [data-theme="dark"] {
   --ifm-color-primary: #33c2ff;
@@ -24,6 +25,7 @@
 
   --self-title-color: #dfdfdf;
   --self-desc-color: #888;
+  --self-collapse-bg: rgba(255,255,255,0.1);
 }
 
 html,
