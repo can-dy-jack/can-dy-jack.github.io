@@ -81,7 +81,7 @@ const config: Config = {
         alt: "陈科衡的个人博客",
         src: "img/kj.png",
       },
-      hideOnScroll: true,
+      // hideOnScroll: true,
       items: [
         {
           type: "docSidebar",
@@ -97,6 +97,7 @@ const config: Config = {
           position: "left"
         },
         { to: "/news", label: "时事新闻", position: "left" },
+
         { to: "/rss", label: "RSS订阅", position: "left" },
         {
           type: "search",

@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
     createSidebar('CSS'),
     createSidebar('GIT'),
     "frontendmaster",
+    createSidebar('游戏攻略'),
   ],
   sidebar2: [
     {
@@ -35,7 +36,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index'
       },
     }
-  ]
+  ],
 };
 
 export default sidebars;

@@ -4,7 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-import HomeSpring from '../components/HomeSpring/HomeSpring';
 
 import styles from './index.module.css';
 
@@ -44,7 +43,6 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageFeatures />
       </main>
-      <HomeSpring />
     </Layout>
   );
 }

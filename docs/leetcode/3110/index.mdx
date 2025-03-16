@@ -1,0 +1,55 @@
+---
+title: 3110
+position: 3110
+tags: [字符串]
+sidebar_position: 3110
+---
+import DifficultyTag from "../../../src/components/DifficultyTag";
+
+# 3152. 特殊数组 II
+
+## 题目描述 <DifficultyTag level={1} />
+
+:::info
+
+题目来源：[LeetCode官网题目](https://leetcode.cn/problems/score-of-a-string/description)
+
+:::
+
+给你一个字符串 `s` 。一个字符串的 **分数** 定义为相邻字符 **ASCII** 码差值绝对值的和。
+
+请你返回 `s` 的 **分数** 。
+
+**示例 1：**
+
+> **输入：s = "hello"
+> **输出**：13
+> **解释**：
+> `s` 中字符的 `ASCII` 码分别为：`'h' = 104` ，`'e' = 101` ，`'l' = 108` ，`'o' = 111` 。
+> 所以 `s` 的分数为 `|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13` 。
+
+**示例 2**：
+
+> **输入**：s = "zaz"
+> **输出**：50
+> **解释**：
+> `s` 中字符的 `ASCII` 码分别为：`'z' = 122 `，`'a' = 97` 。所以 `s` 的分数为 `|122 - 97| + |97 - 122| = 25 + 25 = 50` 。
+
+题目限制：
+- `2 <= s.length <= 100`
+- `s` 只包含小写英文字母。
+
+## 题解
+模拟即可
+
+代码如下：
+```ts
+function scoreOfString(s: string): number {
+    let ans = 0;
+    for (let i = 1; i < s.length; i++) {
+    ans += Math.abs(s.charCodeAt(i) - s.charCodeAt(i - 1));
+}
+    return ans;
+}
+```
+
