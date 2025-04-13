@@ -3,10 +3,10 @@ import OutLink from "./OutLink";
 import {FC, ReactElement} from "react";
 
 interface CollapseOutLinkProps {
-  OutLinkLink: string;
-  OutLinkText: string;
-  detail: string;
-  text: string;
+  OutLinkLink?: string;
+  OutLinkText?: string;
+  detail?: string;
+  text?: string;
   isOk: boolean;
 }
 
