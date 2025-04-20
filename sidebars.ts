@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
     createSidebar('GIT'),
     "frontendmaster",
     createSidebar('游戏攻略'),
+    "resources",
   ],
   sidebar2: [
     {

@@ -1,6 +1,6 @@
 ---
 title: 经典编程书籍大全
-tags: books, github, 资源
+tags: [books, github, 资源]
 authors: jobbole
 ---
 
