@@ -52,3 +52,16 @@ css:
   label: css
   permalink: /css
   description: css
+
+books:
+  label: books
+  permalink: /books
+  description: books
+github:
+  label: github
+  permalink: /github
+  description: github
+资源:
+  label: 资源
+  permalink: /资源
+  description: 资源

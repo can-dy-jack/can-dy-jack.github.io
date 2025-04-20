@@ -41,3 +41,11 @@ Michelle Barker:
     linkedin: michelle-barker-02819230
     github: mbarker84
     blog: https://michellebarker.co.uk/
+
+jobbole:
+  name: jobbole
+  title: 伯乐在线
+  url: https://github.com/jobbole
+  image_url: https://github.com/jobbole.png
+  socials:
+    github: jobbole
