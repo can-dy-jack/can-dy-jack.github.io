@@ -1,13 +1,15 @@
 ---
 title: 第二期
 authors: jim
-tags: [blog]
+tags: [blog, ai, cursor]
 ---
 
 ## 新闻
 ### [Cursor CEO亲自道歉](https://36kr.com/p/3259770104889479)
 > 一位名叫 BrokenToasterOven 的程序员在使用 Cursor 写代码时，发现了个奇怪的问题：以往他可以在台式机、笔记本和远程开发环境之间自由切换，
 > Cursor 也都能正常使用。但最近他发现，只要在一台设备上登录 Cursor，其他设备上的账号就会立刻被强制下线。
+
+{/* truncate */}
 
 ## 资源
 1. Claw Cloud Run 永久免费权益限时领取: https://juejin.cn/post/7496025111293771817
@@ -20,4 +22,42 @@ tags: [blog]
 恐怕以后程序员要学习的并不是具体的技术，而是如何准确描述需求和细节，让 AI 能理解并生成目标程序。
 
 参考：MCP 官网： [mcp - docs](https://mcp-docs.cn/introduction)
+
+## AI
+
+## 目前的 AI 编辑器
+> 目前的 AI 编辑器还是主要以 cursor 为主流。部分 AI 编辑器支持 vscode 或者 JB 系列软件的插件使用方式。
+
+1. cursor
+2. trae
+3. augment code
+4. JB 系列出品 - Junie
+5. claude code
+6. aider - 命令行上的 AI
+
+## AI 协议 / 框架
+- `MCP server`
+  - 模型上下文协议
+  - 由 Anthropic 于 2024 年 11 月发布，旨在标准化 AI 模型（LLM）与外部数据源和工具（如数据库、API、文件系统）的连接。
+  - 它统一了不同模型和框架的“函数调用” (Function Calling) 功能，让 AI 能访问和利用上下文数据。
+  - 告诉 AI 如何使用各种工具和数据。
+- `A2A`
+  - Agent2Agent 协议，专注于智能体之间的协作。
+  - 它是一个应用层协议，支持智能体以「智能体」或「用户」的身份进行交互，处理更动态、更自然的对话和协作任务，而不仅仅是作为工具被调用。
+- “AI 智能体”：`Coze`
+- `Dify` 开源的大语言模型（LLM）应用开发平台
+- `langchain` 框架
+  - 帮助开发人员使用语言模型构建端到端的应用程序。它提供了一套工具、组件和接口，可简化创建由大型语言模型 (LLM) 和聊天模型提供支持的应用程序的过程。
+- `langchain`
+  - LangGraph 是在 LangChain 基础上的一个库，是 LangChain 的 LangChain Expression Language （LCEL）的扩展。
+  - 能够利用有向无环图的方式，去协调多个LLM或者状态，使用起来比 LCEL 会复杂，但是逻辑会更清晰。
+- `Eino`
+  - 提供基于 `Golang` 语言的终极大模型应用开发框架。
+  - 它从开源社区中的诸多优秀 LLM 应用开发框架，如 LangChain 和 LlamaIndex 等获取灵感，同时借鉴前沿研究成果与实际应用，提供了一个强调简洁性、可扩展性、可靠性与有效性，且更符合 Go 语言编程惯例的 LLM 应用开发框架。
+
+
+## 参考资料
+- [解构 Google 的 A2A 协议及其和 MCP 的关系](https://www.phppan.com/2025/04/google-a2a-and-mcp/)
+- [LangChain 完整指南：使用大语言模型构建强大的应用程序](https://zhuanlan.zhihu.com/p/620529542)
+- [LangGraph 入门与实战](https://zhuanlan.zhihu.com/p/684847526)
 
