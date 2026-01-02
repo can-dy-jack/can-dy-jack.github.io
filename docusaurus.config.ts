@@ -21,7 +21,7 @@ const config: Config = {
   tagline: "分享知识，但不只是知识",
   favicon: "img/favicon.ico",
 
-  url: "https://kartjim.cn",
+  url: "https://can-dy-jack.github.io",
   baseUrl: "/",
 
   organizationName: "can-dy-jack",
@@ -29,6 +29,7 @@ const config: Config = {
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  deploymentBranch: "gh-pages",
 
   i18n: {
     defaultLocale: "zh-Hans",
