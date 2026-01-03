@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
     "frontendmaster",
     createSidebar('游戏攻略'),
     "resources",
+    createSidebar('AI'),
   ],
   sidebar2: [
     {

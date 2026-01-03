@@ -96,17 +96,19 @@ const config: Config = {
           label: "奇闻趣事",
           position: "left"
         },
-        { to: "/news", label: "时事新闻", position: "left" },
+        // { to: "/news", label: "时事新闻", position: "left" },
 
-        { to: "/rss", label: "RSS订阅", position: "left" },
+        // { to: "/rss", label: "RSS订阅", position: "left" },
         {
           type: "search",
           position: "left",
         },
         {
           href: "https://github.com/can-dy-jack",
-          label: "GitHub",
+          // label: "GitHub",
           position: "right",
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
