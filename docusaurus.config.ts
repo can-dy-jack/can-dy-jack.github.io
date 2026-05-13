@@ -91,9 +91,8 @@ const config: Config = {
         },
         { to: "/blog", label: "博客", position: "left" },
         {
-          type: "docSidebar",
-          sidebarId: "sidebar2",
-          label: "奇闻趣事",
+          to: '/docs/chatweave/privacy-policy',
+          label: "Chatweave",
           position: "left"
         },
         // { to: "/news", label: "时事新闻", position: "left" },

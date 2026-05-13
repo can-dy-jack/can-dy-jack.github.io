@@ -1,0 +1,105 @@
+---
+title: TypeScript 品牌类型
+---
+## 从未使用过的属性
+
+最近上班无聊，随意翻阅 VSCode 源码，无意间看到了一个 `RGBA` 的类定义了一个不从使用过的属性 `_rgbaBrand` 。
+
+{/* truncate */}
+
+首先看一下代码：
+
+```typescript
+export class RGBA {
+	// 从未使用过
+	_rgbaBrand: void = undefined;
+
+	/**
+	 * Red: integer in [0-255]
+	 */
+	readonly r: number;
+
+	/**
+	 * Green: integer in [0-255]
+	 */
+	readonly g: number;
+
+	/**
+	 * Blue: integer in [0-255]
+	 */
+	readonly b: number;
+
+	/**
+	 * Alpha: float in [0-1]
+	 */
+	readonly a: number;
+
+	constructor(r: number, g: number, b: number, a: number = 1) {
+		this.r = Math.min(255, Math.max(0, r)) | 0;
+		this.g = Math.min(255, Math.max(0, g)) | 0;
+		this.b = Math.min(255, Math.max(0, b)) | 0;
+		this.a = roundFloat(Math.max(Math.min(1, a), 0), 3);
+	}
+
+	static equals(a: RGBA, b: RGBA): boolean  {
+		return a.r === b.r && a.g === b.g && a.b === b.b && a.a === b.a;
+	}
+}
+```
+
+其中，`_rgbaBrand` 这个属性定义为 void 类型，并且从未赋值或者读取。
+
+在查阅了多处资料，并询问了AI之后，我才发现，这个 `_rgbaBrand` 叫做 **品牌类型（Branded Type）** ，是一个十分精巧的设计。
+
+## **品牌类型**
+
+先说结论：`_rgbaBrand` 是 TypeScript 中一种**品牌类型（Branded Type）**  的实现方式，也被称为「幻影类型（Phantom Type）」，其核心目的是：**在类型层面确保** **`RGBA`** **实例是通过合法的构造函数创建的，而不是被外部随意模拟 / 伪造**，本质是给类型增加一个「唯一标识」，防止类型欺骗。
+
+### 为什么需要这个属性
+
+在 TypeScript 中，如果一个对象的结构和 `RGBA` 完全一致，TypeScript 的结构类型系统会认为它和 `RGBA` 是「兼容的」，即使它不是通过 `new RGBA()` 创建的。例如：
+
+```typescript
+// 伪造一个 RGBA 结构的对象
+const fakeRGBA = { r: 255, g: 0, b: 0, a: 1 };
+// TypeScript 会认为 fakeRGBA 可以赋值给 RGBA 类型（结构一致）
+const realRGBA: RGBA = fakeRGBA; // 类型检查不报错，但 fakeRGBA 并非真正的 RGBA 实例
+```
+
+这种「结构兼容」在某些场景下会有风险：比如你希望只有通过 `RGBA` 构造函数（经过合法的数值校验）创建的对象，才能被当作 `RGBA` 类型使用。 `_rgbaBrand` 就是用来验证是否是构造函数创建的，而非模拟的类型。
+
+### 实现逻辑
+
+- `_rgbaBrand` 是一个**只读（隐式，因为没有 setter）且仅在类内部赋值** 的属性，类型是 `void`，值固定为 `undefined`。
+- 外部代码无法（也不会）主动添加这个属性（尤其是 `void` 类型 + `undefined` 值的组合，没有实际业务意义），因此只有通过 `new RGBA()` 创建的实例，才会拥有这个属性。
+- TypeScript 会把这个属性纳入类型校验，因此外部伪造的对象因为缺少 `_rgbaBrand`，会被类型系统拒绝赋值给 `RGBA` 类型：
+
+```typescript
+const fakeRGBA = { r: 255, g: 0, b: 0, a: 1 };
+const realRGBA: RGBA = fakeRGBA; 
+// ❌ 类型错误：缺少属性 '_rgbaBrand'
+// 类型 '{ r: number; g: number; b: number; a: number; }' 不能赋值给类型 'RGBA'
+```
+
+### 为什么值是 `undefined`、类型是 `void`
+
+- `void` 类型表示「没有返回值」，在这里用来标识这个属性**无业务意义**，仅作为类型标记。
+- `undefined` 是 `void` 类型的唯一合法值（在 TypeScript 中），赋值为 `undefined` 既满足类型要求，又不会占用额外内存（因为 `undefined` 是 JS 原始值，且这个属性无实际业务用途）。
+- 这个属性通常会被命名为「Brand」相关（比如 `_brand`、`_rgbaBrand`），是行业内的约定俗成，一眼就能识别出这是品牌类型的标记。
+
+### 优势
+
+- 这个属性**不影响运行时**：JS 运行时中，`_rgbaBrand` 只是一个值为 `undefined` 的普通属性，不会改变类的功能、性能，也不会被业务逻辑使用。
+- 它是**纯 TypeScript 层面的类型安全手段**：仅作用于开发阶段的类型检查，编译为 JS 后，这个属性依然存在，但不会产生任何运行时影响。
+- 扩展：如果想更严格，还可以把 `_rgbaBrand` 设为 `private`，进一步防止外部访问 / 修改：
+
+```typescript
+private readonly _rgbaBrand: void = undefined;
+```
+
+## 总结
+
+1.  TypeScript 「品牌类型」，核心作用是**防止外部伪造对象**，确保只有通过合法构造函数创建的实例才能被识别。
+2. 它是纯类型层面的安全手段，无业务逻辑意义，运行时仅作为一个值为 `undefined` 的普通属性存在。
+3. 利用 TypeScript 的结构类型系统特性，通过「额外的唯一属性」阻断结构兼容导致的类型欺骗问题。
+
